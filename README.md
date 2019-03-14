@@ -11,7 +11,7 @@ Web Application for supporting wholesale coffee business processes. Built using 
 5. Git                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://git-scm.com/downloads
 6. Postman              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://www.getpostman.com/downloads/
 7. SQLLite.DB.Browser   &nbsp;&nbsp;&nbsp;&nbsp;-> https://sqlitebrowser.org/dl/
-9. VSCode + _Extensions_ &nbsp;-> https://code.visualstudio.com/download
+9. VSCode + _Extensions_ &nbsp;-> https://code.visualstudio.com/download    (_insiders https://code.visualstudio.com/insiders/ )_
    * _Angular Files (Alexander Ivanichev)_
    * _Angular Language Service (Angular)_
    * _Angular v7 Snippets (John Papa)_

@@ -11,7 +11,6 @@ Web Application for supporting wholesale coffee business processes. Built using 
 5. Git
 6. Postman
 7. DB.Browser.for.SQLLite
-8. Bootstrap & font-awesome (npm) 
 9. VSCode + _Extensions_
    * _Angular Files (Alexander Ivanichev)_
    * _Angular Language Service (Angular)_

@@ -21,12 +21,11 @@ Web Application for supporting wholesale coffee business processes. Built using 
    * _C# (Microsoft)_
    * _C# Extensions (jchannon)_
    * _Debugger for chrome (Microsoft)_
+   * _Markdown All in One_ (Yu Zhang)
    * _Markdown Preview Enhanced (Yiyi Wang)_
    * _Meterial Icon Theme (Philipp Kief)_
    * _Nuget Package Manger (jmrog)_
    * _Path Intellisense (Christian Kohler)_
    * _Prettier - Code Formatter (Esben Peterson)_
    * _TSLint (Microsoft)_
-
-
-
+   * _TSLint (Microsoft)_

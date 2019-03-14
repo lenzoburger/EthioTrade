@@ -17,7 +17,7 @@ Web Application for supporting wholesale coffee business processes. Built using 
    * _Angular v7 Snippets (John Papa)_
    * _angular2-switcher (infinity1207)_
    * _Auto Rename Tag (Jun Han)_
-   * _Bracket Pair Colorizer (Coenraads)_
+   * _Bracket Pair Colorizer 2 (Coenraads)_
    * _C# (Microsoft)_
    * _C# Extensions (jchannon)_
    * _Debugger for chrome (Microsoft)_

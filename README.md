@@ -4,14 +4,14 @@ Web Application for supporting wholesale coffee business processes. Built using 
 
 
 ### Dev Tools
-1. Dotnet-sdk (v2.2+)
-2. Node (v10+)
-3. AngularCLi (v7+)
-4. Notepad++
-5. Git
-6. Postman
-7. DB.Browser.for.SQLLite
-9. VSCode + _Extensions_
+1. Dotnet-sdk (v2.2+)  &nbsp;&nbsp;&nbsp;&nbsp;-> https://dotnet.microsoft.com/download
+2. Node (v10+)           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://nodejs.org/en/download/
+3. AngularCLi (v7+)     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://cli.angular.io/
+4. Notepad++            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://notepad-plus-plus.org/download
+5. Git                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://git-scm.com/downloads
+6. Postman              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://www.getpostman.com/downloads/
+7. SQLLite.DB.Browser   &nbsp;&nbsp;&nbsp;&nbsp;-> https://sqlitebrowser.org/dl/
+9. VSCode + _Extensions_ &nbsp;-> https://code.visualstudio.com/download
    * _Angular Files (Alexander Ivanichev)_
    * _Angular Language Service (Angular)_
    * _Angular v7 Snippets (John Papa)_

@@ -44,7 +44,7 @@ namespace EthCoffee.api.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserLoginDto userLoginDto)
         {  
-            var userFromRepo = await _repo.Login(userLoginDto.Username,userLoginDto.Password);
+            var userFromRepo = await _repo.Login(userLoginDto.Username.ToLower(),userLoginDto.Password);
 
             if (userFromRepo == null) 
             {

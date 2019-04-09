@@ -1,0 +1,7 @@
+<div class="container mt-5">
+  <div class="row">
+    <div *ngFor="let listing of listings" class="col-lg-3 col-md-4 col-sm-6">
+      <app-listing-card [listing]="listing"></app-listing-card>
+    </div>
+  </div>
+</div>

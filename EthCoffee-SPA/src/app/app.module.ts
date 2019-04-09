@@ -14,11 +14,14 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
-import { ListingsComponent } from './listings/listings.component';
+import { ListingsComponent } from './listingsContainer/listings/listings.component';
 import { MyEtradeComponent } from './my-etrade/my-etrade.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
+import { UserService } from './_services/user.service';
+import { ListingService } from './_services/listing.service';
+import { ListingCardComponent } from './listingsContainer/listing-card/listing-card.component';
 
 
 @NgModule({
@@ -29,7 +32,8 @@ import { AuthGuard } from './_guards/auth.guard';
       RegisterComponent,
       ListingsComponent,
       MyEtradeComponent,
-      MessagesComponent
+      MessagesComponent,
+      ListingCardComponent
    ],
    imports: [
       BrowserModule,
@@ -43,7 +47,9 @@ import { AuthGuard } from './_guards/auth.guard';
       AuthService,
       ErrorInterceptorProvider,
       AlertifyService,
-      AuthGuard
+      AuthGuard,
+      UserService,
+      ListingService
    ],
    bootstrap: [
       AppComponent

@@ -1,4 +1,50 @@
 img {
-    height: 250px;
-    object-fit: cover;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card:hover img {
+  transform: scale(1.2, 1.2);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+
+.card img {
+  transform: scale(1, 1);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+
+.card:hover .card-body{
+  height:100%;
+}
+
+.card .card-body{
+  height: 3rem;
+  overflow: hidden;
+}
+
+.card-img-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.listing-icons{
+  position: absolute;
+  bottom: -6%;
+  left: 83%;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 0.5;
+}
+
+.card-img-wrapper:hover .listing-icons{
+  bottom: -4%;
+  left: 80%;
+  opacity: 1;
+}
+
+.animate {
+  transition: all 0.3s ease-in-out;
 }

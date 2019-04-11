@@ -4,11 +4,6 @@ import { Observable } from 'rxjs';
 import { Listing } from '../_models/listing';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    Authorization: 'Bearer ' + localStorage.getItem('token')
-  })
-};
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +14,10 @@ export class ListingService {
   constructor(private http: HttpClient) { }
 
   getListing(id): Observable<Listing> {
-    return this.http.get<Listing>(this.baseUrl + 'listings/' + id, httpOptions);
+    return this.http.get<Listing>(this.baseUrl + 'listings/' + id);
   }
 
   getListings(): Observable<Listing[]> {
-    return this.http.get<Listing[]>(this.baseUrl + 'listings', httpOptions);
+    return this.http.get<Listing[]>(this.baseUrl + 'listings');
   }
 }

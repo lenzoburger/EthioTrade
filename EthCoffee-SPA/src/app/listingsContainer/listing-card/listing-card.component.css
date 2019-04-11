@@ -15,11 +15,11 @@ img {
   transition-timing-function: ease-out;
 }
 
-.card:hover .card-body{
-  height:100%;
+.card:hover .card-body {
+  height: 100%;
 }
 
-.card .card-body{
+.card .card-body {
   height: 3rem;
   overflow: hidden;
 }
@@ -29,7 +29,7 @@ img {
   position: relative;
 }
 
-.listing-icons{
+.listing-icons {
   position: absolute;
   bottom: -6%;
   left: 83%;
@@ -39,7 +39,7 @@ img {
   opacity: 0.5;
 }
 
-.card-img-wrapper:hover .listing-icons{
+.card-img-wrapper:hover .listing-icons {
   bottom: -4%;
   left: 80%;
   opacity: 1;
@@ -47,4 +47,17 @@ img {
 
 .animate {
   transition: all 0.3s ease-in-out;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.card-title:hover {
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.card-title{
+  font-weight: bold;
 }

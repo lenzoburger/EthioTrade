@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img class="card-img-top img-thumbnail" src="{{listing?.listingPhotoUrl}}" alt="{{listing?.title}}">
+        <div class="card-body">
+          <div>
+            <p><strong>{{listing?.title}}</strong></p>
+          </div>
+          <div>
+            <p>{{listing?.category}}</p>
+          </div>
+          <div>
+            <strong>Listed:</strong>
+            <p>{{listing?.dateAdded}}</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group d-flex">
+            <button class="btn btn-primary w-100">Watch</button>
+            <button class="btn btn-success w-100">Ask</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+
+    </div>
+  </div>
+</div>

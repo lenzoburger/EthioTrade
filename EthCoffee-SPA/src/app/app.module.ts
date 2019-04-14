@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { ListingService } from './_services/listing.service';
 import { ListingCardComponent } from './listingsContainer/listing-card/listing-card.component';
 import { ListingDetailComponent } from './listingsContainer/listing-detail/listing-detail.component';
 import { ListingDetailResolver } from './_resolvers/listing-detail-resolver';
+import { ListingsResolver } from './_resolvers/listings-resolver';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -48,6 +50,7 @@ export function tokenGetter() {
     HttpClientModule,
     FormsModule,
     BsDropdownModule.forRoot(),
+    NgxGalleryModule,
     TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     JwtModule.forRoot({
@@ -65,7 +68,8 @@ export function tokenGetter() {
     AuthGuard,
     UserService,
     ListingService,
-    ListingDetailResolver
+    ListingDetailResolver,
+    ListingsResolver
   ],
   bootstrap: [
     AppComponent

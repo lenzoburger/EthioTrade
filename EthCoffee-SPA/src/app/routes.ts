@@ -6,6 +6,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { ListingDetailComponent } from './listingsContainer/listing-detail/listing-detail.component';
 import { ListingDetailResolver } from './_resolvers/listing-detail-resolver';
+import { ListingsResolver } from './_resolvers/listings-resolver';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,7 +15,10 @@ export const appRoutes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      { path: 'listings', component: ListingsComponent },
+      {
+        path: 'listings', component: ListingsComponent,
+        resolve: { listings: ListingsResolver }
+      },
       {
         path: 'listings/:id', component: ListingDetailComponent,
         resolve: { listing: ListingDetailResolver }

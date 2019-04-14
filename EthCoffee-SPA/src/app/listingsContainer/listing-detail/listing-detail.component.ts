@@ -15,15 +15,17 @@ export class ListingDetailComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.loadListing();
-  }
-
-  loadListing() {
-    this.listingService.getListing(+this.route.snapshot.params.id).subscribe((listing: Listing) => {
-      this.listing = listing;
-    }, error => {
-      this.alertify.error(error);
+    this.route.data.subscribe(data => {
+      this.listing = data.user;
     });
   }
+
+  // loadListing() {
+  //   this.listingService.getListing(+this.route.snapshot.params.id).subscribe((listing: Listing) => {
+  //     this.listing = listing;
+  //   }, error => {
+  //     this.alertify.error(error);
+  //   });
+  // }
 
 }

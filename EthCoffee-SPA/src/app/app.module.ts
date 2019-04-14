@@ -27,6 +27,7 @@ import { ListingCardComponent } from './listingsContainer/listing-card/listing-c
 import { ListingDetailComponent } from './listingsContainer/listing-detail/listing-detail.component';
 import { ListingDetailResolver } from './_resolvers/listing-detail-resolver';
 import { ListingsResolver } from './_resolvers/listings-resolver';
+import { ListingEditComponent } from './listingsContainer/listing-edit/listing-edit.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -42,7 +43,8 @@ export function tokenGetter() {
     MyEtradeComponent,
     MessagesComponent,
     ListingCardComponent,
-    ListingDetailComponent
+    ListingDetailComponent,
+    ListingEditComponent
   ],
   imports: [
     BrowserModule,

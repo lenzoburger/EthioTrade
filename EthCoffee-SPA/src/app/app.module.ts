@@ -24,6 +24,7 @@ import { UserService } from './_services/user.service';
 import { ListingService } from './_services/listing.service';
 import { ListingCardComponent } from './listingsContainer/listing-card/listing-card.component';
 import { ListingDetailComponent } from './listingsContainer/listing-detail/listing-detail.component';
+import { ListingDetailResolver } from './_resolvers/listing-detail-resolver';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -62,7 +63,8 @@ export function tokenGetter() {
     AlertifyService,
     AuthGuard,
     UserService,
-    ListingService
+    ListingService,
+    ListingDetailResolver
   ],
   bootstrap: [
     AppComponent

@@ -7,6 +7,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { ListingDetailComponent } from './listingsContainer/listing-detail/listing-detail.component';
 import { ListingDetailResolver } from './_resolvers/listing-detail-resolver';
 import { ListingsResolver } from './_resolvers/listings-resolver';
+import { ListingEditComponent } from './listingsContainer/listing-edit/listing-edit.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +24,7 @@ export const appRoutes: Routes = [
         path: 'listings/:id', component: ListingDetailComponent,
         resolve: { listing: ListingDetailResolver }
       },
+      { path: 'listings/edit', component: ListingEditComponent },
       { path: 'myetrade', component: MyEtradeComponent },
       { path: 'messages', component: MessagesComponent },
     ]

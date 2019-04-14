@@ -8,5 +8,5 @@ export interface Listing {
     listingPhotoUrl: string;
 
     description?: string;
-    listingPhotos?: ListingPhoto[];
+    photos?: ListingPhoto[];
 }

@@ -28,6 +28,7 @@ import { ListingDetailComponent } from './listingsContainer/listing-detail/listi
 import { ListingDetailResolver } from './_resolvers/listing-detail-resolver';
 import { ListingsResolver } from './_resolvers/listings-resolver';
 import { ListingEditComponent } from './listingsContainer/listing-edit/listing-edit.component';
+import { ListingEditResolver } from './_resolvers/listing-edit-resolver';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -71,7 +72,8 @@ export function tokenGetter() {
     UserService,
     ListingService,
     ListingDetailResolver,
-    ListingsResolver
+    ListingsResolver,
+    ListingEditResolver
   ],
   bootstrap: [
     AppComponent

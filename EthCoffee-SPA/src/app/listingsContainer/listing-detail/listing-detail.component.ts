@@ -4,18 +4,21 @@ import { ListingService } from 'src/app/_services/listing.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import { AuthService } from 'src/app/_services/auth.service';
+
 @Component({
   selector: 'app-listing-detail',
   templateUrl: './listing-detail.component.html',
   styleUrls: ['./listing-detail.component.css']
 })
+
 export class ListingDetailComponent implements OnInit {
   listing: Listing;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
   constructor(private listingService: ListingService, private alertify: AlertifyService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute, private authService: AuthService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -33,6 +36,8 @@ export class ListingDetailComponent implements OnInit {
       }
     ];
     this.galleryImages = this.getImages();
+
+    this.listingService.updateCurrentListingData((this.listing));
   }
 
   getImages() {
@@ -47,5 +52,14 @@ export class ListingDetailComponent implements OnInit {
     }
 
     return imageUrls;
+  }
+
+  isListingOwner() {
+    if (this.authService.loggedIn()) {
+      if ('' + this.listing.user.id === this.authService.decodedToken.nameid) {
+        return true;
+      }
+    }
+    return false;
   }
 }

@@ -23,11 +23,21 @@ namespace EthCoffee.api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUser(int id)
+        public async Task<IActionResult> GetUserDetails(int id)
         {
-            var user = await _repo.GetUser(id);
+            var user = await _repo.GetUserDetails(id);
 
             var userToReturn = _mapper.Map<User, UserDetailsDto>(user);
+
+            return Ok(userToReturn);
+        }
+
+        [HttpGet("listings/{id}")]
+        public async Task<IActionResult> GetUserListings(int id)
+        {
+            var user = await _repo.GetUserListings(id);
+
+            var userToReturn = _mapper.Map<User, UserListingsDto>(user);
 
             return Ok(userToReturn);
         }

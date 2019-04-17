@@ -13,5 +13,6 @@ namespace EthCoffee.api.Dtos
         public DateTime DateAdded { get; set; }
         public string ListingPhotoUrl { get; set; } 
         public ICollection<ListingPhotosDetailedDto> Photos { get; set; }
+        public UserDetailsDto User { get; set; }
     }
 }

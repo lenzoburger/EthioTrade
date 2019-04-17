@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Listing } from 'src/app/_models/listing';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-listing-edit',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listing-edit.component.css']
 })
 export class ListingEditComponent implements OnInit {
-
-  constructor() { }
+  listing: Listing;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => {
+      this.listing = data.listing;
+    });
   }
 
 }

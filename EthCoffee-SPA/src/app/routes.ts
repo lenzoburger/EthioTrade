@@ -8,6 +8,7 @@ import { ListingDetailComponent } from './listingsContainer/listing-detail/listi
 import { ListingDetailResolver } from './_resolvers/listing-detail-resolver';
 import { ListingsResolver } from './_resolvers/listings-resolver';
 import { ListingEditComponent } from './listingsContainer/listing-edit/listing-edit.component';
+import { ListingEditResolver } from './_resolvers/listing-edit-resolver';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,10 +22,13 @@ export const appRoutes: Routes = [
         resolve: { listings: ListingsResolver }
       },
       {
+        path: 'listings/edit/:id', component: ListingEditComponent,
+        resolve: { listing: ListingEditResolver }
+      },
+      {
         path: 'listings/:id', component: ListingDetailComponent,
         resolve: { listing: ListingDetailResolver }
       },
-      { path: 'listings/edit', component: ListingEditComponent },
       { path: 'myetrade', component: MyEtradeComponent },
       { path: 'messages', component: MessagesComponent },
     ]

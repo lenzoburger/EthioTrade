@@ -1,4 +1,5 @@
 import { ListingPhoto } from './listingPhoto';
+import { User } from './user';
 
 export interface Listing {
     id: number;
@@ -9,4 +10,5 @@ export interface Listing {
 
     description?: string;
     photos?: ListingPhoto[];
+    user?: User;
 }

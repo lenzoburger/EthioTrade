@@ -7,7 +7,7 @@
         <a class="nav-link" [routerLink]="['/listings']">Listings</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/myetrade']">My E-Trade</a>
+        <a class="nav-link" [routerLink]="['/myetrade']">My ETrade</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/messages']">Messages</a>
@@ -20,7 +20,7 @@
       </a>
 
       <div class="dropdown-menu mt-3" *dropdownMenu>
-        <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edit Profile</a>
+        <a class="dropdown-item" [routerLink]="['/account']"><i class="fa fa-user"></i>My Account</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i>Logout</a>
       </div>

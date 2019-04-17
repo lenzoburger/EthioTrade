@@ -17,7 +17,7 @@ export class ListingDetailComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
-  constructor(private listingService: ListingService, private alertify: AlertifyService,
+  constructor(private listingService: ListingService,
               private route: ActivatedRoute, private authService: AuthService) { }
 
   ngOnInit() {

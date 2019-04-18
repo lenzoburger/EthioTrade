@@ -1,6 +1,7 @@
 import { Avatar } from './avatar';
+import { Listing } from './Listing';
 
-export interface User {
+export interface UserListing {
     id: number;
     username: string;
     city: string;
@@ -10,4 +11,5 @@ export interface User {
     bio: string;
     avatarUrl: string;
     avatar: Avatar;
+    myListings: Listing[];
 }

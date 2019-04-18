@@ -1,3 +1,64 @@
-<p>
-  listing-edit works!
-</p>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-4">
+          <h4>{{listing.title}}</h4>
+          </div>
+      <div class="col-sm-8">
+        <div *ngIf="editForm.dirty" class="alert alert-info">
+          <strong>Information:</strong> You have made changes. Any unsaved changes will be lost!
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img
+          class="card-img-top img-thumbnail"
+          src="{{ listing.listingPhotoUrl }}"
+          alt="{{ listing.title }}"
+        />
+        <div class="card-footer">
+            <div class="btn-group d-flex">
+                <button class="btn btn-warning w-90" [routerLink]="['/listings', listing.id]">Back</button>
+                <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success w-100">Save Changes</button>
+              </div>
+        </div>
+        <div class="card-body">
+            <div>
+                <strong>Category: </strong>
+              <p>{{ listing.category }}</p>
+            </div>
+          <div>
+            <strong>Listed:</strong>
+            <p>{{ listing.dateAdded }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="tab-panel">
+        <tabset class="member-tabset">
+          <tab heading="Edit Details">
+            <form #editForm="ngForm" id="editForm" (ngSubmit)="updateListing()">
+                <label for="title">Title</label>
+                <input name="title" type="text" class="form-control" [(ngModel)]="listing.title">
+                <h4>Description</h4>
+                <textarea name="description" rows="6" class="form-control" [(ngModel)]="listing.description"></textarea>
+                <h4>Category</h4>
+                <div class="form-inline">
+                    <label for="category">Main-Category:</label>
+                    <input name="category" type="text" class="form-control" [(ngModel)]="listing.category">
+                    <label for="subCategory">Sub-Category:</label>
+                    <input name="subCategory" type="text" class="form-control">
+                </div>
+              </form>
+          </tab>
+          <tab heading="Edit Photos">
+              <h4>Edit Photos</h4>
+              <p>Edit photos here</p>
+            </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+</div>

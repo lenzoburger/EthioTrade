@@ -1,0 +1,55 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img class="card-img-top img-thumbnail avatar" src="{{ account.avatarUrl }}" alt="{{ account.id }}" />
+        <div class="card-body">
+          <div>
+            <p>
+              <strong>{{ account.username }}</strong>
+            </p>
+          </div>
+          <div>
+            <p><b>AccountID: </b> {{ account.id }}</p>
+          </div>
+          <div>
+            <strong>Joined:</strong>
+            <p>{{ account.createdDate }}</p>
+          </div>
+          <div>
+            <strong>Joined:</strong>
+            <p>{{ account.lastActiveDate }}</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group d-flex">
+            <button class="btn btn-primary w-50">My ETrade</button>
+            <button class="btn btn-success w-50" [routerLink]="['/account/edit']">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="tab-panel">
+        <tabset class="member-tabset">
+          <tab heading="My Details">
+            <h4>Details</h4>
+            <p>{{ account.bio }}</p>
+          </tab>
+          <tab heading="My Settings">
+            <h4>Settings</h4>
+            <p>Settings Go here</p>
+          </tab>
+          <tab heading="Notification Settings">
+            <h4>Notifications</h4>
+            <p>Notifications go here</p>
+          </tab>
+          <tab heading="My Feedback">
+            <h4>FeedBack</h4>
+            <p>FeedBacks posted here</p>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+</div>

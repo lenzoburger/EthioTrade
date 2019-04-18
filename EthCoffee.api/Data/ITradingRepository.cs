@@ -8,7 +8,8 @@ namespace EthCoffee.api.Data
     {
          void Add<T>(T entity) where T: class;
          void Delete<T>(T entity) where T:class;         
-         Task<User> GetUser(int id);
+         Task<User> GetUserListings(int id);
+         Task<User> GetUserDetails(int id);
          Task<Listing> GetListing(int id);
          Task<IEnumerable<Listing>> GetListings();
          Task<bool> SaveAll();

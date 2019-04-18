@@ -4,7 +4,7 @@ using EthCoffee.api.Models;
 
 namespace EthCoffee.api.Dtos
 {
-    public class UserDetailsDto
+    public class UserListingsDto
     {
         public int Id { get; set; }
         public string Username { get; set; }
@@ -16,5 +16,6 @@ namespace EthCoffee.api.Dtos
 
         public string AvatarUrl { get; set; }               
         public AvatarsDetailedDto Avatar { get; set; }
+        public ICollection<ListingSearchResultsDto> MyListings { get; set; }
     }
 }

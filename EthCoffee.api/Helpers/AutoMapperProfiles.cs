@@ -22,10 +22,15 @@ namespace EthCoffee.api.Helpers
                 opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url);
             });            
             
+            CreateMap<User, UserListingsDto>();
+
             CreateMap<User, UserDetailsDto>();
 
             CreateMap<ListingPhoto, ListingPhotosDetailedDto>();
+
             CreateMap<Avatar, AvatarsDetailedDto>();
+            
+            CreateMap<ListingDetailsUpdateDto, Listing>();
         }
     }
 }

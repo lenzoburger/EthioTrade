@@ -28,6 +28,11 @@ import { ListingDetailComponent } from './listingsContainer/listing-detail/listi
 import { ListingDetailResolver } from './_resolvers/listing-detail-resolver';
 import { ListingsResolver } from './_resolvers/listings-resolver';
 import { ListingEditComponent } from './listingsContainer/listing-edit/listing-edit.component';
+import { ListingEditResolver } from './_resolvers/listing-edit-resolver';
+import { MyAccountComponent } from './account/my-account/my-account.component';
+import { MyAccountResolver } from './_resolvers/my-account-resolver';
+import { MyAccountEditComponent } from './account/my-account-edit/my-account-edit.component';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -44,7 +49,9 @@ export function tokenGetter() {
     MessagesComponent,
     ListingCardComponent,
     ListingDetailComponent,
-    ListingEditComponent
+    ListingEditComponent,
+    MyAccountComponent,
+    MyAccountEditComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +78,10 @@ export function tokenGetter() {
     UserService,
     ListingService,
     ListingDetailResolver,
-    ListingsResolver
+    ListingsResolver,
+    ListingEditResolver,
+    MyAccountResolver,
+    PreventUnsavedChanges
   ],
   bootstrap: [
     AppComponent

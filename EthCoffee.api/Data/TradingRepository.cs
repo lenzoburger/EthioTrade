@@ -25,7 +25,7 @@ namespace EthCoffee.api.Data
             _context.Remove(entity);
         }
 
-        public async Task<User> GetUser(int id)
+        public async Task<User> GetUserListings(int id)
         {
             var user = await _context.Users
             .Include(a => a.Avatar)
@@ -35,10 +35,20 @@ namespace EthCoffee.api.Data
             return user;
         }
 
+        public async Task<User> GetUserDetails(int id)
+        {
+            var user = await _context.Users
+            .Include(a => a.Avatar)
+            .FirstOrDefaultAsync(u => u.Id == id);
+            return user;
+        }
+
         public async Task<Listing> GetListing(int id)
         {
             var listing = await _context.Listings
             .Include(p => p.Photos)
+            .Include(l => l.User)
+            .ThenInclude(u => u.Avatar)
             .FirstOrDefaultAsync(l => l.id == id);
             return listing;
         }

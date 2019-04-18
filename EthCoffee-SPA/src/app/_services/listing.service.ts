@@ -39,4 +39,8 @@ export class ListingService {
       return throwError('Returning to listing ...');
     }
   }
+
+  updateListing(id: number, listing: Listing) {
+    return this.http.put(this.baseUrl + 'listings/' + id, listing);
+  }
 }

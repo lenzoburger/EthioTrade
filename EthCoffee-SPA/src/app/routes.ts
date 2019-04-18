@@ -12,6 +12,7 @@ import { ListingEditResolver } from './_resolvers/listing-edit-resolver';
 import { MyAccountComponent } from './account/my-account/my-account.component';
 import { MyAccountResolver } from './_resolvers/my-account-resolver';
 import { MyAccountEditComponent } from './account/my-account-edit/my-account-edit.component';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,7 +27,7 @@ export const appRoutes: Routes = [
       },
       {
         path: 'listings/edit/:id', component: ListingEditComponent,
-        resolve: { listing: ListingEditResolver }
+        resolve: { listing: ListingEditResolver }, canDeactivate: [PreventUnsavedChanges]
       },
       {
         path: 'listings/:id', component: ListingDetailComponent,

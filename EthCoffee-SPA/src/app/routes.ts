@@ -35,7 +35,7 @@ export const appRoutes: Routes = [
       },
       {
         path: 'account/edit', component: MyAccountEditComponent,
-        resolve: { user: MyAccountResolver }
+        resolve: { user: MyAccountResolver }, canDeactivate: [PreventUnsavedChanges]
       },
       {
         path: 'account', component: MyAccountComponent,

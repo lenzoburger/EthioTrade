@@ -22,10 +22,7 @@
           </div>
         </div>
         <div class="card-footer">
-          <div class="btn-group d-flex">
-            <button class="btn btn-primary w-50">My ETrade</button>
-            <button class="btn btn-success w-50" [routerLink]="['/account/edit']">Edit</button>
-          </div>
+            <button class="btn btn-primary w-100">Edit Avatar</button>           
         </div>
       </div>
     </div>
@@ -33,8 +30,18 @@
       <div class="tab-panel">
         <tabset class="member-tabset">
           <tab heading="My Details">
-            <h4>Details</h4>
-            <p>{{ account.bio }}</p>
+            <button id="editDetails" class="btn btn-primary w-10" [routerLink]="['/account/edit']">Edit Details</button>
+          <h4>Details</h4>
+          <strong>Name:</strong>
+          <p>{{ account.firstname }} {{ account.lastname }}</p>
+          <strong>Bio:</strong>       
+          <p>{{ account.bio }}</p>
+          <strong>Favourites:</strong>       
+          <p>{{ account.interests }}</p>
+          <strong>Address:</strong>
+          <p>{{ account.streetNumber }} {{ account.street }}</p>
+          <p> {{ account.city }} {{ account.zipCode }}</p>
+          <p> {{ account.country }}</p>
           </tab>
           <tab heading="My Settings">
             <h4>Settings</h4>

@@ -37,5 +37,4 @@ export class ListingEditComponent implements OnInit {
       this.alertify.error(error);
     });
   }
-
 }

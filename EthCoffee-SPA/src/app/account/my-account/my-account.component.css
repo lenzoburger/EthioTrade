@@ -11,3 +11,7 @@
 .avatar {
   width: 100px;
 }
+
+#editDetails{
+  float: right;
+}

@@ -31,12 +31,10 @@
       </div>
     </div>
     <div class="col-sm-8">
-      <a *ngIf="this.isListingOwner()" class="editListing" [routerLink]="['/listings/edit', listing.id]">
-        <i>Edit Listing</i>
-      </a>
       <div class="tab-panel">
         <tabset class="member-tabset">
           <tab heading="Details">
+              <button *ngIf="this.isListingOwner()" id="editListing" class="btn btn-primary w-10" [routerLink]="['/listings/edit', listing.id]">Edit Listing</button>
             <h4>Details</h4>
             <p>{{ listing.description }}</p>
           </tab>

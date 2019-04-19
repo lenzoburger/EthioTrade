@@ -15,13 +15,13 @@ namespace EthCoffee.api.Helpers
             {
                 opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url);
             });
-            
+
             CreateMap<Listing, ListingDetailsDto>()
             .ForMember(dest => dest.ListingPhotoUrl, opt =>
             {
                 opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url);
-            });            
-            
+            });
+
             CreateMap<User, UserListingsDto>();
 
             CreateMap<User, UserDetailsDto>();
@@ -29,8 +29,9 @@ namespace EthCoffee.api.Helpers
             CreateMap<ListingPhoto, ListingPhotosDetailedDto>();
 
             CreateMap<Avatar, AvatarsDetailedDto>();
-            
+
             CreateMap<ListingDetailsUpdateDto, Listing>();
+            CreateMap<UserDetailsUpdateDto, User>();
         }
     }
 }

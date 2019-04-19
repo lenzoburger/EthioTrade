@@ -1,4 +1,6 @@
+using System;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using EthCoffee.api.Data;
@@ -40,6 +42,25 @@ namespace EthCoffee.api.Controllers
             var userToReturn = _mapper.Map<User, UserListingsDto>(user);
 
             return Ok(userToReturn);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateUser(int id, UserDetailsUpdateDto userUpdate)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            {
+                return Unauthorized();
+            }
+
+            var userFromRepo = await _repo.GetUserDetails(id);
+
+            _mapper.Map(userUpdate, userFromRepo);
+
+            if (await _repo.SaveAll())
+            {
+                return NoContent();
+            }
+            throw new Exception($"Updating user details failed on save");
         }
 
     }

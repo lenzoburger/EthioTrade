@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using EthCoffee.api.Models;
 using Microsoft.EntityFrameworkCore;
@@ -74,6 +75,12 @@ namespace EthCoffee.api.Data
         {
             var avatar = await _context.Avatars.FirstOrDefaultAsync(a => a.Id == id);
             return avatar;
+        }
+
+        public async Task<ListingPhoto> GetMainListingPhoto(int listingId)
+        {
+            return await _context.ListingPhotos.Where(l => l.ListingId == listingId)
+            .FirstOrDefaultAsync(p => p.IsMain);
         }
     }
 }

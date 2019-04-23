@@ -12,14 +12,12 @@ export class ListingEditResolver implements Resolve<Listing> {
               private alertify: AlertifyService) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<Listing> {
-    // if(ListingService.UserIsAuthenticated)
-    return this.listingService.getCurrentListingData().pipe(
+    return this.listingService.getListingForEdit(route.params.id).pipe(
       catchError(error => {
-        this.alertify.message(error);
+        this.alertify.error(error);
         this.router.navigate(['listings/' + route.params.id]);
         return of(null);
       })
     );
-    // Else(alertify (You do not have access to edit this listing))
   }
 }

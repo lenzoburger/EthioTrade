@@ -31,7 +31,14 @@ namespace EthCoffee.api.Helpers
             CreateMap<Avatar, AvatarsDetailedDto>();
 
             CreateMap<ListingDetailsUpdateDto, Listing>();
+
             CreateMap<UserDetailsUpdateDto, User>();
+
+            CreateMap<PhotoForCreationDto, ListingPhoto>();
+            CreateMap<PhotoForCreationDto, Avatar>();
+
+            CreateMap<ListingPhoto, ListingPhotoForReturnDto>();
+            CreateMap<Avatar, AvatarForReturnDto>();
         }
     }
 }

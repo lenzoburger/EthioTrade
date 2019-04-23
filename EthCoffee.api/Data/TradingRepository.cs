@@ -63,5 +63,17 @@ namespace EthCoffee.api.Data
         {
             return await _context.SaveChangesAsync() > 0;
         }
+
+        public async Task<ListingPhoto> GetListingPhoto(int id)
+        {
+            var listingPhoto = await _context.ListingPhotos.FirstOrDefaultAsync(lp => lp.Id == id);
+            return listingPhoto;
+        }
+
+        public async Task<Avatar> GetAvatar(int id)
+        {
+            var avatar = await _context.Avatars.FirstOrDefaultAsync(a => a.Id == id);
+            return avatar;
+        }
     }
 }

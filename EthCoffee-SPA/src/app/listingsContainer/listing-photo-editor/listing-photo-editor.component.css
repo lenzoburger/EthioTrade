@@ -1,0 +1,16 @@
+img.img-thumbnail {
+  height: 150px;
+  margin-bottom: 2px;
+}
+
+.photoContainer {
+  margin-bottom: 2px;
+}
+
+.nv-file-over {
+  border: dotted 3px #18BC9C
+}
+
+input[type=file]{
+  color: transparent;
+}

@@ -55,7 +55,7 @@
           </tab>
           <tab heading="Edit Photos">
               <h4>Edit Photos</h4>
-              <app-listing-photo-editor [listingPhotos]="listing.photos" [listingId]="listing.id"></app-listing-photo-editor>
+              <app-listing-photo-editor [listingPhotos]="listing.photos" [listingId]="listing.id" (getListingPhotoChange)="updateMainPhoto($event)"></app-listing-photo-editor>
             </tab>
         </tabset>
       </div>

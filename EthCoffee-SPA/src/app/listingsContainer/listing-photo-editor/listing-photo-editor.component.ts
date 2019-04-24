@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ListingPhoto } from 'src/app/_models/listingPhoto';
 import { FileUploader } from 'ng2-file-upload';
 import { environment } from 'src/environments/environment';
 import { ListingService } from 'src/app/_services/listing.service';
+import { AlertifyService } from 'src/app/_services/alertify.service';
 
 @Component({
   selector: 'app-listing-photo-editor',
@@ -12,12 +13,14 @@ import { ListingService } from 'src/app/_services/listing.service';
 export class ListingPhotoEditorComponent implements OnInit {
   @Input() listingPhotos: ListingPhoto[];
   @Input() listingId: number;
+  @Output() getListingPhotoChange = new EventEmitter<string>();
   uploader: FileUploader;
   hasBaseDropZoneOver = false;
   hasAnotherDropZoneOver = false;
   baseUrl = environment.apiUrl;
+  currentMainPhoto: ListingPhoto;
 
-  constructor() { }
+  constructor(private listingService: ListingService, private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.intializerUploader();
@@ -48,11 +51,33 @@ export class ListingPhotoEditorComponent implements OnInit {
           url: res.url,
           dateAdded: res.dateAdded,
           description: res.description,
-          IsMain: res.IsMain
+          isMain: res.isMain
         };
         this.listingPhotos.push(listingPhoto);
       }
     };
+  }
+
+  setMainPhoto(listingPhoto: ListingPhoto) {
+    this.listingService.setMainPhoto(this.listingId, listingPhoto.id).subscribe(() => {
+      this.currentMainPhoto = this.listingPhotos.filter(p => p.isMain === true)[0];
+      this.currentMainPhoto.isMain = false;
+      listingPhoto.isMain = true;
+      this.getListingPhotoChange.emit(listingPhoto.url);
+    }, error => {
+      this.alertify.error(error);
+    });
+  }
+
+  deletePhoto(id: number) {
+    this.alertify.confirm('Are you sure you want to delete this photo?', () => {
+      this.listingService.deletePhoto(this.listingId, id).subscribe(() => {
+        this.listingPhotos.splice(this.listingPhotos.findIndex(p => p.id === id), 1);
+        this.alertify.success('Photo has been deleted');
+      }, error => {
+        this.alertify.error('Failed to delete photo: ' + error);
+      });
+    });
   }
 
 }

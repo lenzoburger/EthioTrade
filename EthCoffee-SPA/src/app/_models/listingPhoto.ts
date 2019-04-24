@@ -3,5 +3,5 @@ export interface ListingPhoto {
     url: string;
     description: string;
     dateAdded: string;
-    IsMain: boolean;
+    isMain: boolean;
 }

@@ -42,4 +42,12 @@ export class ListingService {
   updateListing(id: number, listing: Listing) {
     return this.http.put(this.baseUrl + 'listings/' + id, listing);
   }
+
+  setMainPhoto(listingId: number, id: number) {
+    return this.http.post(this.baseUrl + 'listings/' + listingId + '/photos/' + id + '/setMain', {});
+  }
+
+  deletePhoto(listingId: number, id: number) {
+    return this.http.delete(this.baseUrl + 'listings/' + listingId + '/photos/' + id);
+  }
 }

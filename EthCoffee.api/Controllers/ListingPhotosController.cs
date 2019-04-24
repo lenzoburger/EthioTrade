@@ -160,17 +160,18 @@ namespace EthCoffee.api.Controllers
 
                 var result = _cloudinary.Destroy(deleteParams);
 
-                if(result.Result == "ok"){
+                if (result.Result == "ok")
+                {
                     _repo.Delete(photoFromRepo);
                 }
             }
-
-            if (photoFromRepo.PublicId == null)
+            else if (photoFromRepo.PublicId == null)
             {
                 _repo.Delete(photoFromRepo);
             }
 
-            if(await _repo.SaveAll()){
+            if (await _repo.SaveAll())
+            {
                 return Ok();
             }
 

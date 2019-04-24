@@ -9,6 +9,7 @@ import { UserListing } from '../_models/userListing';
   providedIn: 'root'
 })
 export class UserService {
+  public changeAvatar = false;
   baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }

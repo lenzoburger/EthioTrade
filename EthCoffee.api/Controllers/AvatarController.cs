@@ -68,9 +68,7 @@ namespace EthCoffee.api.Controllers
                 {
                     var uploadParams = new ImageUploadParams()
                     {
-                        File = new FileDescription(file.Name, stream),
-                        Transformation = new Transformation()
-                        .Width(250).Height(250).Crop("fit").Gravity("face")
+                        File = new FileDescription(file.Name, stream)
                     };
                     uploadResult = _cloudinary.Upload(uploadParams);
                 }
@@ -80,6 +78,28 @@ namespace EthCoffee.api.Controllers
             photoForCreationDto.PublicId = uploadResult.PublicId;
 
             var photo = _mapper.Map<Avatar>(photoForCreationDto);
+
+
+            if (userFromRepo.Avatar != null)
+            {
+                var avatarFromRepo = await _repo.GetAvatar(userFromRepo.Avatar.Id);
+
+                if (avatarFromRepo.PublicId != null)
+                {
+                    var deleteParams = new DeletionParams(avatarFromRepo.PublicId);
+
+                    var result = _cloudinary.Destroy(deleteParams);
+
+                    if (result.Result == "ok")
+                    {
+                        _repo.Delete(avatarFromRepo);
+                    }
+                }
+                else if (avatarFromRepo.PublicId == null)
+                {
+                    _repo.Delete(avatarFromRepo);
+                }
+            }
 
             userFromRepo.Avatar = photo;
 

@@ -70,7 +70,7 @@
               type="button"
               class="btn btn-success btn-s"
               (click)="uploader.uploadAll()"
-              [disabled]="!uploader.getNotUploadedItems().length" 
+              [disabled]="!uploader.getNotUploadedItems().length"
             >
               <span class="fa fa-upload"></span> Upload
             </button>
@@ -95,13 +95,13 @@
         <div class="ml-3 mt-3 mb-3">
           <img
             class="card-img-top img-thumbnail avatar"
-            src="{{ account.avatarUrl }}"
+            src="{{ avatarUrl }}"
             alt="{{ account.id }}"/>
-          <button id="changeAvatar" class="btn-s btn-primary" 
+          <button id="changeAvatar" class="btn-s btn-primary"
           (click)="toggleChangeAvatar()" *ngIf="!changeAvatar">
             Change
           </button>
-          <button id="changeAvatar" class="btn-s btn-warning" 
+          <button id="changeAvatar" class="btn-s btn-warning"
           (click)="toggleChangeAvatar()" *ngIf="changeAvatar">
             Cancel
           </button>

@@ -22,6 +22,7 @@ export class MyAccountEditComponent implements OnInit {
   hasAnotherDropZoneOver = false;
   baseUrl = environment.apiUrl;
   changeAvatar: boolean;
+  avatarUrl: string;
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
     if (this.editForm.dirty) {
@@ -36,6 +37,7 @@ export class MyAccountEditComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.account = data.user;
     });
+    this.authService.currentAvatarUrl.subscribe( avatarUrl => this.avatarUrl = avatarUrl);
     this.changeAvatar = this.userService.changeAvatar;
     this.intializerUploader();
   }
@@ -81,6 +83,9 @@ export class MyAccountEditComponent implements OnInit {
         };
         this.account.avatar = avatar;
         this.account.avatarUrl =  avatar.url;
+        this.authService.changeUserPhoto(avatar.url);
+        this.authService.currentUser.avatarUrl = avatar.url;
+        localStorage.setItem('user', JSON.stringify(this.authService.currentUser));
         this.toggleChangeAvatar();
       }
     };

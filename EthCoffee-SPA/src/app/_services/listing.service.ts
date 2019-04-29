@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Observable, of, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { Listing } from '../_models/listing';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
-
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListingService {
-  private currentListingData: Listing;
   baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient, private authService: AuthService) { }
@@ -23,24 +22,32 @@ export class ListingService {
     return this.http.get<Listing[]>(this.baseUrl + 'listings');
   }
 
-  updateCurrentListingData(updatedlisting: Listing) {
-    this.currentListingData = updatedlisting;
-  }
-
-  getCurrentListingData(): Observable<Listing> {
-    if (this.currentListingData) {
-      if (this.authService.loggedIn() && '' + this.currentListingData.user.id
-        === this.authService.decodedToken.nameid) {
-        return of(this.currentListingData);
-      } else {
-        return throwError('Login is required to perform this action...');
-      }
+  getListingForEdit(id): Observable<Listing> {
+    if (this.authService.loggedIn()) {
+      return this.getListing(id).pipe(
+        map(listing => {
+          if ('' + listing.user.id === this.authService.decodedToken.nameid) {
+            return listing;
+          } else {
+            throw new Error();
+          }
+        }), catchError(error => {
+          return throwError('Login required to perform this action');
+        }));
     } else {
-      return throwError('Returning to listing ...');
+      return throwError('Please login.');
     }
   }
 
   updateListing(id: number, listing: Listing) {
     return this.http.put(this.baseUrl + 'listings/' + id, listing);
+  }
+
+  setMainPhoto(listingId: number, id: number) {
+    return this.http.post(this.baseUrl + 'listings/' + listingId + '/photos/' + id + '/setMain', {});
+  }
+
+  deletePhoto(listingId: number, id: number) {
+    return this.http.delete(this.baseUrl + 'listings/' + listingId + '/photos/' + id);
   }
 }

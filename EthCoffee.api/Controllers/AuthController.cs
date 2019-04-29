@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using EthCoffee.api.Data;
 using EthCoffee.api.Dtos;
 using EthCoffee.api.Models;
@@ -18,9 +19,11 @@ namespace EthCoffee.api.Controllers
     {
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
+        private readonly IMapper _mapper;
 
-        public AuthController (IAuthRepository repo, IConfiguration config)
+        public AuthController(IAuthRepository repo, IConfiguration config, IMapper mapper)
         {
+            _mapper = mapper;
             _repo = repo;
             _config = config;
         }
@@ -30,35 +33,43 @@ namespace EthCoffee.api.Controllers
         {
             UserRegDto.Username = UserRegDto.Username.ToLower();
 
-            if (await _repo.UserExists(UserRegDto.Username)){
+            if (await _repo.UserExists(UserRegDto.Username))
+            {
                 return BadRequest("Username already exists");
             }
 
-            var userToCreate = new User{ Username = UserRegDto.Username };
 
-            var createdUser = await _repo.Register(userToCreate,UserRegDto.Password);
+            var userToCreate = _mapper.Map<User>(UserRegDto);
 
-            return StatusCode(201);
+            var createdUser = await _repo.Register(userToCreate, UserRegDto.Password);
+
+            var userToReturn = _mapper.Map<UserDetailsDto>(createdUser);
+
+            return CreatedAtRoute("GetUserDetails", new {controller = "Users", id = createdUser.Id}, userToReturn);
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserLoginDto userLoginDto)
-        {  
-            var userFromRepo = await _repo.Login(userLoginDto.Username.ToLower(),userLoginDto.Password);
+        {
+            var userFromRepo = await _repo.Login(userLoginDto.Username.ToLower(), userLoginDto.Password);
 
-            if (userFromRepo == null) 
+            if (userFromRepo == null)
             {
                 return Unauthorized();
             }
-            
+
             var tokenDescriptor = CreateTokenDescriptor(userFromRepo);
 
             var tokenHandler = new JwtSecurityTokenHandler();
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
-            return Ok( new {
-                token = tokenHandler.WriteToken(token)
+            var userObject = _mapper.Map<UserDetailsDto>(userFromRepo);
+
+            return Ok(new
+            {
+                token = tokenHandler.WriteToken(token),
+                userObject
             });
         }
 
@@ -74,7 +85,7 @@ namespace EthCoffee.api.Controllers
             //Get and convert secret Key from AppSettings
             var key = new SymmetricSecurityKey(Encoding.UTF8
             .GetBytes(_config.GetSection("AppSettings:Token").Value));
-            
+
             //Hash Secret Jey
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
@@ -86,7 +97,7 @@ namespace EthCoffee.api.Controllers
                 SigningCredentials = creds
             };
 
-            return tokenDescriptor;            
+            return tokenDescriptor;
         }
     }
 }

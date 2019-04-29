@@ -1,0 +1,32 @@
+.card-body {
+    padding: 0 20px;
+  }
+  
+  .card-footer {
+    padding: 10px 15px;
+    background-color: white;
+    border-top: none;
+  }
+  
+  .avatar {
+    width: 200px;
+  }
+
+  .nv-file-over {
+    border: dotted 3px #18BC9C
+  }
+  
+  input[type=file]{
+    color: transparent;
+  }
+
+  .dropArea {
+    width: 200px;
+  }
+  
+  #changeAvatar{
+    margin-left: 5px;
+    width: 70px;
+    float: inline-start;
+    vertical-align: bottom;
+  }

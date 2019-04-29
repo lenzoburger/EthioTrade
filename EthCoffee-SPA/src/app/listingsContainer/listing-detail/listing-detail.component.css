@@ -11,3 +11,7 @@
   background-color: white;
   border-top: none;
 }
+
+#editListing{
+  float: right;
+}

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using EthCoffee.api.Models;
 using Microsoft.EntityFrameworkCore;
@@ -28,8 +29,12 @@ namespace EthCoffee.api.Data
         public async Task<User> GetUserListings(int id)
         {
             var user = await _context.Users
-            .Include(a => a.Avatar)
-            .Include(l => l.MyListings)
+            .Include(usr => usr.Avatar)
+            .Include(usr => usr.UserAddresses)
+            .ThenInclude(usrAdr => usrAdr.Address)
+            .Include(usr => usr.UserAddresses)
+            .ThenInclude(usrAdrT => usrAdrT.AddressType)
+            .Include(usr => usr.MyListings)
                 .ThenInclude(p => p.Photos)
             .FirstOrDefaultAsync(u => u.Id == id);
             return user;
@@ -38,7 +43,11 @@ namespace EthCoffee.api.Data
         public async Task<User> GetUserDetails(int id)
         {
             var user = await _context.Users
-            .Include(a => a.Avatar)
+            .Include(usr => usr.Avatar)
+            .Include(usr => usr.UserAddresses)
+            .ThenInclude(usrAdr => usrAdr.Address)
+            .Include(usr => usr.UserAddresses)
+            .ThenInclude(usrAdrT => usrAdrT.AddressType)
             .FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }
@@ -62,6 +71,24 @@ namespace EthCoffee.api.Data
         public async Task<bool> SaveAll()
         {
             return await _context.SaveChangesAsync() > 0;
+        }
+
+        public async Task<ListingPhoto> GetListingPhoto(int id)
+        {
+            var listingPhoto = await _context.ListingPhotos.FirstOrDefaultAsync(lp => lp.Id == id);
+            return listingPhoto;
+        }
+
+        public async Task<Avatar> GetAvatar(int id)
+        {
+            var avatar = await _context.Avatars.FirstOrDefaultAsync(a => a.Id == id);
+            return avatar;
+        }
+
+        public async Task<ListingPhoto> GetMainListingPhoto(int listingId)
+        {
+            return await _context.ListingPhotos.Where(l => l.ListingId == listingId)
+            .FirstOrDefaultAsync(p => p.IsMain);
         }
     }
 }

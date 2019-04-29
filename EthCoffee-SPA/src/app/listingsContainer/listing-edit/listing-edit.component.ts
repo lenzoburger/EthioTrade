@@ -20,8 +20,7 @@ export class ListingEditComponent implements OnInit {
     }
   }
 
-  constructor(private route: ActivatedRoute, private alertify: AlertifyService,
-              private listingService: ListingService) { }
+  constructor(private route: ActivatedRoute, private alertify: AlertifyService, private listingService: ListingService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -38,4 +37,7 @@ export class ListingEditComponent implements OnInit {
     });
   }
 
+  updateMainPhoto(url: string) {
+    this.listing.listingPhotoUrl = url;
+  }
 }

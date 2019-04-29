@@ -9,6 +9,7 @@ import { UserListing } from '../_models/userListing';
   providedIn: 'root'
 })
 export class UserService {
+  public changeAvatar = false;
   baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
@@ -19,5 +20,9 @@ export class UserService {
 
   getUserListings(id): Observable<UserListing> {
     return this.http.get<UserListing>(this.baseUrl + 'users/listings/' + id);
+  }
+
+  updateUserDetails(id: number, userDetails: User) {
+    return this.http.put(this.baseUrl + 'users/' + id, userDetails);
   }
 }

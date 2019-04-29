@@ -12,6 +12,9 @@ namespace EthCoffee.api.Data
          Task<User> GetUserDetails(int id);
          Task<Listing> GetListing(int id);
          Task<IEnumerable<Listing>> GetListings();
+         Task<ListingPhoto> GetListingPhoto(int id);
+         Task<ListingPhoto> GetMainListingPhoto(int listingId);
+         Task<Avatar> GetAvatar(int id);
          Task<bool> SaveAll();
     }
 }

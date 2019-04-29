@@ -17,8 +17,7 @@ export class ListingDetailComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
-  constructor(private listingService: ListingService,
-              private route: ActivatedRoute, private authService: AuthService) { }
+  constructor(private route: ActivatedRoute, private authService: AuthService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -36,8 +35,6 @@ export class ListingDetailComponent implements OnInit {
       }
     ];
     this.galleryImages = this.getImages();
-
-    this.listingService.updateCurrentListingData((this.listing));
   }
 
   getImages() {

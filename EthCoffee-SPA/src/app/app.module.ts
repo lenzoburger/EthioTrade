@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { MyAccountComponent } from './account/my-account/my-account.component';
 import { MyAccountResolver } from './_resolvers/my-account-resolver';
 import { MyAccountEditComponent } from './account/my-account-edit/my-account-edit.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+import { ListingPhotoEditorComponent } from './listingsContainer/listing-photo-editor/listing-photo-editor.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -51,17 +53,21 @@ export function tokenGetter() {
     ListingDetailComponent,
     ListingEditComponent,
     MyAccountComponent,
-    MyAccountEditComponent
+    MyAccountEditComponent,
+    ListingPhotoEditorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BsDropdownModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     NgxGalleryModule,
     TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    FileUploadModule,
     JwtModule.forRoot({
       config: {
         tokenGetter,

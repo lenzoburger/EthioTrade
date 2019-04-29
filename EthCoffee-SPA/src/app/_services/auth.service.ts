@@ -23,8 +23,8 @@ export class AuthService {
     this.avatarUrl.next(avatarUrl);
   }
 
-  login(model: any) {
-    return this.http.post(this.baseUrl + 'login', model).pipe(
+  login(userCred: any) {
+    return this.http.post(this.baseUrl + 'login', userCred).pipe(
       map((response: any) => {
         const user = response;
         if (user) {
@@ -38,8 +38,8 @@ export class AuthService {
     );
   }
 
-  register(model: any) {
-    return this.http.post(this.baseUrl + 'register', model);
+  register(user: User) {
+    return this.http.post(this.baseUrl + 'register', user);
   }
 
   loggedIn() {

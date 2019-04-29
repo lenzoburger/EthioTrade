@@ -13,7 +13,7 @@ export class ListingsComponent implements OnInit {
   listings: Listing[];
 
   constructor(private listingService: ListingService, private alertify: AlertifyService,
-    private route: ActivatedRoute) { }
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.data.subscribe( data => {

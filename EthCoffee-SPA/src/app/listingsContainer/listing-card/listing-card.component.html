@@ -1,6 +1,6 @@
 <div class="card mb-3 mr-1" style="width: 14rem;">
   <div class="card-img-wrapper">
-    <img src="{{listing.listingPhotoUrl}}" alt="{{listing.category}}" class="card-img-top link" [routerLink]="['/listings', listing.id]">
+    <img src="{{listing.listingPhotoUrl || '../../../assets/noImage.jpg'}}" alt="{{listing.category}}" class="card-img-top link" [routerLink]="['/listings', listing.id]">
     <ul class="list-inline listing-icons animate text-center">
       <li class="list-inline-item"><button class="btn btn-primary"><i class="fa fa-clock-o"></i></button></li>
     </ul>

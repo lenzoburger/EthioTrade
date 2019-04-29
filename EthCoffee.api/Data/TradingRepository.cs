@@ -29,8 +29,12 @@ namespace EthCoffee.api.Data
         public async Task<User> GetUserListings(int id)
         {
             var user = await _context.Users
-            .Include(a => a.Avatar)
-            .Include(l => l.MyListings)
+            .Include(usr => usr.Avatar)
+            .Include(usr => usr.UserAddresses)
+            .ThenInclude(usrAdr => usrAdr.Address)
+            .Include(usr => usr.UserAddresses)
+            .ThenInclude(usrAdrT => usrAdrT.AddressType)
+            .Include(usr => usr.MyListings)
                 .ThenInclude(p => p.Photos)
             .FirstOrDefaultAsync(u => u.Id == id);
             return user;
@@ -39,7 +43,11 @@ namespace EthCoffee.api.Data
         public async Task<User> GetUserDetails(int id)
         {
             var user = await _context.Users
-            .Include(a => a.Avatar)
+            .Include(usr => usr.Avatar)
+            .Include(usr => usr.UserAddresses)
+            .ThenInclude(usrAdr => usrAdr.Address)
+            .Include(usr => usr.UserAddresses)
+            .ThenInclude(usrAdrT => usrAdrT.AddressType)
             .FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }

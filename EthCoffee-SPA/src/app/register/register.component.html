@@ -57,18 +57,18 @@
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <input type="text" class="form-control" formControlName="firstName" placeholder="First name"
-              [ngClass]="{'is-invalid': registerForm.get('firstName').errors && registerForm.get('firstName').touched}">
+            <input type="text" class="form-control" formControlName="firstname" placeholder="First name"
+              [ngClass]="{'is-invalid': registerForm.get('firstname').errors && registerForm.get('firstname').touched}">
             <div class="invalid-feedback"
-              *ngIf="registerForm.get('firstName').hasError('required') && registerForm.get('firstName').touched">First name
+              *ngIf="registerForm.get('firstname').hasError('required') && registerForm.get('firstname').touched">First name
             </div>
           </div>
 
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" formControlName="lastName" placeholder="Last name"
-              [ngClass]="{'is-invalid': registerForm.get('lastName').errors && registerForm.get('lastName').touched}">
+            <input type="text" class="form-control" formControlName="lastname" placeholder="Last name"
+              [ngClass]="{'is-invalid': registerForm.get('lastname').errors && registerForm.get('lastname').touched}">
             <div class="invalid-feedback"
-              *ngIf="registerForm.get('lastName').hasError('required') && registerForm.get('lastName').touched">Last name is
+              *ngIf="registerForm.get('lastname').hasError('required') && registerForm.get('lastname').touched">Last name is
               required</div>
           </div>
     </div>
@@ -95,14 +95,14 @@
     </div>
 
     <div class="form-group">
-      <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Phone Number"
-        [ngClass]="{'is-invalid': registerForm.get('phoneNumber').errors && registerForm.get('phoneNumber').touched}">
+      <input type="text" class="form-control" formControlName="phone" placeholder="Phone Number"
+        [ngClass]="{'is-invalid': registerForm.get('phone').errors && registerForm.get('phone').touched}">
     </div>
 
     <div class="form-group mb-0">
     <label class="control-label" style="margin-right:10px; font-weight: bold;">Address: </label>
     <div class="form-group">
-        <input type="text" class="form-control" id="streetName" formControlName="streetName"
+        <input type="text" class="form-control" id="addressLine1" formControlName="addressLine1"
           placeholder="Address:  e.g. 123 Any Street">
       </div>
 

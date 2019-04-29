@@ -9,14 +9,44 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EthCoffee.api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190406071658_listingsAndAvatars")]
-    partial class listingsAndAvatars
+    [Migration("20190428082731_addAddress")]
+    partial class addAddress
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.2-servicing-10034");
+
+            modelBuilder.Entity("EthCoffee.api.Models.Address", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("AddressLine1");
+
+                    b.Property<string>("City");
+
+                    b.Property<string>("Country");
+
+                    b.Property<string>("ZipCode");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Addresses");
+                });
+
+            modelBuilder.Entity("EthCoffee.api.Models.AddressType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AddressTypes");
+                });
 
             modelBuilder.Entity("EthCoffee.api.Models.Avatar", b =>
                 {
@@ -26,6 +56,8 @@ namespace EthCoffee.api.Migrations
                     b.Property<DateTime>("DateAdded");
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("PublicId");
 
                     b.Property<string>("Url");
 
@@ -50,7 +82,7 @@ namespace EthCoffee.api.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("Url");
+                    b.Property<string>("Title");
 
                     b.Property<int>("UserId");
 
@@ -74,6 +106,8 @@ namespace EthCoffee.api.Migrations
 
                     b.Property<int>("ListingId");
 
+                    b.Property<string>("PublicId");
+
                     b.Property<string>("Url");
 
                     b.HasKey("Id");
@@ -88,21 +122,15 @@ namespace EthCoffee.api.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Bio");
-
-                    b.Property<string>("City");
-
-                    b.Property<string>("Country");
-
                     b.Property<DateTime>("CreatedDate");
 
                     b.Property<DateTime>("DateOfBirth");
 
+                    b.Property<string>("Email");
+
                     b.Property<string>("Firstname");
 
                     b.Property<string>("Gender");
-
-                    b.Property<string>("Interests");
 
                     b.Property<DateTime>("LastActiveDate");
 
@@ -112,29 +140,30 @@ namespace EthCoffee.api.Migrations
 
                     b.Property<byte[]>("PasswordSalt");
 
-                    b.Property<string>("Street");
-
-                    b.Property<string>("StreetNumber");
+                    b.Property<string>("Phone");
 
                     b.Property<string>("Username");
-
-                    b.Property<string>("ZipCode");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("EthCoffee.api.Models.Value", b =>
+            modelBuilder.Entity("EthCoffee.api.Models.UserAddress", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("UserId");
 
-                    b.Property<string>("Name");
+                    b.Property<int>("AddressId");
 
-                    b.HasKey("Id");
+                    b.Property<int>("AddressTypeId");
 
-                    b.ToTable("Values");
+                    b.HasKey("UserId", "AddressId", "AddressTypeId");
+
+                    b.HasIndex("AddressId");
+
+                    b.HasIndex("AddressTypeId");
+
+                    b.ToTable("UserAddress");
                 });
 
             modelBuilder.Entity("EthCoffee.api.Models.Avatar", b =>
@@ -158,6 +187,24 @@ namespace EthCoffee.api.Migrations
                     b.HasOne("EthCoffee.api.Models.Listing", "Listing")
                         .WithMany("Photos")
                         .HasForeignKey("ListingId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("EthCoffee.api.Models.UserAddress", b =>
+                {
+                    b.HasOne("EthCoffee.api.Models.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("EthCoffee.api.Models.AddressType", "AddressType")
+                        .WithMany()
+                        .HasForeignKey("AddressTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("EthCoffee.api.Models.User", "User")
+                        .WithMany("UserAddresses")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

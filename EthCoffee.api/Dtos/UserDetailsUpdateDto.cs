@@ -1,15 +1,14 @@
+using System;
+
 namespace EthCoffee.api.Dtos
 {
     public class UserDetailsUpdateDto
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        public string StreetNumber { get; set; }
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
-        public string ZipCode { get; set; }        
-        public string Bio { get; set; }
-        public string Interests { get; set; }
+        public string Email { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public string Gender { get; set; }
+        public string Phone { get; set; }                 
     }
 }

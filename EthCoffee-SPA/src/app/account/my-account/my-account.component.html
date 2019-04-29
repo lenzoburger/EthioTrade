@@ -5,9 +5,9 @@
         <div class="ml-3 mt-3 mb-3">
           <img
             class="card-img-top img-thumbnail avatar"
-            src="{{ account.avatarUrl }}"
+            src="{{ account.avatarUrl || '../../../assets/user.png'}}"
             alt="{{ account.id }}"/>
-          <button id="changeAvatar" class="btn-s btn-secondary" 
+          <button id="changeAvatar" class="btn-s btn-secondary"
           (click)="changeAvatar()" [routerLink]="['/account/edit']">
             Change
           </button>
@@ -37,14 +37,14 @@
           <h4>Details</h4>
           <strong>Name:</strong>
           <p>{{ account.firstname }} {{ account.lastname }}</p>
-          <strong>Bio:</strong>       
-          <p>{{ account.bio }}</p>
-          <strong>Favourites:</strong>       
-          <p>{{ account.interests }}</p>
-          <strong>Address:</strong>
-          <p>{{ account.streetNumber }} {{ account.street }}</p>
-          <p> {{ account.city }} {{ account.zipCode }}</p>
-          <p> {{ account.country }}</p>
+          <strong>Gender:</strong>
+          <p>{{ account.gender }}</p>
+          <strong>Date of birth:</strong>
+          <p>{{ account.dateOfBirth }}</p>
+          <strong>Contact Details:</strong>
+          <p> {{ account.email }}</p>
+          <p> {{ account.phone }}</p>
+          <p>{{ account.physicalAddress?.addressLine1 }}, {{ account.physicalAddress?.city }}, {{ account.physicalAddress?.country }} {{ account.physicalAddress?.zipCode }}</p>
           </tab>
           <tab heading="My Settings">
             <h4>Settings</h4>

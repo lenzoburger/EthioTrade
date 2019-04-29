@@ -95,7 +95,7 @@
         <div class="ml-3 mt-3 mb-3">
           <img
             class="card-img-top img-thumbnail avatar"
-            src="{{ avatarUrl }}"
+            src="{{ avatarUrl || '../../../assets/user.png'}}"
             alt="{{ account.id }}"/>
           <button id="changeAvatar" class="btn-s btn-primary"
           (click)="toggleChangeAvatar()" *ngIf="!changeAvatar">
@@ -162,35 +162,44 @@
                   [(ngModel)]="account.lastname"
                 />
               </div>
-              <strong>Bio:</strong>
-              <textarea
-                name="bio"
+              <strong>Gender:</strong>
+              <input
+                name="gender"
                 rows="2"
                 class="form-control"
-                [(ngModel)]="account.bio"
-              ></textarea>
-              <strong>Favourites:</strong>
+                [(ngModel)]="account.gender"
+              >
+              <strong>Date of birth:</strong>
               <input
-                name="interests"
+                name="dateOfBirth"
                 type="text"
                 class="form-control"
-                [(ngModel)]="account.interests"
+                [(ngModel)]="account.dateOfBirth"
               />
+              <strong>Emai:</strong>
+              <input
+                name="email"
+                type="text"
+                class="form-control"
+                [(ngModel)]="account.email"
+              />
+              <strong>Phone:</strong>
+              <input
+                name="phone"
+                type="text"
+                class="form-control"
+                [(ngModel)]="account.phone"
+              />
+              <div *ngIf="addressNotNull">
               <h5>Address:</h5>
+
               <div class="form-inline">
-                <label for="streetNumber">Number</label>
+                <label for="street">Street Address</label>
                 <input
-                  name="streetNumber"
+                  name="addressLine1"
                   type="text"
                   class="form-control"
-                  [(ngModel)]="account.streetNumber"
-                />
-                <label for="street">Street</label>
-                <input
-                  name="street"
-                  type="text"
-                  class="form-control"
-                  [(ngModel)]="account.street"
+                  [(ngModel)]="account.physicalAddress.addressLine1"
                 />
               </div>
               <div class="form-inline">
@@ -199,23 +208,24 @@
                   name="city"
                   type="text"
                   class="form-control"
-                  [(ngModel)]="account.city"
+                  [(ngModel)]="account.physicalAddress.city"
                 />
                 <label for="country">Country</label>
                 <input
                   name="country"
                   type="text"
                   class="form-control"
-                  [(ngModel)]="account.country"
+                  [(ngModel)]="account.physicalAddress.country"
                 />
                 <label for="zipCode">Zip Code</label>
                 <input
                   name="zipCode"
                   type="text"
                   class="form-control"
-                  [(ngModel)]="account.zipCode"
+                  [(ngModel)]="account.physicalAddress.zipCode"
                 />
               </div>
+            </div>
             </form>
           </tab>
           <tab heading="Edit Contact Details">

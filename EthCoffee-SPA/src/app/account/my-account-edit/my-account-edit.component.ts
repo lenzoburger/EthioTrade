@@ -23,6 +23,7 @@ export class MyAccountEditComponent implements OnInit {
   baseUrl = environment.apiUrl;
   changeAvatar: boolean;
   avatarUrl: string;
+  addressNotNull = false;
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
     if (this.editForm.dirty) {
@@ -40,6 +41,9 @@ export class MyAccountEditComponent implements OnInit {
     this.authService.currentAvatarUrl.subscribe( avatarUrl => this.avatarUrl = avatarUrl);
     this.changeAvatar = this.userService.changeAvatar;
     this.intializerUploader();
+    if (this.account.physicalAddress) {
+      this.addressNotNull = true;
+    }
   }
 
   public fileOverBase(e: any): void {

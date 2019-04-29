@@ -1,19 +1,18 @@
 import { Avatar } from './avatar';
+import { Address } from './address';
 
 export interface User {
     id: number;
     username: string;
+    email: string;
     firstname: string;
     lastname: string;
-    streetNumber: string;
-    street: string;
-    city: string;
-    country: string;
-    zipCode: string;
+    dateOfBirth?: string;
+    gender?: string;
+    phone?: string;
+    physicalAddress?: Address;
     lastActiveDate: string;
     createdDate: string;
-    bio: string;
-    interests: string;
-    avatarUrl: string;
-    avatar: Avatar;
+    avatarUrl?: string;
+    avatar?: Avatar;
 }

@@ -38,11 +38,14 @@ namespace EthCoffee.api.Controllers
                 return BadRequest("Username already exists");
             }
 
-            var userToCreate = new User { Username = UserRegDto.Username };
+
+            var userToCreate = _mapper.Map<User>(UserRegDto);
 
             var createdUser = await _repo.Register(userToCreate, UserRegDto.Password);
 
-            return StatusCode(201);
+            var userToReturn = _mapper.Map<UserDetailsDto>(createdUser);
+
+            return CreatedAtRoute("GetUserDetails", new {controller = "Users", id = createdUser.Id}, userToReturn);
         }
 
         [HttpPost("login")]

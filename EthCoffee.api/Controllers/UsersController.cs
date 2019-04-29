@@ -24,7 +24,7 @@ namespace EthCoffee.api.Controllers
             _repo = repo;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetUserDetails")]
         public async Task<IActionResult> GetUserDetails(int id)
         {
             var user = await _repo.GetUserDetails(id);

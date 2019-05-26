@@ -1,5 +1,5 @@
-# EthioCoffeeWholesalers-WebApp
-Web Application for supporting wholesale coffee business processes. Built using the latest in ASP .Net Core WebApi(v2.2), Angular (v7),  Entity Framework, Bootstrap, Font-Awesome, sql-lite &amp; Azure.
+# Ethio Trade
+Web Application for buying and selling goods - Developed with ASP .Net Core 2.2 & Angular 7 and Hosted with Azure.
 
 ### Restore/Run
 1. Install dependencies

@@ -4,7 +4,7 @@ Web Application for buying and selling goods - Developed with ASP .Net Core 2.2 
 ### Restore/Run
 1. Install dependencies
 2. Clone repo. In _terminal/cmd_ window run `git clone https://github.com/lenzoburger/EthioCoffeeWholesalers-WebApp.git`
-3. Change current directory to repo folder `cd EthioCoffeeWholesalers-WebApp`
+3. Change current directory to repo folder `cd EthioTrade`
 4. Open two _terminal/cmd_ windows
 5. **Terminal 1 (WebAPI)**
    * Change to _EthCoffee.api_ directory `cd EthCoffee.api`

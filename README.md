@@ -18,29 +18,29 @@ Web Application for buying and selling goods - Developed with ASP .Net Core 2.2 
    *  Launch browser and navigate to `http://localhost:4200/`
 
 ### Dependencies
-1. Dotnet-sdk (v2.2+)  &nbsp;&nbsp;&nbsp;&nbsp;-> https://dotnet.microsoft.com/download
-2. Node (v10+)           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://nodejs.org/en/download/
-3. AngularCLi (v7+)     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://cli.angular.io/ `npm install -g @angular/cli`
-4. Git                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://git-scm.com/downloads
+1. [Dotnet-sdk (v2.2+)](https://dotnet.microsoft.com/download)
+2. [Node (v10+)](https://nodejs.org/en/download)
+3. [AngularCLi (v7+)](https://cli.angular.io/) `npm install -g @angular/cli`
+4. [Git](https://git-scm.com/downloads)
 
 ### Tools
-1. Notepad++            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://notepad-plus-plus.org/download
-2. Postman              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> https://www.getpostman.com/downloads/
-3. SQLLite.DB.Browser   &nbsp;&nbsp;&nbsp;&nbsp;-> https://sqlitebrowser.org/dl/
-4. VSCode + _Extensions_ &nbsp;-> https://code.visualstudio.com/download    (_insiders https://code.visualstudio.com/insiders/ )_
-   * _Angular Files (Alexander Ivanichev)_
-   * _Angular Language Service (Angular)_
-   * _Angular v7 Snippets (John Papa)_
-   * _angular2-switcher (infinity1207)_
-   * _Auto Rename Tag (Jun Han)_
-   * _Bracket Pair Colorizer 2 (Coenraads)_
-   * _C# (Microsoft)_
-   * _C# Extensions (jchannon)_
-   * _Debugger for chrome (Microsoft)_
-   * _Markdown All in One_ (Yu Zhang)
-   * _Markdown Preview Enhanced (Yiyi Wang)_
-   * _Meterial Icon Theme (Philipp Kief)_
-   * _Nuget Package Manger (jmrog)_
-   * _Path Intellisense (Christian Kohler)_
-   * _Prettier - Code Formatter (Esben Peterson)_
-   * _TSLint (Microsoft)_
+1. [Notepad++](https://notepad-plus-plus.org/download)
+2. [Postman](https://www.getpostman.com/downloads)
+3. [SQLLite.DB.Browser](https://sqlitebrowser.org/dl)
+4. [Visual Studio Code](https://code.visualstudio.com/download) & **Extensions:**
+   * [_Angular Files_](https://marketplace.visualstudio.com/items?itemName=alexiv.vscode-angular2-files)
+   * [_Angular Language Service_](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+   * [_Angular Snippets_](https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2)
+   * [_angular2-switcher_](https://marketplace.visualstudio.com/items?itemName=infinity1207.angular2-switcher)
+   * [_Auto Rename Tag_](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+   * [_Bracket Pair Colorizer 2_](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)
+   * [_C#_](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+   * [_C# Extensions_](https://marketplace.visualstudio.com/items?itemName=jchannon.csharpextensions)
+   * [_Debugger for chrome_](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+   * [_Markdown All in One_](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+   * [_Markdown Preview Enhanced_](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
+   * [_Meterial Icon Theme_](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+   * [_Nuget Package Manger_](https://marketplace.visualstudio.com/items?itemName=jmrog.vscode-nuget-package-manager)
+   * [_Path Intellisense_](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+   * [_Prettier - Code Formatter_](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+   * [_TSLint_](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)

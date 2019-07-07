@@ -114,11 +114,11 @@
           </div>
           <div>
             <strong>Joined:</strong>
-            <p>{{ account.createdDate }}</p>
+            <p>{{ account.createdDate | date}}</p>
           </div>
           <div>
             <strong>Last Active:</strong>
-            <p>{{ account.lastActiveDate }}</p>
+            <p>{{ account.lastActiveDate | timeAgo}}</p>
           </div>
         </div>
         <div class="card-footer">
@@ -174,9 +174,11 @@
                 name="dateOfBirth"
                 type="text"
                 class="form-control"
-                [(ngModel)]="account.dateOfBirth"
+                [ngModel]="(account.dateOfBirth | date: 'dd/MM/y')"
+                (ngModelChange) = "account.dateOfBirth = $event"
+                bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"
               />
-              <strong>Emai:</strong>
+              <strong>Email:</strong>
               <input
                 name="email"
                 type="text"

@@ -1,9 +1,9 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { AlertifyService } from '../_services/alertify.service';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { User } from '../_models/user';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
   user: User;
   registerForm: FormGroup;
 
-  constructor(private authservice: AuthService, private alertify: AlertifyService, private fb: FormBuilder, private router: Router) { }
+  constructor(private authservice: AuthService, private alertify: AlertifyService,
+              private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.createRegistrationForm();
@@ -24,20 +25,21 @@ export class RegisterComponent implements OnInit {
   createRegistrationForm() {
     this.registerForm = this.fb.group(
       {
-        email: ['', Validators.required],
-        username: ['', Validators.required],
-        password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
+        email: ['', [Validators.required, Validators.email]],
+        username: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9-_&\.]*')]],
+        password: ['', [Validators.required, Validators.minLength(8),
+          Validators.maxLength(20), Validators.pattern('[a-zA-Z 0-9-_&()\*\^%\$#@!+]*')]],
         confirmPassword: ['', Validators.required],
-        firstname: ['', Validators.required],
-        lastname: ['', Validators.required],
+        firstname: ['', [Validators.required, Validators.pattern('[ a-zA-Z-_\.\'’‘]*')]],
+        lastname: ['', [Validators.required, Validators.pattern('[ a-zA-Z-_\.\'’‘]*')]],
         dateOfBirth: ['', Validators.required],
         gender: 'male',
-        phone: '',
-        country: '',
-        addressLine1: '',
-        city: ['', Validators.required],
+        phone: ['', Validators.pattern('[0-9 +]*')],
+        country: ['', [Validators.required, Validators.pattern('[a-zA-Z \.-]*')]],
+        addressLine1: ['', Validators.pattern('[a-zA-Z 0-9-/\.]*')],
+        city: ['', [Validators.required, Validators.pattern('[a-zA-Z \.]*')]],
         region: ['Pick a Region...', Validators.required],
-        zipCode: ''
+        zipCode: ['', [Validators.pattern('[0-9]*'), Validators.minLength(4)]]
       },
       { validators: this.passwordMatchValidator });
   }

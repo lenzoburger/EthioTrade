@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using AutoMapper;
 using EthCoffee.api.Data;
 using EthCoffee.api.Dtos;
+using EthCoffee.api.Helpers;
 using EthCoffee.api.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EthCoffee.api.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]

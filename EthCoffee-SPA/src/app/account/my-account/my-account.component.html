@@ -20,11 +20,11 @@
           </div>
           <div>
             <strong>Joined:</strong>
-            <p>{{ account.createdDate }}</p>
+            <p>{{ account.createdDate | date}}</p>
           </div>
           <div>
             <strong>Last Active:</strong>
-            <p>{{ account.lastActiveDate }}</p>
+            <p>{{ account.lastActiveDate | timeAgo}}</p>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
           <strong>Gender:</strong>
           <p>{{ account.gender }}</p>
           <strong>Date of birth:</strong>
-          <p>{{ account.dateOfBirth }}</p>
+          <p>{{ account.dateOfBirth | date: 'dd/MM/y'}}</p>
           <strong>Contact Details:</strong>
           <p> {{ account.email }}</p>
           <p> {{ account.phone }}</p>

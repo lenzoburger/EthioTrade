@@ -3,13 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "cd EthCoffee-SPA && ng",
-    "start": "cd EthCoffee-SPA && ng serve --open",
-    "build": "cd EthCoffee-SPA && ng build",
-    "test": "cd EthCoffee-SPA && ng test",
-    "lint": "cd EthCoffee-SPA && ng lint",
-    "e2e": "cd EthCoffee-SPA && ng e2e",
     "dotnet": "cd EthCoffee.api && dotnet",
-    "start-only": "ng serve && npm run dotnet run"
+    "start": "concurrently \"npm run start-api\" \"npm run start-spa\"",
+    "start-only": "concurrently \"npm run ng serve\" \"npm run dotnet run\"",
+    "start-api": "npm run dotnet watch run",
+    "start-spa": "cd EthCoffee-SPA && ng serve --open",
+    "build-spa": "npm run ng build",
+    "build-api": "npm run dotnet restore && npm run dotnet build",
+    "setup": "npm install && npm run build-api",
+    "test": "npm run ng test",
+    "lint": "npm run ng lint",
+    "e2e": "npm run ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +48,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "concurrently": "^4.1.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",

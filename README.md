@@ -1,21 +1,16 @@
 # Ethio Trade
 Web Application for buying and selling goods - Developed with ASP .Net Core 2.2 & Angular 7 and Hosted with Azure.
 
-### Restore/Run
-1. Install dependencies
-2. Clone repo. In _terminal/cmd_ window run `git clone https://github.com/lenzoburger/EthioCoffeeWholesalers-WebApp.git`
-3. Change current directory to repo folder `cd EthioTrade`
-4. Open two _terminal/cmd_ windows
-5. **Terminal 1 (WebAPI)**
-   * Change to _EthCoffee.api_ directory `cd EthCoffee.api`
-   * Restore project dependencies and tools `dotnet restore`
-   * Build Project `dotnet build`
-   * Run WebAPI `dotnet run` or `dotnet watch run`
-6. **Terminal 2 (Angular App)**
-   *  Change to _EthCoffee-SPA_ directory `cd EthCoffee-SPA`
-   *  Restore app dependencies/_node-modules_ `npm install`
-   *  Run app `ng serve`
-   *  Launch browser and navigate to `http://localhost:4200/`
+![alt text](EthCoffee-SPA/src/assets/images/snapshot.png)
+
+### Setup & Run
+1. Install [dependencies](#Dependencies)
+2. Launch _terminal/cmd_ clone repo: `git clone https://github.com/lenzoburger/EthioTrade.git`
+3. Change current directory `cd EthioTrade`
+4. Run setup `npm run setup`
+5. Start application `npm start`
+6. Browser will launch at http://localhost:4200 
+   * ... _if not, launch browser and navigate to [URL](http://localhost:4200)_
 
 ### Dependencies
 1. [Dotnet-sdk (v2.2+)](https://dotnet.microsoft.com/download)
@@ -24,7 +19,7 @@ Web Application for buying and selling goods - Developed with ASP .Net Core 2.2 
 4. [Git](https://git-scm.com/downloads)
 
 ### Tools
-1. [Notepad++](https://notepad-plus-plus.org/download)
+1. [Git Extensions](https://github.com/gitextensions/gitextensions/releases)
 2. [Postman](https://www.getpostman.com/downloads)
 3. [SQLLite.DB.Browser](https://sqlitebrowser.org/dl)
 4. [Visual Studio Code](https://code.visualstudio.com/download) & **Extensions:**

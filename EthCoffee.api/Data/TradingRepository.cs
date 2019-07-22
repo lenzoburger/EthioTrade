@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EthCoffee.api.Helpers;
 using EthCoffee.api.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -62,10 +63,11 @@ namespace EthCoffee.api.Data
             return listing;
         }
 
-        public async Task<IEnumerable<Listing>> GetListings()
+        public async Task<PagedList<Listing>> GetListings(PaginationParams paginationParams)
         {
-            var listings = await _context.Listings.Include(p => p.Photos).ToListAsync();
-            return listings;
+            var listings =  _context.Listings.Include(p => p.Photos);
+
+            return await PagedList<Listing>.CreateAsync(listings,paginationParams.PageNumber, paginationParams.PageSize);
         }
 
         public async Task<bool> SaveAll()

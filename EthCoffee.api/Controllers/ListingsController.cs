@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using EthCoffee.api.Data;
 using EthCoffee.api.Dtos;
+using EthCoffee.api.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,10 +26,12 @@ namespace EthCoffee.api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetListings()
+        public async Task<IActionResult> GetListings([FromQuery]PaginationParams paginationParams)
         {
-            var listings = await _repo.GetListings();
+            var listings = await _repo.GetListings(paginationParams);
             var listingsToReturn = _mapper.Map<IEnumerable<ListingSearchResultsDto>>(listings);
+
+            Response.AddPagination(listings.PageNumber, listings.PageSize, listings.TotalPages, listings.TotalItems);
 
             return Ok(listingsToReturn);
         }

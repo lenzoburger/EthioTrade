@@ -8,11 +8,14 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ListingsResolver implements Resolve<Listing[]> {
+  pageNumber = 1;
+  pageSize = 5;
+
   constructor(private listingService: ListingService, private router: Router,
               private alertify: AlertifyService) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<Listing[]> {
-    return this.listingService.getListings().pipe(
+    return this.listingService.getListings(this.pageNumber, this.pageSize).pipe(
       catchError(error => {
         this.alertify.error('Problem retrieving data');
         this.router.navigate(['/home']);

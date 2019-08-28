@@ -17,7 +17,7 @@ export class ListingsComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe( data => {
-      this.listings = data.listings;
+      this.listings = data.listings.result;
     });
   }
 

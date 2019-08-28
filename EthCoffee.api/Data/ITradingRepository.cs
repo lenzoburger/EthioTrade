@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using EthCoffee.api.Helpers;
 using EthCoffee.api.Models;
 
 namespace EthCoffee.api.Data
@@ -11,7 +12,7 @@ namespace EthCoffee.api.Data
          Task<User> GetUserListings(int id);
          Task<User> GetUserDetails(int id);
          Task<Listing> GetListing(int id);
-         Task<IEnumerable<Listing>> GetListings();
+         Task<PagedList<Listing>> GetListings(PaginationParams paginationParams);
          Task<ListingPhoto> GetListingPhoto(int id);
          Task<ListingPhoto> GetMainListingPhoto(int listingId);
          Task<Avatar> GetAvatar(int id);

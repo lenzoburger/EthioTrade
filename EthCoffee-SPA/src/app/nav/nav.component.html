@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" [routerLink]="['/home']">Ethio Trade</a>
+      <img src="/assets/images/EthioTrade_scale.png" width="48" height="48" class="d-inline-block align-top mr-3"
+      alt="">
+    <a class="navbar-brand mr-5" [routerLink]="['/home']">
+      Ethio Trade</a>
 
     <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">

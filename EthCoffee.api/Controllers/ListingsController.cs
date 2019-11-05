@@ -9,6 +9,7 @@ using EthCoffee.api.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+[assembly: ApiConventionType(typeof(DefaultApiConventions))]
 namespace EthCoffee.api.Controllers
 {
 

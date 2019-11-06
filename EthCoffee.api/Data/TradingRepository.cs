@@ -63,10 +63,10 @@ namespace EthCoffee.api.Data
             return listing;
         }
 
-        public async Task<PagedList<Listing>> GetListings(PaginationParams paginationParams)
+        public async Task<PagedList<Listing>> GetListings(PaginationParams paginationParams, FilterParams filterParams)
         {
-            var listings =  _context.Listings.Include(p => p.Photos);
-
+            var listings =  _context.Listings.Include(p => p.Photos).AsQueryable();
+            listings = listings.Where(l => l.Category.ToLowerInvariant().Contains(filterParams.Category.ToLowerInvariant()));
             return await PagedList<Listing>.CreateAsync(listings,paginationParams.PageNumber, paginationParams.PageSize);
         }
 

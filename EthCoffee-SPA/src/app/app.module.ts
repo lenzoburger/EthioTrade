@@ -36,6 +36,7 @@ import { MyAccountResolver } from './_resolvers/my-account-resolver';
 import { MyAccountEditComponent } from './account/my-account-edit/my-account-edit.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { ListingPhotoEditorComponent } from './listingsContainer/listing-photo-editor/listing-photo-editor.component';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -76,7 +77,8 @@ export function tokenGetter() {
         whitelistedDomains: ['localhost:5000'],
         blacklistedRoutes: ['localhost:5000/api/auth']
       },
-    })
+    }),
+    PaginationModule.forRoot()
   ],
   providers: [
     AuthService,

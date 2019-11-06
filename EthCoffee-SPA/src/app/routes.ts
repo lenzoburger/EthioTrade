@@ -1,18 +1,18 @@
-import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ListingsComponent } from './listingsContainer/listings/listings.component';
-import { MyEtradeComponent } from './my-etrade/my-etrade.component';
-import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { HomeComponent } from './home/home.component';
 import { ListingDetailComponent } from './listingsContainer/listing-detail/listing-detail.component';
 import { ListingDetailResolver } from './_resolvers/listing-detail-resolver';
-import { ListingsResolver } from './_resolvers/listings-resolver';
 import { ListingEditComponent } from './listingsContainer/listing-edit/listing-edit.component';
 import { ListingEditResolver } from './_resolvers/listing-edit-resolver';
+import { ListingsComponent } from './listingsContainer/listings/listings.component';
+import { ListingsResolver } from './_resolvers/listings-resolver';
+import { MessagesComponent } from './messages/messages.component';
 import { MyAccountComponent } from './account/my-account/my-account.component';
-import { MyAccountResolver } from './_resolvers/my-account-resolver';
 import { MyAccountEditComponent } from './account/my-account-edit/my-account-edit.component';
+import { MyAccountResolver } from './_resolvers/my-account-resolver';
+import { MyEtradeComponent } from './my-etrade/my-etrade.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+import { Routes } from '@angular/router';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },

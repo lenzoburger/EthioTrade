@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../_services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   registerMode = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
+    if (this.authService.loggedIn()) {
+      this.router.navigate(['/listings']);
+    }
   }
 
   registerToggle() {

@@ -1,4 +1,34 @@
+<div class="text-center mt-3">
+  <h5>Matching results: {{pagination.totalItems}}</h5>
+</div>
+
 <div class="container mt-5">
+  <form class="form-inline" #form="ngForm" (ngSubmit)="loadListings()" novalidate>
+
+    <div class="form-group">
+      <label for="keyword">Keyword:</label>
+      <input [(ngModel)]="filterParams.title" class="form-control ml-1" type="text" name="keyword" id="keyword">
+    </div>
+
+    <div class="form-group px-2">
+      <label for="category">Category: </label>
+      <select class="form-control ml-1" [(ngModel)]="filterParams.category" id="category" name="category">
+        <option *ngFor="let item of categories" [value]="item">{{item}}</option>
+      </select>
+    </div>
+
+    <div class="form-group px-2">
+      <label for="dateAdded">Listed: </label>
+      <select class="form-control ml-1" [(ngModel)]="filterParams.dateAdded" id="dateAdded" name="dateAdded">
+        <option *ngFor="let item of listedTimes" [value]="item">{{item}}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Apply Filters</button>
+    <button type="button" class="btn btn-info" (click)="resetFilters()" style="margin-left: 10px;">Reset Filters</button>
+  </form>
+  <br>
+
   <div class="row">
     <div *ngFor="let listing of listings" class="card-container">
       <app-listing-card [listing]="listing"></app-listing-card>
@@ -7,11 +37,6 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <pagination
-    [boundaryLinks]="false"
-    [totalItems]="pagination.totalItems"
-    [itemsPerPage]="pagination.pageSize"    
-    [(ngModel)]="pagination.pageNumber"
-    (pageChanged)="pageChanged($event)"
-  ></pagination>
+  <pagination [boundaryLinks]="false" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.pageSize"
+    [(ngModel)]="pagination.pageNumber" (pageChanged)="pageChanged($event)"></pagination>
 </div>

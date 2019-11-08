@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable, throwError } from 'rxjs';
-import { Listing } from '../_models/listing';
+import { Listing, ListedDates } from '../_models/listing';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { map, catchError } from 'rxjs/operators';
 import { PaginatedResult } from '../_models/pagination';
 import { FilterParams } from '../_models/filter-params';
+import { UtilitiesService } from './utilities.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ import { FilterParams } from '../_models/filter-params';
 export class ListingService {
   baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(private http: HttpClient, private authService: AuthService, private utils: UtilitiesService) {}
 
   getListing(id): Observable<Listing> {
     return this.http.get<Listing>(this.baseUrl + 'listings/' + id);
@@ -34,7 +35,10 @@ export class ListingService {
     if (filterParams != null) {
       params = (filterParams.title !== '') ? params.append('title', filterParams.title) : params;
       params = (filterParams.category !== 'All') ? params.append('category', filterParams.category) : params;
+      params = (filterParams.category !== ListedDates.Any) ?
+      params.append('dateAdded', this.utils.convertListedDates(filterParams.dateAdded)) : params;
     }
+
 
     return this.http.get<Listing[]>(this.baseUrl + 'listings', { observe: 'response', params }).pipe(
       map( response => {

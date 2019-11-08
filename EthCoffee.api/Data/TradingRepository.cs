@@ -78,15 +78,15 @@ namespace EthCoffee.api.Data
             switch (paginationParams.SortBy)
             {
                 case "dateAdded":
-                    listings = listings.OrderByDescending(l => l.DateAdded);
-                    break;
-                case "dateAdded_asc":
                     listings = listings.OrderBy(l => l.DateAdded);
                     break;
-                case "price_asc":
-                    listings = listings.OrderBy(l => Convert.ToDouble(l.Price));
+                case "dateAdded_desc":
+                    listings = listings.OrderByDescending(l => l.DateAdded);
                     break;
                 case "price":
+                    listings = listings.OrderBy(l => Convert.ToDouble(l.Price));
+                    break;
+                case "price_desc":
                     listings = listings.OrderByDescending(l =>  Convert.ToDouble(l.Price));
                     break;
             }

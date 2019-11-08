@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Listing, ListedDates } from '../../_models/listing';
+import { Listing, ListedDates, SortBy } from '../../_models/listing';
 import { ListingService } from '../../_services/listing.service';
 import { AlertifyService } from '../../_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
@@ -16,6 +16,7 @@ export class ListingsComponent implements OnInit {
   pagination: Pagination;
   filterParams: FilterParams;
   listedDates = Object.values(ListedDates);
+  sortParams = Object.values(SortBy);
   categories: string[] = ['All', 'Medical', 'Objects', 'Landscape', 'Paper & Books', 'Food & Drink'];
 
   constructor(
@@ -37,7 +38,8 @@ export class ListingsComponent implements OnInit {
     return {
       dateAdded: ListedDates.Any,
       category: this.categories[0],
-      title: ''
+      title: '',
+      sortBy: SortBy.DateAdded_Desc
     };
   }
 

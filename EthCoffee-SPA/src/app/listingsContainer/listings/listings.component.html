@@ -1,7 +1,46 @@
+<div class="text-center mt-3">
+  <h5>Matching results: {{pagination.totalItems}}</h5>
+</div>
+
 <div class="container mt-5">
+  <form class="form-inline" #form="ngForm" (ngSubmit)="loadListings()" novalidate>
+
+    <div class="form-group ">
+      <input [(ngModel)]="filterParams.title" class="form-control ml-1 text-dark" type="text" name="keyword" id="keyword" placeholder="Keywords">
+    </div>
+
+    <div class="form-group px-2">
+      <label for="category">Category: </label>
+      <select class="form-control ml-1 text-dark" [(ngModel)]="filterParams.category" id="category" name="category">
+        <option *ngFor="let item of categories" [value]="item">{{item}}</option>
+      </select>
+    </div>
+
+    <div class="form-group px-2">
+      <label for="dateAdded">Listed: </label>
+      <select class="form-control ml-1 text-dark" [(ngModel)]="filterParams.dateAdded" id="dateAdded" name="dateAdded">
+        <option *ngFor="let item of listedDates" [value]="item">{{item}}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success" style="margin-left: 10px;">Apply Filters</button>
+    <button type="button" class="btn btn-secondary" (click)="resetFilters()" style="margin-left: 10px;">Reset Filters</button>
+    <div class="form-group px-1 ml-3">
+      <label for="sortBy">Sort By: </label>
+      <select class="form-control ml-1 text-success" [(ngModel)]="filterParams.sortBy" (click)="loadListings()" id="sortBy" name="sortBy">
+        <option *ngFor="let item of sortParams" [value]="item">{{item}}</option>
+      </select>
+    </div>
+  </form>
+  <br>
+
   <div class="row">
     <div *ngFor="let listing of listings" class="card-container">
       <app-listing-card [listing]="listing"></app-listing-card>
     </div>
   </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5">
+  <pagination [boundaryLinks]="false" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.pageSize"
+    [(ngModel)]="pagination.pageNumber" (pageChanged)="pageChanged($event)"></pagination>
 </div>

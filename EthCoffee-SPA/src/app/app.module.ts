@@ -1,41 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
-import { RouterModule } from '@angular/router';
-import { JwtModule } from '@auth0/angular-jwt';
-import { NgxGalleryModule } from 'ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
+import { NgModule } from '@angular/core';
+import { NgxGalleryModule } from 'ngx-gallery';
+import { RouterModule } from '@angular/router';
 import {TimeAgoPipe} from 'time-ago-pipe';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HttpClient } from 'selenium-webdriver/http';
-import { NavComponent } from './nav/nav.component';
-import { AuthService } from './_services/auth.service';
-import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
-import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
-import { ListingsComponent } from './listingsContainer/listings/listings.component';
-import { MyEtradeComponent } from './my-etrade/my-etrade.component';
-import { MessagesComponent } from './messages/messages.component';
-import { appRoutes } from './routes';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './_guards/auth.guard';
-import { UserService } from './_services/user.service';
-import { ListingService } from './_services/listing.service';
+import { AuthService } from './_services/auth.service';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { HomeComponent } from './home/home.component';
 import { ListingCardComponent } from './listingsContainer/listing-card/listing-card.component';
 import { ListingDetailComponent } from './listingsContainer/listing-detail/listing-detail.component';
 import { ListingDetailResolver } from './_resolvers/listing-detail-resolver';
-import { ListingsResolver } from './_resolvers/listings-resolver';
 import { ListingEditComponent } from './listingsContainer/listing-edit/listing-edit.component';
 import { ListingEditResolver } from './_resolvers/listing-edit-resolver';
-import { MyAccountComponent } from './account/my-account/my-account.component';
-import { MyAccountResolver } from './_resolvers/my-account-resolver';
-import { MyAccountEditComponent } from './account/my-account-edit/my-account-edit.component';
-import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { ListingPhotoEditorComponent } from './listingsContainer/listing-photo-editor/listing-photo-editor.component';
+import { ListingService } from './_services/listing.service';
+import { ListingsComponent } from './listingsContainer/listings/listings.component';
+import { ListingsResolver } from './_resolvers/listings-resolver';
+import { MessagesComponent } from './messages/messages.component';
+import { MyAccountComponent } from './account/my-account/my-account.component';
+import { MyAccountEditComponent } from './account/my-account-edit/my-account-edit.component';
+import { MyAccountResolver } from './_resolvers/my-account-resolver';
+import { MyEtradeComponent } from './my-etrade/my-etrade.component';
+import { NavComponent } from './nav/nav.component';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+import { RegisterComponent } from './register/register.component';
+import { UserService } from './_services/user.service';
+import { appRoutes } from './routes';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -44,32 +44,33 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
     HomeComponent,
-    RegisterComponent,
-    ListingsComponent,
-    MyEtradeComponent,
-    MessagesComponent,
     ListingCardComponent,
     ListingDetailComponent,
     ListingEditComponent,
+    ListingPhotoEditorComponent,
+    ListingsComponent,
+    MessagesComponent,
     MyAccountComponent,
     MyAccountEditComponent,
-    ListingPhotoEditorComponent,
+    MyEtradeComponent,
+    NavComponent,
+    RegisterComponent,
     TimeAgoPipe
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BsDropdownModule.forRoot(),
+    BrowserModule,
     BsDatepickerModule.forRoot(),
-    NgxGalleryModule,
-    TabsModule.forRoot(),
-    RouterModule.forRoot(appRoutes),
+    BsDropdownModule.forRoot(),
     FileUploadModule,
+    FormsModule,
+    HttpClientModule,
+    NgxGalleryModule,
+    PaginationModule.forRoot(),
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes),
+    TabsModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter,
@@ -79,17 +80,17 @@ export function tokenGetter() {
     })
   ],
   providers: [
-    AuthService,
-    ErrorInterceptorProvider,
     AlertifyService,
     AuthGuard,
-    UserService,
-    ListingService,
+    AuthService,
+    ErrorInterceptorProvider,
     ListingDetailResolver,
-    ListingsResolver,
     ListingEditResolver,
+    ListingService,
+    ListingsResolver,
     MyAccountResolver,
-    PreventUnsavedChanges
+    PreventUnsavedChanges,
+    UserService
   ],
   bootstrap: [
     AppComponent

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -63,11 +64,34 @@ namespace EthCoffee.api.Data
             return listing;
         }
 
-        public async Task<PagedList<Listing>> GetListings(PaginationParams paginationParams)
+        public async Task<PagedList<Listing>> GetListings(int userId, PaginationParams paginationParams, FilterParams filterParams)
         {
-            var listings =  _context.Listings.Include(p => p.Photos);
+            var listings = _context.Listings.Include(p => p.Photos).AsQueryable();
+            listings = listings.Where(l => l.Category.ToLowerInvariant().Contains(filterParams.Category.ToLowerInvariant()));
+            listings = listings.Where(l => l.Title.ToLowerInvariant().Contains(filterParams.Title.ToLowerInvariant()));
+            listings = listings.Where(l => l.UserId != userId);
 
-            return await PagedList<Listing>.CreateAsync(listings,paginationParams.PageNumber, paginationParams.PageSize);
+            if (filterParams.DateAdded != null)
+            {
+                listings = listings.Where(l => l.DateAdded > filterParams.DateAdded);
+            }
+            switch (paginationParams.SortBy)
+            {
+                case "dateAdded":
+                    listings = listings.OrderBy(l => l.DateAdded);
+                    break;
+                case "dateAdded_desc":
+                    listings = listings.OrderByDescending(l => l.DateAdded);
+                    break;
+                case "price":
+                    listings = listings.OrderBy(l => Convert.ToDouble(l.Price));
+                    break;
+                case "price_desc":
+                    listings = listings.OrderByDescending(l =>  Convert.ToDouble(l.Price));
+                    break;
+            }
+
+            return await PagedList<Listing>.CreateAsync(listings, paginationParams.PageNumber, paginationParams.PageSize);
         }
 
         public async Task<bool> SaveAll()

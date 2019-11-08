@@ -42,6 +42,8 @@
             <form #editForm="ngForm" id="editForm" (ngSubmit)="updateListing()">
                 <label for="title">Title</label>
                 <input name="title" type="text" class="form-control" [(ngModel)]="listing.title">
+                <label for="price">Price</label>
+                <input name="price" type="text" class="form-control" [(ngModel)]="listing.price">
                 <h4>Description</h4>
                 <textarea name="description" rows="6" class="form-control" [(ngModel)]="listing.description"></textarea>
                 <h4>Category</h4>

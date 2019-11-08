@@ -27,9 +27,12 @@ namespace EthCoffee.api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetListings([FromQuery]PaginationParams paginationParams)
+        public async Task<IActionResult> GetListings([FromQuery]PaginationParams paginationParams, [FromQuery]FilterParams filterParams)
         {
-            var listings = await _repo.GetListings(paginationParams);
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+            var listings = await _repo.GetListings(userId, paginationParams, filterParams);
+
             var listingsToReturn = _mapper.Map<IEnumerable<ListingSearchResultsDto>>(listings);
 
             Response.AddPagination(listings.PageNumber, listings.PageSize, listings.TotalPages, listings.TotalItems);

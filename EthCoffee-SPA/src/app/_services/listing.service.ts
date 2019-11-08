@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable, throwError } from 'rxjs';
-import { Listing } from '../_models/listing';
+import { Listing, ListedDates, ListingSortDict } from '../_models/listing';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { map, catchError } from 'rxjs/operators';
 import { PaginatedResult } from '../_models/pagination';
+import { FilterParams } from '../_models/filter-params';
+import { UtilitiesService } from './utilities.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +15,13 @@ import { PaginatedResult } from '../_models/pagination';
 export class ListingService {
   baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(private http: HttpClient, private authService: AuthService, private utils: UtilitiesService) {}
 
   getListing(id): Observable<Listing> {
     return this.http.get<Listing>(this.baseUrl + 'listings/' + id);
   }
 
-  getListings(pageNumber?, pageSize?): Observable<PaginatedResult<Listing[]>> {
+  getListings(pageNumber?, pageSize?, filterParams?: FilterParams): Observable<PaginatedResult<Listing[]>> {
     const paginatedResult: PaginatedResult<Listing[]> = new PaginatedResult<Listing[]>();
     let params = new HttpParams();
     if (pageNumber != null) {
@@ -29,6 +31,15 @@ export class ListingService {
     if (pageSize != null ) {
       params = params.append('pageSize', pageSize);
     }
+
+    if (filterParams != null) {
+      params = (filterParams.title !== '') ? params.append('title', filterParams.title) : params;
+      params = (filterParams.category !== 'All') ? params.append('category', filterParams.category) : params;
+      params = (filterParams.dateAdded !== ListedDates.Any) ?
+      params.append('dateAdded', this.utils.convertListedDates(filterParams.dateAdded)) : params;
+      params = params.append('sortBy', ListingSortDict[filterParams.sortBy]);
+    }
+
 
     return this.http.get<Listing[]>(this.baseUrl + 'listings', { observe: 'response', params }).pipe(
       map( response => {

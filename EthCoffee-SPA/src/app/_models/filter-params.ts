@@ -1,5 +1,7 @@
+import { ListedDates } from './listing';
+
 export interface FilterParams {
-    dateAdded: string;
+    dateAdded: ListedDates;
     category: string;
     title: string;
 }

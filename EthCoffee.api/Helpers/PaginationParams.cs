@@ -11,6 +11,8 @@ namespace EthCoffee.api.Helpers
             get { return pageSize; }
             set { pageSize = (value > MaxPageSize) ? MaxPageSize : value; }
         }
+
+        public string SortBy { get; set; } = "dateAdded";
         
     }
 }

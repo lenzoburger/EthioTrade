@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -67,8 +68,28 @@ namespace EthCoffee.api.Data
         {
             var listings = _context.Listings.Include(p => p.Photos).AsQueryable();
             listings = listings.Where(l => l.Category.ToLowerInvariant().Contains(filterParams.Category.ToLowerInvariant()));
-            listings = listings.Where(l => l.Title.ToLowerInvariant().Contains(filterParams.title.ToLowerInvariant()));
+            listings = listings.Where(l => l.Title.ToLowerInvariant().Contains(filterParams.Title.ToLowerInvariant()));
             listings = listings.Where(l => l.UserId != userId);
+
+            if (filterParams.DateAdded != null)
+            {
+                listings = listings.Where(l => l.DateAdded > filterParams.DateAdded);
+            }
+            switch (paginationParams.SortBy)
+            {
+                case "dateAdded":
+                    listings = listings.OrderByDescending(l => l.DateAdded);
+                    break;
+                case "dateAdded_asc":
+                    listings = listings.OrderBy(l => l.DateAdded);
+                    break;
+                case "price_asc":
+                    listings = listings.OrderBy(l => Convert.ToDouble(l.Price));
+                    break;
+                case "price":
+                    listings = listings.OrderByDescending(l =>  Convert.ToDouble(l.Price));
+                    break;
+            }
 
             return await PagedList<Listing>.CreateAsync(listings, paginationParams.PageNumber, paginationParams.PageSize);
         }

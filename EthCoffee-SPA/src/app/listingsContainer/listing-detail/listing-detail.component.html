@@ -1,25 +1,25 @@
 <div class="container mt-4">
   <div class="row">
-      <div class="col-sm-4">
-          <h4>{{listing.title}}</h4>
-          </div>
+    <div class="col-sm-4">
+      <h4>{{listing.title}}</h4>
+    </div>
   </div>
   <div class="row">
     <div class="col-sm-4">
       <div class="card">
-        <img
-          class="card-img-top img-thumbnail"
-          src="{{ listing.listingPhotoUrl }}"
-          alt="{{ listing.title }}"
-        />
+        <img class="card-img-top img-thumbnail" src="{{ listing.listingPhotoUrl }}" alt="{{ listing.title }}" />
         <div class="card-body">
           <div>
-              <strong>Category: </strong>
+            <strong>Price: </strong>
+            <p>${{ listing.price }}</p>
+          </div>
+          <div>
+            <strong>Category: </strong>
             <p>{{ listing.category }}</p>
           </div>
           <div>
             <strong>Listed:</strong>
-            <p>{{ listing.dateAdded }}</p>
+            <p>{{ listing.dateAdded | timeAgo}}</p>
           </div>
         </div>
         <div class="card-footer">
@@ -34,14 +34,15 @@
       <div class="tab-panel">
         <tabset class="member-tabset">
           <tab heading="Details">
-              <button *ngIf="this.isListingOwner()" id="editListing" class="btn btn-primary w-10" [routerLink]="['/listings/edit', listing.id]">Edit Listing</button>
+            <button *ngIf="this.isListingOwner()" id="editListing" class="btn btn-primary w-10"
+              [routerLink]="['/listings/edit', listing.id]">Edit Listing</button>
             <h4>Details</h4>
             <p>{{ listing.description }}</p>
           </tab>
           <tab heading="Photos">
-              <h4>Photos</h4>
-              <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
-            </tab>
+            <h4>Photos</h4>
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+          </tab>
           <tab heading="Questions">
             <h4>Questions</h4>
             <p>Questions posted here</p>

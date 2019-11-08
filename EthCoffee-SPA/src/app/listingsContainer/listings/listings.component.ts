@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Listing } from '../../_models/listing';
+import { Listing, ListedDates } from '../../_models/listing';
 import { ListingService } from '../../_services/listing.service';
 import { AlertifyService } from '../../_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
@@ -15,7 +15,7 @@ export class ListingsComponent implements OnInit {
   listings: Listing[];
   pagination: Pagination;
   filterParams: FilterParams;
-  listedTimes: string[] = ['Any Time', 'Today', 'Yesterday', 'This Week', 'This Month'];
+  listedDates = Object.values(ListedDates);
   categories: string[] = ['All', 'Medical', 'Objects', 'Landscape', 'Paper & Books', 'Food & Drink'];
 
   constructor(
@@ -35,7 +35,7 @@ export class ListingsComponent implements OnInit {
 
   initializeFilters(): FilterParams {
     return {
-      dateAdded: this.listedTimes[0],
+      dateAdded: ListedDates.Any,
       category: this.categories[0],
       title: ''
     };

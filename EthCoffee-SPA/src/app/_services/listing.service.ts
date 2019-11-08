@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable, throwError } from 'rxjs';
-import { Listing, ListedDates } from '../_models/listing';
+import { Listing, ListedDates, ListingSortDict } from '../_models/listing';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { map, catchError } from 'rxjs/operators';
@@ -35,8 +35,9 @@ export class ListingService {
     if (filterParams != null) {
       params = (filterParams.title !== '') ? params.append('title', filterParams.title) : params;
       params = (filterParams.category !== 'All') ? params.append('category', filterParams.category) : params;
-      params = (filterParams.category !== ListedDates.Any) ?
+      params = (filterParams.dateAdded !== ListedDates.Any) ?
       params.append('dateAdded', this.utils.convertListedDates(filterParams.dateAdded)) : params;
+      params = params.append('sortBy', ListingSortDict[filterParams.sortBy]);
     }
 
 

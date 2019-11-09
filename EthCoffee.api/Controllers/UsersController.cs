@@ -36,7 +36,7 @@ namespace EthCoffee.api.Controllers
             return Ok(userToReturn);
         }
 
-        [HttpGet("listings/{id}")]
+        [HttpGet("{id}/listings")]
         public async Task<IActionResult> GetUserListings(int id)
         {
             var user = await _repo.GetUserListings(id);

@@ -13,36 +13,46 @@ import { UtilitiesService } from './utilities.service';
   providedIn: 'root'
 })
 export class ListingService {
-  baseUrl = environment.apiUrl;
+  baseUrl = `${environment.apiUrl}/listings`;
 
-  constructor(private http: HttpClient, private authService: AuthService, private utils: UtilitiesService) {}
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private utils: UtilitiesService
+  ) {}
 
   getListing(id): Observable<Listing> {
-    return this.http.get<Listing>(this.baseUrl + 'listings/' + id);
+    return this.http.get<Listing>(`${this.baseUrl}/${id}`);
   }
 
-  getListings(pageNumber?, pageSize?, filterParams?: FilterParams): Observable<PaginatedResult<Listing[]>> {
+  getListings(
+    pageNumber?,
+    pageSize?,
+    filterParams?: FilterParams
+  ): Observable<PaginatedResult<Listing[]>> {
     const paginatedResult: PaginatedResult<Listing[]> = new PaginatedResult<Listing[]>();
     let params = new HttpParams();
     if (pageNumber != null) {
       params = params.append('pageNumber', pageNumber);
     }
 
-    if (pageSize != null ) {
+    if (pageSize != null) {
       params = params.append('pageSize', pageSize);
     }
 
     if (filterParams != null) {
-      params = (filterParams.title !== '') ? params.append('title', filterParams.title) : params;
-      params = (filterParams.category !== 'All') ? params.append('category', filterParams.category) : params;
-      params = (filterParams.dateAdded !== ListedDates.Any) ?
-      params.append('dateAdded', this.utils.convertListedDates(filterParams.dateAdded)) : params;
+      params = filterParams.title !== '' ? params.append('title', filterParams.title) : params;
+      params =
+        filterParams.category !== 'All' ? params.append('category', filterParams.category) : params;
+      params =
+        filterParams.dateAdded !== ListedDates.Any
+          ? params.append('dateAdded', this.utils.convertListedDates(filterParams.dateAdded))
+          : params;
       params = params.append('sortBy', ListingSortDict[filterParams.sortBy]);
     }
 
-
-    return this.http.get<Listing[]>(this.baseUrl + 'listings', { observe: 'response', params }).pipe(
-      map( response => {
+    return this.http.get<Listing[]>(this.baseUrl, { observe: 'response', params }).pipe(
+      map(response => {
         paginatedResult.result = response.body;
         if (response.headers.get('Pagination') != null) {
           paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
@@ -72,19 +82,14 @@ export class ListingService {
   }
 
   updateListing(id: number, listing: Listing) {
-    return this.http.put(this.baseUrl + 'listings/' + id, listing);
+    return this.http.put(`${this.baseUrl}/${id}`, listing);
   }
 
   setMainPhoto(listingId: number, id: number) {
-    return this.http.post(
-      this.baseUrl + 'listings/' + listingId + '/photos/' + id + '/setMain',
-      {}
-    );
+    return this.http.post(`${this.baseUrl}/${listingId}/photos/${id}/setMain`, {});
   }
 
   deletePhoto(listingId: number, id: number) {
-    return this.http.delete(
-      this.baseUrl + 'listings/' + listingId + '/photos/' + id
-    );
+    return this.http.delete(`${this.baseUrl}/${listingId}/photos/${id}`);
   }
 }

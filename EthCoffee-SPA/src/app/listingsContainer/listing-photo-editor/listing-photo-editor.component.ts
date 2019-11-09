@@ -32,8 +32,8 @@ export class ListingPhotoEditorComponent implements OnInit {
 
   intializerUploader() {
     this.uploader = new FileUploader({
-      url: this.baseUrl + 'listings/' + this.listingId + '/photos',
-      authToken: 'Bearer ' + localStorage.getItem('token'),
+      url: `${this.baseUrl}/listings/${this.listingId}/photos`,
+      authToken: `Bearer ${localStorage.getItem('token')}`,
       isHTML5: true,
       allowedFileType: ['image'],
       removeAfterUpload: true,

@@ -12,6 +12,7 @@ namespace EthCoffee.api.Models
         public string Price { get; set; }
         public DateTime DateAdded { get; set; }
         public ICollection<ListingPhoto> Photos { get; set; }
+        public ICollection<ListingWatch> Watchers { get; set; }
 
         public User User { get; set; }
         public int UserId { get; set; }

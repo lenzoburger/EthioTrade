@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl = environment.apiUrl + 'auth/';
+  baseUrl = `${environment.apiUrl}/auth`;
   jwtHelper = new JwtHelperService();
   decodedToken: any;
   currentUser: User;
@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   login(userCred: any) {
-    return this.http.post(this.baseUrl + 'login', userCred).pipe(
+    return this.http.post(`${this.baseUrl}/login`, userCred).pipe(
       map((response: any) => {
         const user = response;
         if (user) {
@@ -39,7 +39,7 @@ export class AuthService {
   }
 
   register(user: User) {
-    return this.http.post(this.baseUrl + 'register', user);
+    return this.http.post(`${this.baseUrl}/register`, user);
   }
 
   loggedIn() {

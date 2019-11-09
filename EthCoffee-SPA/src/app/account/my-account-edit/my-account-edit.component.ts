@@ -65,8 +65,8 @@ export class MyAccountEditComponent implements OnInit {
 
   intializerUploader() {
     this.uploader = new FileUploader({
-      url: this.baseUrl + 'users/' + this.authService.decodedToken.nameid + '/avatar',
-      authToken: 'Bearer ' + localStorage.getItem('token'),
+      url: `${this.baseUrl}/users/${this.authService.decodedToken.nameid}/avatar`,
+      authToken: `Bearer ${localStorage.getItem('token')}`,
       isHTML5: true,
       allowedFileType: ['image'],
       removeAfterUpload: true,

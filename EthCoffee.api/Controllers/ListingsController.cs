@@ -29,9 +29,9 @@ namespace EthCoffee.api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetListings([FromQuery]PaginationParams paginationParams, [FromQuery]FilterParams filterParams)
         {
-            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var userId = User != null ? int.Parse(User?.FindFirst(ClaimTypes.NameIdentifier)?.Value) : -1;
 
-            var listings = await _repo.GetListings(userId, paginationParams, filterParams);
+            var listings = await _repo.GetListings(paginationParams, filterParams, userId);
 
             var listingsToReturn = _mapper.Map<IEnumerable<ListingSearchResultsDto>>(listings);
 
@@ -55,7 +55,7 @@ namespace EthCoffee.api.Controllers
         {
             var listingFromRepo = await _repo.GetListing(id);
 
-            if (listingFromRepo.UserId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            if (listingFromRepo.UserId != int.Parse(User?.FindFirst(ClaimTypes.NameIdentifier)?.Value))
             {
                 return Unauthorized();
             }

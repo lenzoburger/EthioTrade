@@ -64,12 +64,13 @@ namespace EthCoffee.api.Data
             return listing;
         }
 
-        public async Task<PagedList<Listing>> GetListings(int userId, PaginationParams paginationParams, FilterParams filterParams)
+        public async Task<PagedList<Listing>> GetListings(PaginationParams paginationParams, FilterParams filterParams, int userId = -1)
         {
             var listings = _context.Listings.Include(p => p.Photos).AsQueryable();
             listings = listings.Where(l => l.Category.ToLowerInvariant().Contains(filterParams.Category.ToLowerInvariant()));
             listings = listings.Where(l => l.Title.ToLowerInvariant().Contains(filterParams.Title.ToLowerInvariant()));
-            listings = listings.Where(l => l.UserId != userId);
+            
+            listings = userId != -1 ? listings.Where(l => l.UserId != userId) : listings;
 
             if (filterParams.DateAdded != null)
             {

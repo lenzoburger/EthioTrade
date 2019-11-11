@@ -10,7 +10,9 @@ export interface Listing {
   dateAdded: string;
   listingPhotoUrl: string;
 
+  watching?: boolean;
   description?: string;
+  watcherCount?: number;
   photos?: ListingPhoto[];
   user?: User;
 }

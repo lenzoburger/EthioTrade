@@ -25,4 +25,8 @@ export class UserService {
   updateUserDetails(id: number, userDetails: User) {
     return this.http.put(`${this.baseUrl}/${id}`, userDetails);
   }
+
+  watchListing(id: number, listingId: number) {
+    return this.http.post(`${this.baseUrl}/${id}/watch/${listingId}`, {});
+  }
 }

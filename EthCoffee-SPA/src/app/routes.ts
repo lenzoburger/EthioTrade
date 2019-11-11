@@ -13,6 +13,7 @@ import { MyAccountResolver } from './_resolvers/my-account-resolver';
 import { MyEtradeComponent } from './my-etrade/my-etrade.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { Routes } from '@angular/router';
+import { MyEtradeResolver } from './_resolvers/my-etrade-resolver';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -41,7 +42,7 @@ export const appRoutes: Routes = [
         path: 'account', component: MyAccountComponent,
         resolve: { user: MyAccountResolver }
       },
-      { path: 'myetrade', component: MyEtradeComponent },
+      { path: 'myetrade', component: MyEtradeComponent, resolve: { listings: MyEtradeResolver} },
       { path: 'messages', component: MessagesComponent },
     ]
   },

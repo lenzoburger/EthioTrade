@@ -11,6 +11,7 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
 })
 export class ListingCardComponent implements OnInit {
   @Input() listing: Listing;
+  @Input() myListing = false;
 
   constructor(
     private authService: AuthService,

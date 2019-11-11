@@ -6,7 +6,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { map, catchError } from 'rxjs/operators';
 import { PaginatedResult } from '../_models/pagination';
-import { FilterParams } from '../_models/filter-params';
+import { FilterParams, UserListsParams } from '../_models/filter-params';
 import { UtilitiesService } from './utilities.service';
 
 @Injectable({
@@ -28,7 +28,8 @@ export class ListingService {
   getListings(
     pageNumber?,
     pageSize?,
-    filterParams?: FilterParams
+    filterParams?: FilterParams,
+    userListsParams?: UserListsParams
   ): Observable<PaginatedResult<Listing[]>> {
     const paginatedResult: PaginatedResult<Listing[]> = new PaginatedResult<Listing[]>();
     let params = new HttpParams();
@@ -49,6 +50,12 @@ export class ListingService {
           ? params.append('dateAdded', this.utils.convertListedDates(filterParams.dateAdded))
           : params;
       params = params.append('sortBy', ListingSortDict[filterParams.sortBy]);
+    }
+
+    if (userListsParams != null && userListsParams.myListingsOnly) {
+      params = params.append('myListingsOnly', userListsParams.myListingsOnly.toString());
+    } else if (userListsParams != null && userListsParams.watchlistOnly) {
+      params = params.append('watchlistOnly', userListsParams.watchlistOnly.toString());
     }
 
     return this.http.get<Listing[]>(this.baseUrl, { observe: 'response', params }).pipe(

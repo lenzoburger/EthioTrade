@@ -36,6 +36,8 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { RegisterComponent } from './register/register.component';
 import { UserService } from './_services/user.service';
 import { appRoutes } from './routes';
+import { MyEtradeResolver } from './_resolvers/my-etrade-resolver';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -77,7 +79,8 @@ export function tokenGetter() {
         whitelistedDomains: ['localhost:5000'],
         blacklistedRoutes: ['localhost:5000/api/auth']
       },
-    })
+    }),
+    ButtonsModule.forRoot()
   ],
   providers: [
     AlertifyService,
@@ -89,6 +92,7 @@ export function tokenGetter() {
     ListingService,
     ListingsResolver,
     MyAccountResolver,
+    MyEtradeResolver,
     PreventUnsavedChanges,
     UserService
   ],

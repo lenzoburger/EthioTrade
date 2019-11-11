@@ -11,6 +11,7 @@ namespace EthCoffee.api.Dtos
         public string Title { get; set; }
         public string Description { get; set; }
         public string Price { get; set; }
+        public int watcherCount { get; set; }
         public DateTime DateAdded { get; set; }
         public string ListingPhotoUrl { get; set; }
         public ICollection<ListingPhotosDetailedDto> Photos { get; set; }

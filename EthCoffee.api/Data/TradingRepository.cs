@@ -28,18 +28,42 @@ namespace EthCoffee.api.Data
             _context.Remove(entity);
         }
 
-        public async Task<User> GetUserListings(int id)
+        public async Task<IEnumerable<Listing>> GetUserListings(int id)
         {
             var user = await _context.Users
-            .Include(usr => usr.Avatar)
-            .Include(usr => usr.UserAddresses)
-            .ThenInclude(usrAdr => usrAdr.Address)
-            .Include(usr => usr.UserAddresses)
-            .ThenInclude(usrAdrT => usrAdrT.AddressType)
             .Include(usr => usr.MyListings)
                 .ThenInclude(p => p.Photos)
             .FirstOrDefaultAsync(u => u.Id == id);
-            return user;
+            return user.MyListings;
+        }
+
+        public async Task<IEnumerable<Listing>> GetWatching(int id)
+        {
+            var user = await _context.Users
+            .Include(usr => usr.Watchings)
+            .ThenInclude(w => w.Watching)
+            .ThenInclude(p => p.Photos)
+            .FirstOrDefaultAsync(u => u.Id == id);
+
+            return user.Watchings.Select(w => w.Watching);
+        }
+
+        public async Task<IEnumerable<int>> GetWatchingIds(int id)
+        {
+            var user = await _context.Users
+            .Include(usr => usr.Watchings)
+            .FirstOrDefaultAsync(u => u.Id == id);
+
+            return user.Watchings.Select(w => w.WatchingId);
+        }
+
+        public async Task<IEnumerable<User>> GetWatchers(int listingId)
+        {
+            var listing = await _context.Listings
+            .Include(ls => ls.Watchers)
+            .FirstOrDefaultAsync(l => l.id == listingId);
+
+            return listing.Watchers.Select(w => w.Watcher);
         }
 
         public async Task<User> GetUserDetails(int id)
@@ -60,6 +84,7 @@ namespace EthCoffee.api.Data
             .Include(p => p.Photos)
             .Include(l => l.User)
             .ThenInclude(u => u.Avatar)
+            .Include(l => l.Watchers)
             .FirstOrDefaultAsync(l => l.id == id);
             return listing;
         }
@@ -67,10 +92,26 @@ namespace EthCoffee.api.Data
         public async Task<PagedList<Listing>> GetListings(PaginationParams paginationParams, FilterParams filterParams, int userId = -1)
         {
             var listings = _context.Listings.Include(p => p.Photos).AsQueryable();
+
+            if (userId != -1)
+            {
+                if (filterParams.MyListingsOnly)
+                {
+                    listings = listings.Where(l => l.UserId == userId);
+                }
+                else
+                {
+                    listings = listings.Where(l => l.UserId != userId);
+                    if (filterParams.WatchlistOnly)
+                    {
+                        var watchlistIds = await GetWatchingIds(userId);
+                        listings = listings.Where(l => watchlistIds.Contains(l.id));
+                    }
+                }
+            }
+
             listings = listings.Where(l => l.Category.ToLowerInvariant().Contains(filterParams.Category.ToLowerInvariant()));
             listings = listings.Where(l => l.Title.ToLowerInvariant().Contains(filterParams.Title.ToLowerInvariant()));
-            
-            listings = userId != -1 ? listings.Where(l => l.UserId != userId) : listings;
 
             if (filterParams.DateAdded != null)
             {
@@ -88,7 +129,7 @@ namespace EthCoffee.api.Data
                     listings = listings.OrderBy(l => Convert.ToDouble(l.Price));
                     break;
                 case "price_desc":
-                    listings = listings.OrderByDescending(l =>  Convert.ToDouble(l.Price));
+                    listings = listings.OrderByDescending(l => Convert.ToDouble(l.Price));
                     break;
             }
 
@@ -116,6 +157,11 @@ namespace EthCoffee.api.Data
         {
             return await _context.ListingPhotos.Where(l => l.ListingId == listingId)
             .FirstOrDefaultAsync(p => p.IsMain);
+        }
+
+        public async Task<ListingWatch> GetListingWatch(int userId, int listingId)
+        {
+            return await _context.ListingWatchs.FirstOrDefaultAsync(u => u.WatcherId == userId && u.WatchingId == listingId);
         }
     }
 }

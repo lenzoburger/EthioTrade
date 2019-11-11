@@ -29,8 +29,8 @@
     <div class="col">
       <div class="form-group px-1 float-right">
         <label for="sortBy">Sort By: </label>
-        <select class="form-control ml-1" [(ngModel)]="filterParams.sortBy" (click)="loadListings()"
-          id="sortBy" name="sortBy">
+        <select class="form-control ml-1" [(ngModel)]="filterParams.sortBy" (click)="loadListings()" id="sortBy"
+          name="sortBy">
           <option *ngFor="let item of sortParams" [value]="item">{{item}}</option>
         </select>
       </div>
@@ -45,7 +45,8 @@
   </div>
 </div>
 
-<div class="d-flex justify-content-center mt-5">
+<div class="d-flex justify-content-center mt-3">
   <pagination [boundaryLinks]="false" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.pageSize"
-    [(ngModel)]="pagination.pageNumber" (pageChanged)="pageChanged($event)"></pagination>
+    [(ngModel)]="pagination.pageNumber" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;"
+    firstText="&laquo;" lastText="&raquo;"></pagination>
 </div>

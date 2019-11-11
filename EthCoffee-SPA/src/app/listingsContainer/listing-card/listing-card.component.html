@@ -2,7 +2,8 @@
   <div class="card-img-wrapper">
     <img src="{{listing.listingPhotoUrl || '../../../assets/noImage.jpg'}}" alt="{{listing.category}}" class="card-img-top link" [routerLink]="['/listings', listing.id]">
     <ul class="list-inline listing-icons animate text-center">
-      <li class="list-inline-item"><button class="btn btn-primary"><i class="fa fa-clock-o"></i></button></li>
+      
+      <li *ngIf="!myListing" class="list-inline-item"><button class="btn btn-primary" (click)="watchListing(listing.id)"><i [ngClass]="{'fa': true, 'fa-clock-o': !listing.watching, 'fa-check': listing.watching}"></i></button></li>
     </ul>
   </div>
   <div class="card-body p-1">

@@ -20,5 +20,6 @@ namespace EthCoffee.api.Models
         public Avatar Avatar { get; set; }
         public ICollection<UserAddress> UserAddresses { get; set; }
         public ICollection<Listing> MyListings { get; set; }
+        public ICollection<ListingWatch> Watchings { get; set; }
     }
 }

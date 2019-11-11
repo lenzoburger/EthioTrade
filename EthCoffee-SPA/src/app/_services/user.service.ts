@@ -10,19 +10,23 @@ import { UserListing } from '../_models/userListing';
 })
 export class UserService {
   public changeAvatar = false;
-  baseUrl = environment.apiUrl;
+  baseUrl = `${environment.apiUrl}/users`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getUserDetails(id): Observable<User> {
-    return this.http.get<User>(this.baseUrl + 'users/' + id);
+    return this.http.get<User>(`${this.baseUrl}/${id}`);
   }
 
   getUserListings(id): Observable<UserListing> {
-    return this.http.get<UserListing>(this.baseUrl + 'users/listings/' + id);
+    return this.http.get<UserListing>(`${this.baseUrl}/${id}/listings`);
   }
 
   updateUserDetails(id: number, userDetails: User) {
-    return this.http.put(this.baseUrl + 'users/' + id, userDetails);
+    return this.http.put(`${this.baseUrl}/${id}`, userDetails);
+  }
+
+  watchListing(id: number, listingId: number) {
+    return this.http.post(`${this.baseUrl}/${id}/watch/${listingId}`, {});
   }
 }

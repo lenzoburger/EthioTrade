@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -29,12 +30,26 @@ namespace EthCoffee.api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetListings([FromQuery]PaginationParams paginationParams, [FromQuery]FilterParams filterParams)
         {
-            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var userId = User != null ? int.Parse(User?.FindFirst(ClaimTypes.NameIdentifier)?.Value) : -1;
 
-            var listings = await _repo.GetListings(userId, paginationParams, filterParams);
+            if ((filterParams.MyListingsOnly || filterParams.WatchlistOnly) && userId == -1)
+            {
+                return Unauthorized();
+            }
+            var listings = await _repo.GetListings(paginationParams, filterParams, userId);
 
             var listingsToReturn = _mapper.Map<IEnumerable<ListingSearchResultsDto>>(listings);
-
+            if (userId != -1)
+            {
+                var userWatchlist = await _repo.GetWatchingIds(userId);
+                foreach (var item in listingsToReturn)
+                {
+                    if (userWatchlist.Contains(item.id))
+                    {
+                        item.watching = true;
+                    }
+                }
+            }
             Response.AddPagination(listings.PageNumber, listings.PageSize, listings.TotalPages, listings.TotalItems);
 
             return Ok(listingsToReturn);
@@ -46,6 +61,7 @@ namespace EthCoffee.api.Controllers
             var listing = await _repo.GetListing(id);
 
             var listingToReturn = _mapper.Map<ListingDetailsDto>(listing);
+            listingToReturn.watcherCount = listing.Watchers.Count;
 
             return Ok(listingToReturn);
         }
@@ -55,7 +71,7 @@ namespace EthCoffee.api.Controllers
         {
             var listingFromRepo = await _repo.GetListing(id);
 
-            if (listingFromRepo.UserId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            if (listingFromRepo.UserId != int.Parse(User?.FindFirst(ClaimTypes.NameIdentifier)?.Value))
             {
                 return Unauthorized();
             }

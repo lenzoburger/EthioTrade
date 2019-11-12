@@ -66,6 +66,14 @@ namespace EthCoffee.api.Data
             return listing.Watchers.Select(w => w.Watcher);
         }
 
+        public async Task<User> GetUser(int id)
+        {
+            var user = await _context.Users
+            .Include(usr => usr.Avatar)
+            .FirstOrDefaultAsync(u => u.Id == id);
+            return user;
+        }
+
         public async Task<User> GetUserDetails(int id)
         {
             var user = await _context.Users
@@ -162,6 +170,21 @@ namespace EthCoffee.api.Data
         public async Task<ListingWatch> GetListingWatch(int userId, int listingId)
         {
             return await _context.ListingWatchs.FirstOrDefaultAsync(u => u.WatcherId == userId && u.WatchingId == listingId);
+        }
+
+        public async Task<Message> GetMessage(int id)
+        {
+            return await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
+        }
+
+        public Task<PagedList<Message>> GetMessagesForUser()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

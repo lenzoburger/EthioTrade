@@ -53,6 +53,8 @@ namespace EthCoffee.api.Helpers
                 opt.MapFrom(src => src.AddressType.Type);
             });
             CreateMap<UserRegisterDto, User>();
+
+            CreateMap<MessageForCreationDto, Message>().ReverseMap();
         }
     }
 }

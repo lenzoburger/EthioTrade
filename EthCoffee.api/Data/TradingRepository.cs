@@ -177,14 +177,41 @@ namespace EthCoffee.api.Data
             return await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
         }
 
-        public Task<PagedList<Message>> GetMessagesForUser()
+        public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
         {
-            throw new NotImplementedException();
+            var messages = _context.Messages
+                .Include(m => m.Sender).ThenInclude(u => u.Avatar)
+                .Include(m => m.Recipient).ThenInclude(u => u.Avatar)
+                .AsQueryable();
+
+            switch (messageParams.MessageContainer)
+            {
+                case "inbox":
+                    messages = messages.Where(m => messageParams.UserId == m.RecipientId);
+                    break;
+                case "outbox":
+                    messages = messages.Where(m => messageParams.UserId == m.SenderId);
+                    break;
+                default:
+                    messages = messages.Where(m => messageParams.UserId == m.RecipientId && m.IsRead == false);
+                    break;
+            }
+
+            messages = messages.OrderByDescending(m => m.MessageSent);
+            return await PagedList<Message>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
         }
 
-        public Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
+        public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
         {
-            throw new NotImplementedException();
+            var messages = await _context.Messages
+                .Include(m => m.Sender).ThenInclude(u => u.Avatar)
+                .Include(m => m.Recipient).ThenInclude(u => u.Avatar)
+                .Where(m => m.SenderId == userId && m.RecipientId == recipientId ||
+                 m.RecipientId == userId && m.SenderId == recipientId)
+                 .OrderByDescending(m => m.MessageSent)
+                 .ToListAsync();
+
+            return messages;
         }
     }
 }

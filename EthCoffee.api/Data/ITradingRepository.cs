@@ -22,7 +22,7 @@ namespace EthCoffee.api.Data
         Task<Avatar> GetAvatar(int id);
         Task<ListingWatch> GetListingWatch(int userId, int listingId);
         Task<Message> GetMessage(int id);
-        Task<PagedList<Message>> GetMessagesForUser();
+        Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams);
         Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId);
         Task<bool> SaveAll();
     }

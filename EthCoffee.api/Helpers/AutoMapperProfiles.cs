@@ -55,6 +55,7 @@ namespace EthCoffee.api.Helpers
             CreateMap<UserRegisterDto, User>();
 
             CreateMap<MessageForCreationDto, Message>().ReverseMap();
+            CreateMap<Message, MessageToReturnDto>();
         }
     }
 }

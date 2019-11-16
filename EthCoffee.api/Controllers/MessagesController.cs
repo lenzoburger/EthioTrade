@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -32,28 +33,56 @@ namespace EthCoffee.api.Controllers
         {
             if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
-            
+
             var messageFromRepo = await _repo.GetMessage(id);
 
             if (messageFromRepo == null)
                 return NotFound();
-            
+
             return Ok(messageFromRepo);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetMessagesForUser(int userId, [FromQuery] MessageParams messageParams)
+        {
+            if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+
+            messageParams.UserId = userId;
+            var messagesFromRepo = await _repo.GetMessagesForUser(messageParams);
+            var messagesToReturn = _mapper.Map<IEnumerable<MessageToReturnDto>>(messagesFromRepo);
+            Response.AddPagination(messageParams.PageNumber, messageParams.PageSize, messagesFromRepo.TotalPages, messagesFromRepo.TotalItems);
+
+            return Ok(messagesToReturn);
+        }
+
+        [HttpGet("thread/{recipientId}")]
+        public async Task<IActionResult> GetMessageThread(int userId, int recipientId)
+        {
+            if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+
+            var messagesFromRepo = await _repo.GetMessageThread(userId, recipientId);
+
+            var messagesToReturn = _mapper.Map<IEnumerable<MessageToReturnDto>>(messagesFromRepo);
+
+            return Ok(messagesToReturn);
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> CreateMessage(int userId, MessageForCreationDto messageForCreationDto)
         {
             if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
-            
+
             messageForCreationDto.SenderId = userId;
 
             var recipient = await _repo.GetUser(messageForCreationDto.RecipientId);
 
             if (recipient == null)
                 return BadRequest("Could not find user");
-            
+
             var message = _mapper.Map<Message>(messageForCreationDto);
 
             _repo.Add(message);
@@ -61,7 +90,7 @@ namespace EthCoffee.api.Controllers
             var messageToReturn = _mapper.Map<MessageForCreationDto>(message);
 
             if (await _repo.SaveAll())
-                return CreatedAtRoute("GetMessage", new {id = message.Id}, messageToReturn);
+                return CreatedAtRoute("GetMessage", new { id = message.Id }, messageToReturn);
 
             throw new Exception("Creating the message failed on save");
         }

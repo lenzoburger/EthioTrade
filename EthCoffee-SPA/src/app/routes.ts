@@ -14,6 +14,7 @@ import { MyEtradeComponent } from './my-etrade/my-etrade.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { Routes } from '@angular/router';
 import { MyEtradeResolver } from './_resolvers/my-etrade-resolver';
+import { MessagesResolver } from './_resolvers/messages-resolver';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -43,7 +44,7 @@ export const appRoutes: Routes = [
         resolve: { user: MyAccountResolver }
       },
       { path: 'myetrade', component: MyEtradeComponent, resolve: { listings: MyEtradeResolver} },
-      { path: 'messages', component: MessagesComponent },
+      { path: 'messages', component: MessagesComponent, resolve: { messages: MessagesResolver}  },
     ]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },

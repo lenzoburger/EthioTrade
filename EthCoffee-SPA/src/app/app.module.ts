@@ -38,6 +38,8 @@ import { UserService } from './_services/user.service';
 import { appRoutes } from './routes';
 import { MyEtradeResolver } from './_resolvers/my-etrade-resolver';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { MessageService } from './_services/message.service';
+import { MessagesResolver } from './_resolvers/messages-resolver';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -91,6 +93,8 @@ export function tokenGetter() {
     ListingEditResolver,
     ListingService,
     ListingsResolver,
+    MessagesResolver,
+    MessageService,
     MyAccountResolver,
     MyEtradeResolver,
     PreventUnsavedChanges,

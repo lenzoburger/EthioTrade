@@ -16,7 +16,7 @@ export class MessageService {
 
   constructor(private authService: AuthService, private http: HttpClient) {}
 
-  getMessages(pageNumber?, pageSize?, messageContainer?): Observable<PaginatedResult<Message[]>>  {
+  getMessages(pageNumber?, pageSize?, messageContainer?): Observable<PaginatedResult<Message[]>> {
     const paginatedResult: PaginatedResult<Message[]> = new PaginatedResult<Message[]>();
 
     let params = new HttpParams();
@@ -44,5 +44,13 @@ export class MessageService {
           return paginatedResult;
         })
       );
+  }
+
+  getMessageThread(recipientId: number) {
+    return this.http.get<Message[]>(`${this.baseUrl}/thread/${recipientId}`);
+  }
+
+  sendMessage(message: Message) {
+    return this.http.post<Message>(this.baseUrl, message);
   }
 }

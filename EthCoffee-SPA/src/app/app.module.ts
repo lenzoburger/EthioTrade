@@ -25,7 +25,7 @@ import { ListingPhotoEditorComponent } from './listingsContainer/listing-photo-e
 import { ListingService } from './_services/listing.service';
 import { ListingsComponent } from './listingsContainer/listings/listings.component';
 import { ListingsResolver } from './_resolvers/listings-resolver';
-import { MessagesComponent } from './messages/messages.component';
+import { MessagesComponent } from './messagesContainer/messages/messages.component';
 import { MyAccountComponent } from './account/my-account/my-account.component';
 import { MyAccountEditComponent } from './account/my-account-edit/my-account-edit.component';
 import { MyAccountResolver } from './_resolvers/my-account-resolver';
@@ -40,6 +40,7 @@ import { MyEtradeResolver } from './_resolvers/my-etrade-resolver';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { MessageService } from './_services/message.service';
 import { MessagesResolver } from './_resolvers/messages-resolver';
+import { MessageThreadComponent } from './messagesContainer/message-thread/message-thread.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -55,6 +56,7 @@ export function tokenGetter() {
     ListingPhotoEditorComponent,
     ListingsComponent,
     MessagesComponent,
+    MessageThreadComponent,
     MyAccountComponent,
     MyAccountEditComponent,
     MyEtradeComponent,

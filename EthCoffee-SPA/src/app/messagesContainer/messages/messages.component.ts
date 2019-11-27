@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from '../_services/message.service';
-import { AlertifyService } from '../_services/alertify.service';
+import { MessageService } from '../../_services/message.service';
+import { AlertifyService } from '../../_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
-import { Message } from '../_models/message';
-import { Pagination, PaginatedResult } from '../_models/pagination';
+import { Message, UserInfo } from '../../_models/message';
+import { Pagination, PaginatedResult } from '../../_models/pagination';
 
 @Component({
   selector: 'app-messages',
@@ -13,7 +13,8 @@ import { Pagination, PaginatedResult } from '../_models/pagination';
 export class MessagesComponent implements OnInit {
   messages: Message[];
   pagination: Pagination;
-  messageContainer = 'unread';
+  messageContainer = 'Unread';
+  recipient: UserInfo;
 
   constructor(
     private messagesService: MessageService,
@@ -31,6 +32,10 @@ export class MessagesComponent implements OnInit {
   pageChanged(event: any): void {
     this.pagination.pageNumber = event.page;
     this.loadMessages();
+  }
+
+  loadMessageThread(recipient: UserInfo) {
+    this.recipient = { ...recipient };
   }
 
   loadMessages() {

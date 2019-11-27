@@ -1,16 +1,22 @@
 export interface Message {
-  Id: number;
+  id: number;
 
-  SenderId: number;
-  SenderUsername: string;
-  SenderAvatarUrl: string;
+  senderId: number;
+  senderUsername: string;
+  senderAvatarUrl: string;
 
-  RecipientId: number;
-  RecipientUsername: string;
-  RecipientAvatarUrl: string;
+  recipientId: number;
+  recipientUsername: string;
+  recipientAvatarUrl: string;
 
-  Content: string;
-  IsRead: boolean;
-  DateRead?: Date;
-  MessageSent: Date;
+  content: string;
+  isRead: boolean;
+  dateRead?: Date;
+  messageSent: Date;
+}
+
+export interface UserInfo {
+  id: number;
+  username: string;
+  avatarUrl: string;
 }

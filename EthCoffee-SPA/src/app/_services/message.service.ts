@@ -53,4 +53,8 @@ export class MessageService {
   sendMessage(message: Message) {
     return this.http.post<Message>(this.baseUrl, message);
   }
+
+  deletedMessage(messageId: number) {
+    return this.http.post<Message>(`${this.baseUrl}/${messageId}`, {});
+  }
 }

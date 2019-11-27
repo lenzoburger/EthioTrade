@@ -187,13 +187,13 @@ namespace EthCoffee.api.Data
             switch (messageParams.MessageContainer)
             {
                 case "inbox":
-                    messages = messages.Where(m => messageParams.UserId == m.RecipientId);
+                    messages = messages.Where(m => messageParams.UserId == m.RecipientId && !m.RecipientDeleted);
                     break;
                 case "outbox":
-                    messages = messages.Where(m => messageParams.UserId == m.SenderId);
+                    messages = messages.Where(m => messageParams.UserId == m.SenderId && !m.SenderDeleted);
                     break;
                 default:
-                    messages = messages.Where(m => messageParams.UserId == m.RecipientId && m.IsRead == false);
+                    messages = messages.Where(m => messageParams.UserId == m.RecipientId && !m.IsRead && !m.RecipientDeleted);
                     break;
             }
 
@@ -206,8 +206,8 @@ namespace EthCoffee.api.Data
             var messages = await _context.Messages
                 .Include(m => m.Sender).ThenInclude(u => u.Avatar)
                 .Include(m => m.Recipient).ThenInclude(u => u.Avatar)
-                .Where(m => m.SenderId == userId && m.RecipientId == recipientId ||
-                 m.RecipientId == userId && m.SenderId == recipientId)
+                .Where(m => (m.SenderId == userId && m.RecipientId == recipientId && !m.SenderDeleted) ||
+                 (m.RecipientId == userId && m.SenderId == recipientId && !m.RecipientDeleted))
                  .OrderByDescending(m => m.MessageSent)
                  .ToListAsync();
 

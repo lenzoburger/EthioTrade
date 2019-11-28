@@ -11,6 +11,7 @@ Web Application for buying and selling goods - Developed with ASP .Net Core 2.2 
 5. Start application `npm start`
 6. Browser will launch at http://localhost:4200 
    * ... _if not, launch browser and navigate to [URL](http://localhost:4200)_
+7. Visit http://localhost:5000/swagger for EthioTrade-Api SwaggerUi & documentation
 
 ### Dependencies
 1. [Dotnet-sdk (v2.2+)](https://dotnet.microsoft.com/download)

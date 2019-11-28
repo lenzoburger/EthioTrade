@@ -21,5 +21,7 @@ namespace EthCoffee.api.Models
         public ICollection<UserAddress> UserAddresses { get; set; }
         public ICollection<Listing> MyListings { get; set; }
         public ICollection<ListingWatch> Watchings { get; set; }
+        public ICollection<Message> MessageSent { get; set; }
+        public ICollection<Message> MessageReceived { get; set; }
     }
 }

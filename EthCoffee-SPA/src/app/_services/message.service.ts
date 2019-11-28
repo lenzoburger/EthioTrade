@@ -57,4 +57,8 @@ export class MessageService {
   deletedMessage(messageId: number) {
     return this.http.post<Message>(`${this.baseUrl}/${messageId}`, {});
   }
+
+  markAsRead(messageId: number) {
+    return this.http.post<Message>(`${this.baseUrl}/${messageId}/read`, {}).subscribe();
+  }
 }

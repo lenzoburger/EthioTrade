@@ -120,5 +120,24 @@ namespace EthCoffee.api.Controllers
 
             throw new Exception("Error deleting the message");
         }
+
+        [HttpPost("{messageId}/read")]
+        public async Task<IActionResult> MarkMessageAsRead(int userId, int messageId)
+        {
+            if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+
+            var messageFromRepo = await _repo.GetMessage(messageId);
+
+            if(messageFromRepo.RecipientId != userId)
+                return Unauthorized();
+
+            messageFromRepo.IsRead = true;
+            messageFromRepo.DateRead = DateTime.Now;
+
+            await _repo.SaveAll();
+
+            return NoContent();
+        }
     }
 }

@@ -66,6 +66,14 @@ namespace EthCoffee.api.Data
             return listing.Watchers.Select(w => w.Watcher);
         }
 
+        public async Task<User> GetUser(int id)
+        {
+            var user = await _context.Users
+            .Include(usr => usr.Avatar)
+            .FirstOrDefaultAsync(u => u.Id == id);
+            return user;
+        }
+
         public async Task<User> GetUserDetails(int id)
         {
             var user = await _context.Users
@@ -162,6 +170,48 @@ namespace EthCoffee.api.Data
         public async Task<ListingWatch> GetListingWatch(int userId, int listingId)
         {
             return await _context.ListingWatchs.FirstOrDefaultAsync(u => u.WatcherId == userId && u.WatchingId == listingId);
+        }
+
+        public async Task<Message> GetMessage(int id)
+        {
+            return await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
+        }
+
+        public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
+        {
+            var messages = _context.Messages
+                .Include(m => m.Sender).ThenInclude(u => u.Avatar)
+                .Include(m => m.Recipient).ThenInclude(u => u.Avatar)
+                .AsQueryable();
+
+            switch (messageParams.MessageContainer)
+            {
+                case "inbox":
+                    messages = messages.Where(m => messageParams.UserId == m.RecipientId && !m.RecipientDeleted);
+                    break;
+                case "outbox":
+                    messages = messages.Where(m => messageParams.UserId == m.SenderId && !m.SenderDeleted);
+                    break;
+                default:
+                    messages = messages.Where(m => messageParams.UserId == m.RecipientId && !m.IsRead && !m.RecipientDeleted);
+                    break;
+            }
+
+            messages = messages.OrderByDescending(m => m.MessageSent);
+            return await PagedList<Message>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
+        }
+
+        public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
+        {
+            var messages = await _context.Messages
+                .Include(m => m.Sender).ThenInclude(u => u.Avatar)
+                .Include(m => m.Recipient).ThenInclude(u => u.Avatar)
+                .Where(m => (m.SenderId == userId && m.RecipientId == recipientId && !m.SenderDeleted) ||
+                 (m.RecipientId == userId && m.SenderId == recipientId && !m.RecipientDeleted))
+                 .OrderByDescending(m => m.MessageSent)
+                 .ToListAsync();
+
+            return messages;
         }
     }
 }

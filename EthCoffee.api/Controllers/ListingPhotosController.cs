@@ -90,7 +90,7 @@ namespace EthCoffee.api.Controllers
             if (await _repo.SaveAll())
             {
                 var photoToReturn = _mapper.Map<ListingPhotoForReturnDto>(photo);
-                return CreatedAtRoute("GetListingPhoto", new { id = photo.Id }, photoToReturn);
+                return CreatedAtRoute("GetListingPhoto", new { listingId, id = photo.Id }, photoToReturn);
             }
 
             return BadRequest("Could not save the listing photo");

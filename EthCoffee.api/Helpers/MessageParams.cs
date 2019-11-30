@@ -23,7 +23,7 @@ namespace EthCoffee.api.Helpers
             }
             set
             {
-                messageContainer = value.ToLowerInvariant();
+                messageContainer = value.ToLower();
             }
         }
     }

@@ -106,7 +106,7 @@ namespace EthCoffee.api.Controllers
             if (await _repo.SaveAll())
             {
                 var photoToReturn = _mapper.Map<AvatarForReturnDto>(photo);
-                return CreatedAtRoute("GetAvatar", new { id = photo.Id }, photoToReturn);
+                return CreatedAtRoute("GetAvatar", new { userId, id = photo.Id }, photoToReturn);
             }
 
             return BadRequest("Could not save the avatar photo");

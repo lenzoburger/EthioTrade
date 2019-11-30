@@ -118,8 +118,8 @@ namespace EthCoffee.api.Data
                 }
             }
 
-            listings = listings.Where(l => l.Category.ToLowerInvariant().Contains(filterParams.Category.ToLowerInvariant()));
-            listings = listings.Where(l => l.Title.ToLowerInvariant().Contains(filterParams.Title.ToLowerInvariant()));
+            listings = listings.Where(l => l.Category.ToLower().Contains(filterParams.Category.ToLower()));
+            listings = listings.Where(l => l.Title.ToLower().Contains(filterParams.Title.ToLower()));
 
             if (filterParams.DateAdded != null)
             {

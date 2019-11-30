@@ -15,7 +15,7 @@ import { Avatar } from 'src/app/_models/avatar';
   styleUrls: ['./my-account-edit.component.css']
 })
 export class MyAccountEditComponent implements OnInit {
-  @ViewChild('editAccount') editForm: NgForm;
+  @ViewChild('editAccount', { static: true }) editForm: NgForm;
   account: User;
   uploader: FileUploader;
   hasBaseDropZoneOver = false;

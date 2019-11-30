@@ -11,7 +11,7 @@ import { ListingService } from 'src/app/_services/listing.service';
   styleUrls: ['./listing-edit.component.css']
 })
 export class ListingEditComponent implements OnInit {
-  @ViewChild('editForm') editForm: NgForm;
+  @ViewChild('editForm', { static: true }) editForm: NgForm;
   listing: Listing;
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {

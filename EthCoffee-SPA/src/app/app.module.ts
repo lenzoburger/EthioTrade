@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
 import { FileUploadModule } from 'ng2-file-upload';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -44,6 +44,13 @@ import { MessageThreadComponent } from './messagesContainer/message-thread/messa
 
 export function tokenGetter() {
   return localStorage.getItem('token');
+}
+
+export class CustomHammerConfig extends HammerGestureConfig  {
+   overrides = {
+       pinch: { enable: false },
+       rotate: { enable: false }
+   };
 }
 
 @NgModule({
@@ -100,6 +107,7 @@ export function tokenGetter() {
     MyAccountResolver,
     MyEtradeResolver,
     PreventUnsavedChanges,
+    { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig },
     UserService
   ],
   bootstrap: [

@@ -11,6 +11,7 @@ obj
 .history/*
 
 # IDEs and editors
+.vs
 /.idea
 .project
 .classpath

@@ -1,5 +1,5 @@
 # Ethio Trade
-Web Application for buying and selling goods - Developed with ASP .Net Core 2.2 & Angular 7 and Hosted with Azure.
+Web Application for buying and selling goods - Developed with ASP .Net Core 3.0 & Angular 8 and Hosted with Azure.
 
 ![alt text](EthCoffee-SPA/src/assets/images/snapshot.png)
 
@@ -14,9 +14,9 @@ Web Application for buying and selling goods - Developed with ASP .Net Core 2.2 
 7. Visit http://localhost:5000/swagger for EthioTrade-Api SwaggerUi & documentation
 
 ### Dependencies
-1. [Dotnet-sdk (v2.2+)](https://dotnet.microsoft.com/download)
+1. [Dotnet-sdk (v3.0+)](https://dotnet.microsoft.com/download)
 2. [Node (v10+)](https://nodejs.org/en/download)
-3. [AngularCLi (v7+)](https://cli.angular.io/) `npm install -g @angular/cli`
+3. [AngularCLi (v8+)](https://cli.angular.io/) `npm install -g @angular/cli`
 4. [Git](https://git-scm.com/downloads)
 
 ### Tools

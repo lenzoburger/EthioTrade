@@ -4,7 +4,7 @@ obj
 #.db
 
 # dependencies
-/node_modules
+node_modules
 
 # IDE - VSCode
 .vscode/*
@@ -39,7 +39,8 @@ chrome-profiler-events.json
 speed-measure-plugin.json
 
 # compiled output
-/dist
+wwwroot
+dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run

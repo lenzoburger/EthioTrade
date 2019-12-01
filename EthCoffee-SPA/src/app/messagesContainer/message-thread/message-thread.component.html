@@ -2,11 +2,14 @@
   <p>Chat with... </p>
   <img [src]="recipient.avatarUrl" class="img-circle rounded-circle">
   <strong class="ml-2">{{recipient.username}}</strong>
+  <button (click)="loadMessages()" class="btn btn-lg float-right"><i class="text-info fa fa-refresh fa-5"></i></button>
 </div>
 
+
+
 <div class="card">
-  <div class="card-body">
-    <ul class="chat">
+  <div #messagesContainer class="card-body">
+    <ul class="chat" *ngIf="messages">
       <li *ngFor="let message of messages.slice().reverse()">
         <!-- to them -->
         <div *ngIf="message.senderId == recipient.id">

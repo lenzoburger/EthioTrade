@@ -225,7 +225,7 @@
         "DateOfBirth": "1958-09-03T00:00:00",
         "Gender": "female",
         "Phone": "0217654321",
-        "LastActiveDate": "2019-11-28T23:39:23.455143",
+        "LastActiveDate": "2019-12-01T10:30:33.1938544",
         "CreatedDate": "0001-01-01T00:00:00",
         "Avatar": {
             "Id": 15,
@@ -384,6 +384,116 @@
                 "IsRead": true,
                 "DateRead": "2019-11-28T23:31:22.1267142",
                 "MessageSent": "2019-11-12T21:58:30.2708871",
+                "SenderDeleted": false,
+                "RecipientDeleted": false
+            },
+            {
+                "Id": 20,
+                "SenderId": 4,
+                "RecipientId": 12,
+                "Content": "Hey  Katie?",
+                "IsRead": true,
+                "DateRead": "2019-12-01T10:28:04.7042418",
+                "MessageSent": "2019-12-01T09:08:27.3702024",
+                "SenderDeleted": false,
+                "RecipientDeleted": false
+            },
+            {
+                "Id": 21,
+                "SenderId": 4,
+                "RecipientId": 12,
+                "Content": "how are you?",
+                "IsRead": true,
+                "DateRead": "2019-12-01T10:28:04.7038629",
+                "MessageSent": "2019-12-01T09:10:39.4502075",
+                "SenderDeleted": false,
+                "RecipientDeleted": false
+            },
+            {
+                "Id": 22,
+                "SenderId": 4,
+                "RecipientId": 12,
+                "Content": "whats new?",
+                "IsRead": true,
+                "DateRead": "2019-12-01T10:28:04.5152409",
+                "MessageSent": "2019-12-01T09:11:24.089768",
+                "SenderDeleted": false,
+                "RecipientDeleted": false
+            },
+            {
+                "Id": 23,
+                "SenderId": 4,
+                "RecipientId": 12,
+                "Content": "how's I'llkallhome-a?",
+                "IsRead": true,
+                "DateRead": "2019-12-01T10:28:04.4664248",
+                "MessageSent": "2019-12-01T09:13:19.947875",
+                "SenderDeleted": false,
+                "RecipientDeleted": false
+            },
+            {
+                "Id": 24,
+                "SenderId": 4,
+                "RecipientId": 12,
+                "Content": "i mean grownOldEstate?",
+                "IsRead": true,
+                "DateRead": "2019-12-01T10:28:04.4541227",
+                "MessageSent": "2019-12-01T09:15:27.1259089",
+                "SenderDeleted": false,
+                "RecipientDeleted": false
+            },
+            {
+                "Id": 25,
+                "SenderId": 4,
+                "RecipientId": 12,
+                "Content": "hows brokeland?",
+                "IsRead": true,
+                "DateRead": "2019-12-01T10:28:04.4517464",
+                "MessageSent": "2019-12-01T09:32:10.0032891",
+                "SenderDeleted": false,
+                "RecipientDeleted": false
+            },
+            {
+                "Id": 26,
+                "SenderId": 4,
+                "RecipientId": 12,
+                "Content": "lol i'm just chokin... (like u in game 6 at okc)",
+                "IsRead": true,
+                "DateRead": "2019-12-01T10:28:04.4523789",
+                "MessageSent": "2019-12-01T09:47:18.0004452",
+                "SenderDeleted": false,
+                "RecipientDeleted": false
+            },
+            {
+                "Id": 27,
+                "SenderId": 4,
+                "RecipientId": 12,
+                "Content": "All-right I'm done",
+                "IsRead": true,
+                "DateRead": "2019-12-01T10:28:04.4479839",
+                "MessageSent": "2019-12-01T10:02:09.1905247",
+                "SenderDeleted": false,
+                "RecipientDeleted": false
+            },
+            {
+                "Id": 28,
+                "SenderId": 4,
+                "RecipientId": 12,
+                "Content": "This is a long message, Testing 123. Is anybody out there? Can you hear me? Feeling something, It aint no hot ish. But it's something that could. How much could a wood chug chug if a would chug could chug wood.",
+                "IsRead": true,
+                "DateRead": "2019-12-01T10:28:04.4675406",
+                "MessageSent": "2019-12-01T10:06:14.8102384",
+                "SenderDeleted": false,
+                "RecipientDeleted": false
+            },
+            {
+                "Id": 30,
+                "SenderId": 4,
+                "RecipientId": 12,
+                "Content": "relax cupcake",
+                "IsRead": true,
+                "DateRead": "2019-12-01T10:30:05.240235",
+                "MessageSent": "2019-12-01T10:29:55.960336",
                 "SenderDeleted": false,
                 "RecipientDeleted": false
             }
@@ -744,20 +854,6 @@
             {
                 "UserId": 10,
                 "Address": {
-                    "id": 14,
-                    "AddressLine1": "865 Mink Street",
-                    "City": "Shipto",
-                    "Country": "Kuwait",
-                    "ZipCode": "8957",
-                    "CreatedDate": "2019-04-29T00:00:00"
-                },
-                "AddressId": 14,
-                "AddressTypeId": 2,
-                "CreatedDate": "0001-01-01T00:00:00"
-            },
-            {
-                "UserId": 10,
-                "Address": {
                     "id": 13,
                     "AddressLine1": "865 Menahan Street",
                     "City": "Physical",
@@ -767,6 +863,20 @@
                 },
                 "AddressId": 13,
                 "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "UserId": 10,
+                "Address": {
+                    "id": 14,
+                    "AddressLine1": "865 Mink Street",
+                    "City": "Shipto",
+                    "Country": "Kuwait",
+                    "ZipCode": "8957",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressId": 14,
+                "AddressTypeId": 2,
                 "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
@@ -936,7 +1046,7 @@
         "DateOfBirth": "2016-01-11T11:00:00",
         "Gender": "male",
         "Phone": "0210719672",
-        "LastActiveDate": "2019-11-28T23:39:58.9794753",
+        "LastActiveDate": "2019-12-01T10:30:05.2649379",
         "CreatedDate": "2019-04-29T21:46:51.1302671",
         "Avatar": {
             "Id": 12,
@@ -1029,6 +1139,17 @@
                 "IsRead": true,
                 "DateRead": "2019-11-28T23:38:15.4680008",
                 "MessageSent": "2019-11-18T22:03:46.9799209",
+                "SenderDeleted": false,
+                "RecipientDeleted": false
+            },
+            {
+                "Id": 29,
+                "SenderId": 12,
+                "RecipientId": 4,
+                "Content": "you think you're funny huh?",
+                "IsRead": true,
+                "DateRead": "2019-12-01T10:29:13.1288751",
+                "MessageSent": "2019-12-01T10:29:08.8170525",
                 "SenderDeleted": false,
                 "RecipientDeleted": false
             }

@@ -134,14 +134,14 @@ namespace EthCoffee.api.Data
                     listings = listings.OrderByDescending(l => l.DateAdded);
                     break;
                 case "price":
-                    listings = listings.OrderBy(l => Convert.ToDouble(l.Price));
+                    listings = listings.OrderBy(l => l.Price);
                     break;
                 case "price_desc":
-                    listings = listings.OrderByDescending(l => Convert.ToDouble(l.Price));
+                    listings = listings.OrderByDescending(l => l.Price);
                     break;
             }
 
-            return await PagedList<Listing>.CreateAsync(listings, paginationParams.PageNumber, paginationParams.PageSize);
+            return await PagedList<Listing>.CreateAsync(listings.AsNoTracking(), paginationParams.PageNumber, paginationParams.PageSize);
         }
 
         public async Task<bool> SaveAll()
@@ -198,7 +198,7 @@ namespace EthCoffee.api.Data
             }
 
             messages = messages.OrderByDescending(m => m.MessageSent);
-            return await PagedList<Message>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
+            return await PagedList<Message>.CreateAsync(messages.AsNoTracking(), messageParams.PageNumber, messageParams.PageSize);
         }
 
         public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)

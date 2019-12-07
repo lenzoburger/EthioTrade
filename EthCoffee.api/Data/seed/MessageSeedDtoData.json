@@ -1,0 +1,302 @@
+[
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "Hey sugar cupcakes!",
+        "IsRead": true,
+        "DateRead": "2019-11-14T21:58:30.2708871",
+        "MessageSent": "2019-11-12T21:55:30.2708871",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "jk lol :-D... hssssss",
+        "IsRead": true,
+        "DateRead": "2019-11-28T23:31:22.4706762",
+        "MessageSent": "2019-11-12T21:56:30.2708871",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "jk, I'm Just yankin your chain lil bro",
+        "IsRead": true,
+        "DateRead": "2019-11-28T23:31:22.105938",
+        "MessageSent": "2019-11-12T21:57:30.2708871",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "You there?",
+        "IsRead": true,
+        "DateRead": "2019-11-28T23:31:22.1267142",
+        "MessageSent": "2019-11-12T21:58:30.2708871",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 12,
+        "RecipientId": 4,
+        "Content": "Hey Serena!",
+        "IsRead": true,
+        "DateRead": "2019-11-12T21:54:30.2708871",
+        "MessageSent": "2019-11-12T21:50:30.2708871",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 11,
+        "RecipientId": 12,
+        "Content": "Hey KD, why you leave us like that bro?",
+        "IsRead": false,
+        "DateRead": null,
+        "MessageSent": "2019-11-17T17:13:14.1815348",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 11,
+        "RecipientId": 10,
+        "Content": "Hey Splash bro, You better make it to playoffs. I'll be ready to ball by then!",
+        "IsRead": false,
+        "DateRead": null,
+        "MessageSent": "2019-11-17T17:14:35.8814714",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 11,
+        "RecipientId": 4,
+        "Content": "Hey Serana, Love your game. Check out my cool new toaster.",
+        "IsRead": false,
+        "DateRead": null,
+        "MessageSent": "2019-11-17T17:15:32.2312759",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 10,
+        "RecipientId": 11,
+        "Content": "Hey Klay, Hurry bro we need you back",
+        "IsRead": false,
+        "DateRead": null,
+        "MessageSent": "2019-11-17T17:16:56.0219817",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 10,
+        "RecipientId": 12,
+        "Content": "Hey KD, No hard feelings bro. I'm still the best shooter in GSW",
+        "IsRead": true,
+        "DateRead": "2019-11-28T23:32:43.1002858",
+        "MessageSent": "2019-11-17T17:17:45.5150696",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 12,
+        "RecipientId": 4,
+        "Content": "Hey serena! Whats up gurl",
+        "IsRead": true,
+        "DateRead": "2019-11-28T23:38:15.6807168",
+        "MessageSent": "2019-11-18T21:32:25.9111016",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 10,
+        "RecipientId": 4,
+        "Content": "You there?",
+        "IsRead": false,
+        "DateRead": null,
+        "MessageSent": "2019-11-18T21:36:44.4528188",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 10,
+        "RecipientId": 4,
+        "Content": "Yo guuuuurl?",
+        "IsRead": false,
+        "DateRead": null,
+        "MessageSent": "2019-11-18T21:39:35.4851435",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 12,
+        "RecipientId": 4,
+        "Content": "hows your moms?",
+        "IsRead": true,
+        "DateRead": "2019-11-28T23:38:15.6618091",
+        "MessageSent": "2019-11-18T21:43:29.7887873",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 12,
+        "RecipientId": 4,
+        "Content": "testing 123",
+        "IsRead": true,
+        "DateRead": "2019-11-28T23:38:15.6619318",
+        "MessageSent": "2019-11-18T21:44:05.019087",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 10,
+        "RecipientId": 4,
+        "Content": "testing 123?",
+        "IsRead": false,
+        "DateRead": null,
+        "MessageSent": "2019-11-18T21:48:20.8546597",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 10,
+        "RecipientId": 4,
+        "Content": "testing 123?",
+        "IsRead": false,
+        "DateRead": null,
+        "MessageSent": "2019-11-18T21:50:38.1695064",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 12,
+        "RecipientId": 4,
+        "Content": "yo yo yo",
+        "IsRead": true,
+        "DateRead": "2019-11-28T23:38:15.6780744",
+        "MessageSent": "2019-11-18T22:00:30.5795129",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 12,
+        "RecipientId": 4,
+        "Content": "How is it going?",
+        "IsRead": true,
+        "DateRead": "2019-11-28T23:38:15.4680008",
+        "MessageSent": "2019-11-18T22:03:46.9799209",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "Hey  Katie?",
+        "IsRead": true,
+        "DateRead": "2019-12-01T10:28:04.7042418",
+        "MessageSent": "2019-12-01T09:08:27.3702024",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "how are you?",
+        "IsRead": true,
+        "DateRead": "2019-12-01T10:28:04.7038629",
+        "MessageSent": "2019-12-01T09:10:39.4502075",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "whats new?",
+        "IsRead": true,
+        "DateRead": "2019-12-01T10:28:04.5152409",
+        "MessageSent": "2019-12-01T09:11:24.089768",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "how's I'llkallhome-a?",
+        "IsRead": true,
+        "DateRead": "2019-12-01T10:28:04.4664248",
+        "MessageSent": "2019-12-01T09:13:19.947875",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "i mean grownOldEstate?",
+        "IsRead": true,
+        "DateRead": "2019-12-01T10:28:04.4541227",
+        "MessageSent": "2019-12-01T09:15:27.1259089",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "hows brokeland?",
+        "IsRead": true,
+        "DateRead": "2019-12-01T10:28:04.4517464",
+        "MessageSent": "2019-12-01T09:32:10.0032891",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "lol i'm just chokin... (like u in game 6 at okc)",
+        "IsRead": true,
+        "DateRead": "2019-12-01T10:28:04.4523789",
+        "MessageSent": "2019-12-01T09:47:18.0004452",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "All-right I'm done",
+        "IsRead": true,
+        "DateRead": "2019-12-01T10:28:04.4479839",
+        "MessageSent": "2019-12-01T10:02:09.1905247",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "This is a long message, Testing 123. Is anybody out there? Can you hear me? Feeling something, It aint no hot ish. But it's something that could. How much could a wood chug chug if a would chug could chug wood.",
+        "IsRead": true,
+        "DateRead": "2019-12-01T10:28:04.4675406",
+        "MessageSent": "2019-12-01T10:06:14.8102384",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 12,
+        "RecipientId": 4,
+        "Content": "you think you're funny huh?",
+        "IsRead": true,
+        "DateRead": "2019-12-01T10:29:13.1288751",
+        "MessageSent": "2019-12-01T10:29:08.8170525",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "relax cupcake",
+        "IsRead": true,
+        "DateRead": "2019-12-01T10:30:05.240235",
+        "MessageSent": "2019-12-01T10:29:55.960336",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    }
+]

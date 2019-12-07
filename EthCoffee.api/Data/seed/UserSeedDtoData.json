@@ -12,7 +12,6 @@
         "LastActiveDate": "0001-01-01T00:00:00",
         "CreatedDate": "0001-01-01T00:00:00",
         "Avatar": {
-            "Id": 6,
             "Url": "https://randomuser.me/api/portraits/lego/7.jpg",
             "PublicId": null,
             "Description": "Nisi ad aliqua excepteur qui velit enim.",
@@ -20,37 +19,30 @@
         },
         "UserAddresses": [
             {
-                "UserId": 1,
                 "Address": {
-                    "id": 2,
                     "AddressLine1": "875 Mink Street",
                     "City": "Postal",
                     "Country": "Swaziland",
                     "ZipCode": "8753",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 2,
                 "AddressTypeId": 4,
                 "CreatedDate": "0001-01-01T00:00:00"
             },
             {
-                "UserId": 1,
                 "Address": {
-                    "id": 3,
                     "AddressLine1": "875 Menahan Street",
                     "City": "Physical",
                     "Country": "Swaziland",
                     "ZipCode": "5669",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 3,
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
             {
-                "id": 7,
                 "Category": "Objects > Board Games",
                 "Title": "Chess Pieces",
                 "Description": "Ullamco ullamco ea consequat adipisicing amet irure ex veniam cillum sunt commodo et.",
@@ -58,7 +50,6 @@
                 "DateAdded": "2019-11-03T21:05:00",
                 "Photos": [
                     {
-                        "Id": 15,
                         "Url": "https://www.stockvault.net/data/2010/05/02/113811/preview16.jpg",
                         "PublicId": null,
                         "Description": "Adipisicing tempor eiusmod deserunt incididunt magna ad amet.",
@@ -67,9 +58,7 @@
                     }
                 ]
             }
-        ],
-        "Watchings": [],
-        "MessageSent": []
+        ]
     },
     {
         "Id": 2,
@@ -84,7 +73,6 @@
         "LastActiveDate": "0001-01-01T00:00:00",
         "CreatedDate": "0001-01-01T00:00:00",
         "Avatar": {
-            "Id": 9,
             "Url": "https://randomuser.me/api/portraits/lego/5.jpg",
             "PublicId": null,
             "Description": "Aliqua incididunt magna velit sunt laborum laborum esse nulla officia commodo elit nisi dolore.",
@@ -92,37 +80,30 @@
         },
         "UserAddresses": [
             {
-                "UserId": 2,
                 "Address": {
-                    "id": 12,
                     "AddressLine1": "867 Mink Street",
                     "City": "Bills",
                     "Country": "Kuwait",
                     "ZipCode": "8157",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 12,
                 "AddressTypeId": 3,
                 "CreatedDate": "0001-01-01T00:00:00"
             },
             {
-                "UserId": 2,
                 "Address": {
-                    "id": 17,
                     "AddressLine1": "867 Menahan Street",
                     "City": "Physical",
                     "Country": "Kuwait",
                     "ZipCode": "8957",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 17,
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
             {
-                "id": 3,
                 "Category": "Objects > Toys",
                 "Title": "Rubiks Cube",
                 "Description": "Ea aliquip esse exercitation et velit officia.",
@@ -130,7 +111,6 @@
                 "DateAdded": "2019-10-06T21:05:00",
                 "Photos": [
                     {
-                        "Id": 3,
                         "Url": "https://www.stockvault.net/data/2010/10/05/115240/preview16.jpg",
                         "PublicId": null,
                         "Description": "Commodo labore laborum incididunt do sunt voluptate sint esse officia adipisicing.",
@@ -139,9 +119,7 @@
                     }
                 ]
             }
-        ],
-        "Watchings": [],
-        "MessageSent": []
+        ]
     },
     {
         "Id": 3,
@@ -156,7 +134,6 @@
         "LastActiveDate": "0001-01-01T00:00:00",
         "CreatedDate": "0001-01-01T00:00:00",
         "Avatar": {
-            "Id": 8,
             "Url": "https://randomuser.me/api/portraits/lego/4.jpg",
             "PublicId": null,
             "Description": "In voluptate eiusmod culpa Lorem anim pariatur consequat elit et.",
@@ -164,37 +141,30 @@
         },
         "UserAddresses": [
             {
-                "UserId": 3,
                 "Address": {
-                    "id": 10,
                     "AddressLine1": "870 Mink Street",
                     "City": "Postal",
                     "Country": "Vietnam",
                     "ZipCode": "8554",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 10,
                 "AddressTypeId": 4,
                 "CreatedDate": "0001-01-01T00:00:00"
             },
             {
-                "UserId": 3,
                 "Address": {
-                    "id": 18,
                     "AddressLine1": "870 Menahan Street",
                     "City": "Physical",
                     "Country": "Vietnam",
                     "ZipCode": "8989",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 18,
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
             {
-                "id": 4,
                 "Category": "Landscape > Seating",
                 "Title": "Park Bench",
                 "Description": "Et ad voluptate culpa anim incididunt et ex commodo sit anim voluptate in reprehenderit aliquip.",
@@ -202,7 +172,6 @@
                 "DateAdded": "2019-10-23T21:05:00",
                 "Photos": [
                     {
-                        "Id": 10,
                         "Url": "https://www.stockvault.net/data/2010/10/21/115455/preview16.jpg",
                         "PublicId": null,
                         "Description": "Lorem nostrud aliquip esse laboris ullamco qui consequat ullamco velit qui ut enim laborum.",
@@ -211,9 +180,7 @@
                     }
                 ]
             }
-        ],
-        "Watchings": [],
-        "MessageSent": []
+        ]
     },
     {
         "Id": 4,
@@ -225,10 +192,9 @@
         "DateOfBirth": "1958-09-03T00:00:00",
         "Gender": "female",
         "Phone": "0217654321",
-        "LastActiveDate": "2019-12-01T10:30:33.1938544",
+        "LastActiveDate": "2019-12-01T10:33:21.5407037",
         "CreatedDate": "0001-01-01T00:00:00",
         "Avatar": {
-            "Id": 15,
             "Url": "http://res.cloudinary.com/ethio-trade/image/upload/v1573974622/nhgqyoklmbgg16oukb9e.jpg",
             "PublicId": "nhgqyoklmbgg16oukb9e",
             "Description": null,
@@ -236,37 +202,30 @@
         },
         "UserAddresses": [
             {
-                "UserId": 4,
                 "Address": {
-                    "id": 15,
                     "AddressLine1": "868 Mink Street",
                     "City": "Post",
                     "Country": "Afghanistan",
                     "ZipCode": "8554",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 15,
                 "AddressTypeId": 4,
                 "CreatedDate": "0001-01-01T00:00:00"
             },
             {
-                "UserId": 4,
                 "Address": {
-                    "id": 16,
                     "AddressLine1": "868 Menahan Street",
                     "City": "Physical",
                     "Country": "Afghanistan",
                     "ZipCode": "8959",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 16,
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
             {
-                "id": 2,
                 "Category": "Objects > Umbrellas",
                 "Title": "Blue umbrella - the blue one",
                 "Description": "Excepteur est nostrud nostrud deserunt amet dolore veniam dolor reprehenderit exercitation commodo et.",
@@ -274,7 +233,6 @@
                 "DateAdded": "2019-07-08T21:05:00",
                 "Photos": [
                     {
-                        "Id": 4,
                         "Url": "https://res.cloudinary.com/ethio-trade/image/upload/v1556080987/oisvbhqabxghlnttmwb0.jpg",
                         "PublicId": "oisvbhqabxghlnttmwb0",
                         "Description": "Lots of Umbrellas",
@@ -282,7 +240,6 @@
                         "IsMain": true
                     },
                     {
-                        "Id": 5,
                         "Url": "https://res.cloudinary.com/ethio-trade/image/upload/v1556080985/t05ikfdmintcbah5ri6s.jpg",
                         "PublicId": "t05ikfdmintcbah5ri6s",
                         "Description": "Dinosaur umbrella",
@@ -290,7 +247,6 @@
                         "IsMain": false
                     },
                     {
-                        "Id": 6,
                         "Url": "https://res.cloudinary.com/ethio-trade/image/upload/v1556080984/fikoavi4obeivfest7h6.jpg",
                         "PublicId": "fikoavi4obeivfest7h6",
                         "Description": "Butterfly umbrella",
@@ -298,7 +254,6 @@
                         "IsMain": false
                     },
                     {
-                        "Id": 7,
                         "Url": "https://res.cloudinary.com/ethio-trade/image/upload/v1556080983/foninwbdudfqidbiozv9.png",
                         "PublicId": "foninwbdudfqidbiozv9",
                         "Description": "Blue curved umbrella",
@@ -306,7 +261,6 @@
                         "IsMain": false
                     },
                     {
-                        "Id": 8,
                         "Url": "https://res.cloudinary.com/ethio-trade/image/upload/v1555878763/c62inocnoavtmluwymhh.jpg",
                         "PublicId": "c62inocnoavtmluwymhh",
                         "Description": "Folded gray umbrella",
@@ -314,7 +268,6 @@
                         "IsMain": false
                     },
                     {
-                        "Id": 9,
                         "Url": "https://www.stockvault.net/data/2012/08/29/134616/preview16.jpg",
                         "PublicId": null,
                         "Description": "Nisi mollit Lorem dolor aliquip aliquip eu ullamco nostrud nulla laborum excepteur.",
@@ -322,180 +275,6 @@
                         "IsMain": false
                     }
                 ]
-            }
-        ],
-        "Watchings": [
-            {
-                "WatcherId": 4,
-                "WatchingId": 7
-            },
-            {
-                "WatcherId": 4,
-                "WatchingId": 1
-            },
-            {
-                "WatcherId": 4,
-                "WatchingId": 9
-            },
-            {
-                "WatcherId": 4,
-                "WatchingId": 10
-            }
-        ],
-        "MessageSent": [
-            {
-                "Id": 1,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "Hey sugar cupcakes!",
-                "IsRead": true,
-                "DateRead": "2019-11-14T21:58:30.2708871",
-                "MessageSent": "2019-11-12T21:55:30.2708871",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 2,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "jk lol :-D... hssssss",
-                "IsRead": true,
-                "DateRead": "2019-11-28T23:31:22.4706762",
-                "MessageSent": "2019-11-12T21:56:30.2708871",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 3,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "jk, I'm Just yankin your chain lil bro",
-                "IsRead": true,
-                "DateRead": "2019-11-28T23:31:22.105938",
-                "MessageSent": "2019-11-12T21:57:30.2708871",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 4,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "You there?",
-                "IsRead": true,
-                "DateRead": "2019-11-28T23:31:22.1267142",
-                "MessageSent": "2019-11-12T21:58:30.2708871",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 20,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "Hey  Katie?",
-                "IsRead": true,
-                "DateRead": "2019-12-01T10:28:04.7042418",
-                "MessageSent": "2019-12-01T09:08:27.3702024",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 21,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "how are you?",
-                "IsRead": true,
-                "DateRead": "2019-12-01T10:28:04.7038629",
-                "MessageSent": "2019-12-01T09:10:39.4502075",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 22,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "whats new?",
-                "IsRead": true,
-                "DateRead": "2019-12-01T10:28:04.5152409",
-                "MessageSent": "2019-12-01T09:11:24.089768",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 23,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "how's I'llkallhome-a?",
-                "IsRead": true,
-                "DateRead": "2019-12-01T10:28:04.4664248",
-                "MessageSent": "2019-12-01T09:13:19.947875",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 24,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "i mean grownOldEstate?",
-                "IsRead": true,
-                "DateRead": "2019-12-01T10:28:04.4541227",
-                "MessageSent": "2019-12-01T09:15:27.1259089",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 25,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "hows brokeland?",
-                "IsRead": true,
-                "DateRead": "2019-12-01T10:28:04.4517464",
-                "MessageSent": "2019-12-01T09:32:10.0032891",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 26,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "lol i'm just chokin... (like u in game 6 at okc)",
-                "IsRead": true,
-                "DateRead": "2019-12-01T10:28:04.4523789",
-                "MessageSent": "2019-12-01T09:47:18.0004452",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 27,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "All-right I'm done",
-                "IsRead": true,
-                "DateRead": "2019-12-01T10:28:04.4479839",
-                "MessageSent": "2019-12-01T10:02:09.1905247",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 28,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "This is a long message, Testing 123. Is anybody out there? Can you hear me? Feeling something, It aint no hot ish. But it's something that could. How much could a wood chug chug if a would chug could chug wood.",
-                "IsRead": true,
-                "DateRead": "2019-12-01T10:28:04.4675406",
-                "MessageSent": "2019-12-01T10:06:14.8102384",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 30,
-                "SenderId": 4,
-                "RecipientId": 12,
-                "Content": "relax cupcake",
-                "IsRead": true,
-                "DateRead": "2019-12-01T10:30:05.240235",
-                "MessageSent": "2019-12-01T10:29:55.960336",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
             }
         ]
     },
@@ -512,7 +291,6 @@
         "LastActiveDate": "0001-01-01T00:00:00",
         "CreatedDate": "0001-01-01T00:00:00",
         "Avatar": {
-            "Id": 5,
             "Url": "https://randomuser.me/api/portraits/lego/5.jpg",
             "PublicId": null,
             "Description": "Incididunt tempor aliquip sunt cillum magna occaecat velit.",
@@ -520,37 +298,30 @@
         },
         "UserAddresses": [
             {
-                "UserId": 5,
                 "Address": {
-                    "id": 6,
                     "AddressLine1": "873 Mink Street",
                     "City": "Billing",
                     "Country": "Equatorial Guinea",
                     "ZipCode": "8754",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 6,
                 "AddressTypeId": 3,
                 "CreatedDate": "0001-01-01T00:00:00"
             },
             {
-                "UserId": 5,
                 "Address": {
-                    "id": 7,
                     "AddressLine1": "873 Menahan Street",
                     "City": "Physical",
                     "Country": "Equatorial Guinea",
                     "ZipCode": "8909",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 7,
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
             {
-                "id": 1,
                 "Category": "Medical > Services",
                 "Title": "Broken Heart Repairs",
                 "Description": "Id excepteur est veniam pariatur ex qui laboris enim reprehenderit sunt Lorem.",
@@ -558,7 +329,6 @@
                 "DateAdded": "2018-11-08T21:05:00",
                 "Photos": [
                     {
-                        "Id": 13,
                         "Url": "https://www.stockvault.net/data/2013/01/11/140143/preview16.jpg",
                         "PublicId": null,
                         "Description": "Magna anim et veniam enim cillum veniam fugiat sunt aliqua labore consectetur exercitation.",
@@ -567,9 +337,7 @@
                     }
                 ]
             }
-        ],
-        "Watchings": [],
-        "MessageSent": []
+        ]
     },
     {
         "Id": 6,
@@ -584,7 +352,6 @@
         "LastActiveDate": "0001-01-01T00:00:00",
         "CreatedDate": "0001-01-01T00:00:00",
         "Avatar": {
-            "Id": 2,
             "Url": "https://randomuser.me/api/portraits/lego/6.jpg",
             "PublicId": null,
             "Description": "Do duis aliqua ut cupidatat proident exercitation minim aliqua nulla laboris.",
@@ -592,23 +359,19 @@
         },
         "UserAddresses": [
             {
-                "UserId": 6,
                 "Address": {
-                    "id": 8,
                     "AddressLine1": "872 Menahan Street",
                     "City": "Physical",
                     "Country": "Bhutan",
                     "ZipCode": "8909",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 8,
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
             {
-                "id": 5,
                 "Category": "Medical > Equipment",
                 "Title": "Stethoscope",
                 "Description": "Nulla tempor do esse esse proident duis sit.",
@@ -616,7 +379,6 @@
                 "DateAdded": "2019-11-08T21:05:00",
                 "Photos": [
                     {
-                        "Id": 12,
                         "Url": "https://www.stockvault.net/data/2012/12/12/138954/preview16.jpg",
                         "PublicId": null,
                         "Description": "Labore dolor et cillum ullamco.",
@@ -625,9 +387,7 @@
                     }
                 ]
             }
-        ],
-        "Watchings": [],
-        "MessageSent": []
+        ]
     },
     {
         "Id": 7,
@@ -642,7 +402,6 @@
         "LastActiveDate": "0001-01-01T00:00:00",
         "CreatedDate": "0001-01-01T00:00:00",
         "Avatar": {
-            "Id": 10,
             "Url": "https://randomuser.me/api/portraits/lego/7.jpg",
             "PublicId": null,
             "Description": "Exercitation consectetur consectetur eiusmod do commodo in do fugiat laboris in sunt.",
@@ -650,23 +409,19 @@
         },
         "UserAddresses": [
             {
-                "UserId": 7,
                 "Address": {
-                    "id": 11,
                     "AddressLine1": "878 Menahan Street",
                     "City": "Physical",
                     "Country": "Gambia",
                     "ZipCode": "5609",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 11,
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
             {
-                "id": 9,
                 "Category": "Food & Drink > Fruits",
                 "Title": "Ripe Strawberries",
                 "Description": "Officia consectetur deserunt cupidatat nostrud deserunt consequat qui irure enim sunt velit.",
@@ -674,7 +429,6 @@
                 "DateAdded": "2019-11-01T21:05:00",
                 "Photos": [
                     {
-                        "Id": 16,
                         "Url": "https://www.stockvault.net/data/2011/02/12/117618/preview16.jpg",
                         "PublicId": null,
                         "Description": "Nostrud anim sit duis in voluptate duis.",
@@ -683,9 +437,7 @@
                     }
                 ]
             }
-        ],
-        "Watchings": [],
-        "MessageSent": []
+        ]
     },
     {
         "Id": 8,
@@ -700,7 +452,6 @@
         "LastActiveDate": "0001-01-01T00:00:00",
         "CreatedDate": "0001-01-01T00:00:00",
         "Avatar": {
-            "Id": 4,
             "Url": "https://randomuser.me/api/portraits/lego/2.jpg",
             "PublicId": null,
             "Description": "Laborum aliquip quis veniam qui.",
@@ -708,37 +459,30 @@
         },
         "UserAddresses": [
             {
-                "UserId": 8,
                 "Address": {
-                    "id": 1,
                     "AddressLine1": "871 Menahan Street",
                     "City": "Physical",
                     "Country": "Zambia",
                     "ZipCode": "8989",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 1,
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
             },
             {
-                "UserId": 8,
                 "Address": {
-                    "id": 9,
                     "AddressLine1": "871 Mink Street",
                     "City": "SHipping",
                     "Country": "Zambia",
                     "ZipCode": "8554",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 9,
                 "AddressTypeId": 2,
                 "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
             {
-                "id": 8,
                 "Category": "Food & Drink > Spicey",
                 "Title": "Red Chillies",
                 "Description": "Duis culpa ullamco ad fugiat occaecat dolor consectetur ullamco consectetur pariatur.",
@@ -746,7 +490,6 @@
                 "DateAdded": "2019-11-09T21:05:00",
                 "Photos": [
                     {
-                        "Id": 11,
                         "Url": "https://www.stockvault.net/data/2010/10/05/115249/preview16.jpg",
                         "PublicId": null,
                         "Description": "Veniam exercitation nostrud duis consequat eu irure quis exercitation.",
@@ -755,9 +498,7 @@
                     }
                 ]
             }
-        ],
-        "Watchings": [],
-        "MessageSent": []
+        ]
     },
     {
         "Id": 9,
@@ -772,7 +513,6 @@
         "LastActiveDate": "0001-01-01T00:00:00",
         "CreatedDate": "0001-01-01T00:00:00",
         "Avatar": {
-            "Id": 3,
             "Url": "https://randomuser.me/api/portraits/lego/2.jpg",
             "PublicId": null,
             "Description": "In deserunt mollit veniam sint id officia.",
@@ -780,37 +520,30 @@
         },
         "UserAddresses": [
             {
-                "UserId": 9,
                 "Address": {
-                    "id": 4,
                     "AddressLine1": "874 Mink Street",
                     "City": "HQ",
                     "Country": "Seychelles",
                     "ZipCode": "8754",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 4,
                 "AddressTypeId": 5,
                 "CreatedDate": "0001-01-01T00:00:00"
             },
             {
-                "UserId": 9,
                 "Address": {
-                    "id": 5,
                     "AddressLine1": "874 Menahan Street",
                     "City": "Physical",
                     "Country": "Seychelles",
                     "ZipCode": "8909",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 5,
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
             {
-                "id": 6,
                 "Category": "Paper & Books > Old Books",
                 "Title": "Stack of books",
                 "Description": "In eiusmod anim nulla commodo.",
@@ -818,7 +551,6 @@
                 "DateAdded": "2019-10-12T21:05:00",
                 "Photos": [
                     {
-                        "Id": 14,
                         "Url": "https://www.stockvault.net/data/2009/10/28/111363/preview16.jpg",
                         "PublicId": null,
                         "Description": "Do velit eiusmod consequat ex occaecat qui duis do occaecat.",
@@ -827,9 +559,7 @@
                     }
                 ]
             }
-        ],
-        "Watchings": [],
-        "MessageSent": []
+        ]
     },
     {
         "Id": 10,
@@ -844,7 +574,6 @@
         "LastActiveDate": "2019-11-18T21:50:38.2776451",
         "CreatedDate": "2019-04-29T21:49:54.1205528",
         "Avatar": {
-            "Id": 16,
             "Url": "http://res.cloudinary.com/ethio-trade/image/upload/v1573974717/qbfyhx58vti2sp26mhor.jpg",
             "PublicId": "qbfyhx58vti2sp26mhor",
             "Description": null,
@@ -852,37 +581,30 @@
         },
         "UserAddresses": [
             {
-                "UserId": 10,
                 "Address": {
-                    "id": 13,
                     "AddressLine1": "865 Menahan Street",
                     "City": "Physical",
                     "Country": "Kuwait",
                     "ZipCode": "8957",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 13,
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
             },
             {
-                "UserId": 10,
                 "Address": {
-                    "id": 14,
                     "AddressLine1": "865 Mink Street",
                     "City": "Shipto",
                     "Country": "Kuwait",
                     "ZipCode": "8957",
                     "CreatedDate": "2019-04-29T00:00:00"
                 },
-                "AddressId": 14,
                 "AddressTypeId": 2,
                 "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
             {
-                "id": 10,
                 "Category": "Food & Drink > coffee",
                 "Title": "Cup of Coffee",
                 "Description": "Roasted cofee beans in cup",
@@ -890,7 +612,6 @@
                 "DateAdded": "2019-11-05T21:05:00",
                 "Photos": [
                     {
-                        "Id": 1,
                         "Url": "https://www.stockvault.net/data/2011/06/05/124624/preview16.jpg",
                         "PublicId": null,
                         "Description": "Coffee Beans",
@@ -898,7 +619,6 @@
                         "IsMain": true
                     },
                     {
-                        "Id": 2,
                         "Url": "https://www.stockvault.net/data/2011/06/05/124638/preview16.jpg",
                         "PublicId": null,
                         "Description": "Coffee on white",
@@ -906,75 +626,6 @@
                         "IsMain": false
                     }
                 ]
-            }
-        ],
-        "Watchings": [],
-        "MessageSent": [
-            {
-                "Id": 12,
-                "SenderId": 10,
-                "RecipientId": 4,
-                "Content": "You there?",
-                "IsRead": false,
-                "DateRead": null,
-                "MessageSent": "2019-11-18T21:36:44.4528188",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 13,
-                "SenderId": 10,
-                "RecipientId": 4,
-                "Content": "Yo guuuuurl?",
-                "IsRead": false,
-                "DateRead": null,
-                "MessageSent": "2019-11-18T21:39:35.4851435",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 16,
-                "SenderId": 10,
-                "RecipientId": 4,
-                "Content": "testing 123?",
-                "IsRead": false,
-                "DateRead": null,
-                "MessageSent": "2019-11-18T21:48:20.8546597",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 17,
-                "SenderId": 10,
-                "RecipientId": 4,
-                "Content": "testing 123?",
-                "IsRead": false,
-                "DateRead": null,
-                "MessageSent": "2019-11-18T21:50:38.1695064",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 9,
-                "SenderId": 10,
-                "RecipientId": 11,
-                "Content": "Hey Klay, Hurry bro we need you back",
-                "IsRead": false,
-                "DateRead": null,
-                "MessageSent": "2019-11-17T17:16:56.0219817",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 10,
-                "SenderId": 10,
-                "RecipientId": 12,
-                "Content": "Hey KD, No hard feelings bro. I'm still the best shooter in GSW",
-                "IsRead": true,
-                "DateRead": "2019-11-28T23:32:43.1002858",
-                "MessageSent": "2019-11-17T17:17:45.5150696",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
             }
         ]
     },
@@ -991,50 +642,13 @@
         "LastActiveDate": "2019-11-17T17:15:32.2610637",
         "CreatedDate": "2019-04-29T20:49:54.1146083",
         "Avatar": {
-            "Id": 14,
             "Url": "http://res.cloudinary.com/ethio-trade/image/upload/v1573974456/kbcyctv92v54cwuhbim1.jpg",
             "PublicId": "kbcyctv92v54cwuhbim1",
             "Description": null,
             "DateAdded": "2019-11-17T17:07:34.9122072"
         },
         "UserAddresses": [],
-        "MyListings": [],
-        "Watchings": [],
-        "MessageSent": [
-            {
-                "Id": 8,
-                "SenderId": 11,
-                "RecipientId": 4,
-                "Content": "Hey Serana, Love your game. Check out my cool new toaster.",
-                "IsRead": false,
-                "DateRead": null,
-                "MessageSent": "2019-11-17T17:15:32.2312759",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 7,
-                "SenderId": 11,
-                "RecipientId": 10,
-                "Content": "Hey Splash bro, You better make it to playoffs. I'll be ready to ball by then!",
-                "IsRead": false,
-                "DateRead": null,
-                "MessageSent": "2019-11-17T17:14:35.8814714",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 6,
-                "SenderId": 11,
-                "RecipientId": 12,
-                "Content": "Hey KD, why you leave us like that bro?",
-                "IsRead": false,
-                "DateRead": null,
-                "MessageSent": "2019-11-17T17:13:14.1815348",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            }
-        ]
+        "MyListings": []
     },
     {
         "Id": 12,
@@ -1046,114 +660,16 @@
         "DateOfBirth": "2016-01-11T11:00:00",
         "Gender": "male",
         "Phone": "0210719672",
-        "LastActiveDate": "2019-12-01T10:30:05.2649379",
+        "LastActiveDate": "2019-12-01T10:33:21.0853741",
         "CreatedDate": "2019-04-29T21:46:51.1302671",
         "Avatar": {
-            "Id": 12,
             "Url": "http://res.cloudinary.com/ethio-trade/image/upload/v1556533389/y3ejzesirs35xgkjefeh.jpg",
             "PublicId": "y3ejzesirs35xgkjefeh",
             "Description": null,
             "DateAdded": "2019-04-29T22:23:08.400436"
         },
         "UserAddresses": [],
-        "MyListings": [],
-        "Watchings": [
-            {
-                "WatcherId": 12,
-                "WatchingId": 7
-            },
-            {
-                "WatcherId": 12,
-                "WatchingId": 4
-            },
-            {
-                "WatcherId": 12,
-                "WatchingId": 2
-            },
-            {
-                "WatcherId": 12,
-                "WatchingId": 8
-            }
-        ],
-        "MessageSent": [
-            {
-                "Id": 5,
-                "SenderId": 12,
-                "RecipientId": 4,
-                "Content": "Hey Serena!",
-                "IsRead": true,
-                "DateRead": "2019-11-12T21:54:30.2708871",
-                "MessageSent": "2019-11-12T21:50:30.2708871",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 11,
-                "SenderId": 12,
-                "RecipientId": 4,
-                "Content": "Hey serena! Whats up gurl",
-                "IsRead": true,
-                "DateRead": "2019-11-28T23:38:15.6807168",
-                "MessageSent": "2019-11-18T21:32:25.9111016",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 14,
-                "SenderId": 12,
-                "RecipientId": 4,
-                "Content": "hows your moms?",
-                "IsRead": true,
-                "DateRead": "2019-11-28T23:38:15.6618091",
-                "MessageSent": "2019-11-18T21:43:29.7887873",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 15,
-                "SenderId": 12,
-                "RecipientId": 4,
-                "Content": "testing 123",
-                "IsRead": true,
-                "DateRead": "2019-11-28T23:38:15.6619318",
-                "MessageSent": "2019-11-18T21:44:05.019087",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 18,
-                "SenderId": 12,
-                "RecipientId": 4,
-                "Content": "yo yo yo",
-                "IsRead": true,
-                "DateRead": "2019-11-28T23:38:15.6780744",
-                "MessageSent": "2019-11-18T22:00:30.5795129",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 19,
-                "SenderId": 12,
-                "RecipientId": 4,
-                "Content": "How is it going?",
-                "IsRead": true,
-                "DateRead": "2019-11-28T23:38:15.4680008",
-                "MessageSent": "2019-11-18T22:03:46.9799209",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            },
-            {
-                "Id": 29,
-                "SenderId": 12,
-                "RecipientId": 4,
-                "Content": "you think you're funny huh?",
-                "IsRead": true,
-                "DateRead": "2019-12-01T10:29:13.1288751",
-                "MessageSent": "2019-12-01T10:29:08.8170525",
-                "SenderDeleted": false,
-                "RecipientDeleted": false
-            }
-        ]
+        "MyListings": []
     },
     {
         "Id": 13,
@@ -1169,8 +685,6 @@
         "CreatedDate": "2019-05-15T12:27:32.7378273",
         "Avatar": null,
         "UserAddresses": [],
-        "MyListings": [],
-        "Watchings": [],
-        "MessageSent": []
+        "MyListings": []
     }
 ]

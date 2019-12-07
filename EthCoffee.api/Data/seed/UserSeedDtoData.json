@@ -20,17 +20,6 @@
         "UserAddresses": [
             {
                 "Address": {
-                    "AddressLine1": "875 Mink Street",
-                    "City": "Postal",
-                    "Country": "Swaziland",
-                    "ZipCode": "8753",
-                    "CreatedDate": "2019-04-29T00:00:00"
-                },
-                "AddressTypeId": 4,
-                "CreatedDate": "0001-01-01T00:00:00"
-            },
-            {
-                "Address": {
                     "AddressLine1": "875 Menahan Street",
                     "City": "Physical",
                     "Country": "Swaziland",
@@ -39,6 +28,17 @@
                 },
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "875 Mink Street",
+                    "City": "Postal",
+                    "Country": "Swaziland",
+                    "ZipCode": "8753",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 4,
+                "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
@@ -46,7 +46,7 @@
                 "Category": "Objects > Board Games",
                 "Title": "Chess Pieces",
                 "Description": "Ullamco ullamco ea consequat adipisicing amet irure ex veniam cillum sunt commodo et.",
-                "Price": "1.25",
+                "Price": 1.25,
                 "DateAdded": "2019-11-03T21:05:00",
                 "Photos": [
                     {
@@ -81,17 +81,6 @@
         "UserAddresses": [
             {
                 "Address": {
-                    "AddressLine1": "867 Mink Street",
-                    "City": "Bills",
-                    "Country": "Kuwait",
-                    "ZipCode": "8157",
-                    "CreatedDate": "2019-04-29T00:00:00"
-                },
-                "AddressTypeId": 3,
-                "CreatedDate": "0001-01-01T00:00:00"
-            },
-            {
-                "Address": {
                     "AddressLine1": "867 Menahan Street",
                     "City": "Physical",
                     "Country": "Kuwait",
@@ -100,6 +89,17 @@
                 },
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "867 Mink Street",
+                    "City": "Bills",
+                    "Country": "Kuwait",
+                    "ZipCode": "8157",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 3,
+                "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
@@ -107,7 +107,7 @@
                 "Category": "Objects > Toys",
                 "Title": "Rubiks Cube",
                 "Description": "Ea aliquip esse exercitation et velit officia.",
-                "Price": "3.50",
+                "Price": 3.5,
                 "DateAdded": "2019-10-06T21:05:00",
                 "Photos": [
                     {
@@ -142,17 +142,6 @@
         "UserAddresses": [
             {
                 "Address": {
-                    "AddressLine1": "870 Mink Street",
-                    "City": "Postal",
-                    "Country": "Vietnam",
-                    "ZipCode": "8554",
-                    "CreatedDate": "2019-04-29T00:00:00"
-                },
-                "AddressTypeId": 4,
-                "CreatedDate": "0001-01-01T00:00:00"
-            },
-            {
-                "Address": {
                     "AddressLine1": "870 Menahan Street",
                     "City": "Physical",
                     "Country": "Vietnam",
@@ -161,6 +150,17 @@
                 },
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "870 Mink Street",
+                    "City": "Postal",
+                    "Country": "Vietnam",
+                    "ZipCode": "8554",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 4,
+                "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
@@ -168,7 +168,7 @@
                 "Category": "Landscape > Seating",
                 "Title": "Park Bench",
                 "Description": "Et ad voluptate culpa anim incididunt et ex commodo sit anim voluptate in reprehenderit aliquip.",
-                "Price": "169.99",
+                "Price": 169.99,
                 "DateAdded": "2019-10-23T21:05:00",
                 "Photos": [
                     {
@@ -229,7 +229,7 @@
                 "Category": "Objects > Umbrellas",
                 "Title": "Blue umbrella - the blue one",
                 "Description": "Excepteur est nostrud nostrud deserunt amet dolore veniam dolor reprehenderit exercitation commodo et.",
-                "Price": "12.00",
+                "Price": 12.0,
                 "DateAdded": "2019-07-08T21:05:00",
                 "Photos": [
                     {
@@ -299,17 +299,6 @@
         "UserAddresses": [
             {
                 "Address": {
-                    "AddressLine1": "873 Mink Street",
-                    "City": "Billing",
-                    "Country": "Equatorial Guinea",
-                    "ZipCode": "8754",
-                    "CreatedDate": "2019-04-29T00:00:00"
-                },
-                "AddressTypeId": 3,
-                "CreatedDate": "0001-01-01T00:00:00"
-            },
-            {
-                "Address": {
                     "AddressLine1": "873 Menahan Street",
                     "City": "Physical",
                     "Country": "Equatorial Guinea",
@@ -318,6 +307,17 @@
                 },
                 "AddressTypeId": 1,
                 "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "873 Mink Street",
+                    "City": "Billing",
+                    "Country": "Equatorial Guinea",
+                    "ZipCode": "8754",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 3,
+                "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
@@ -325,7 +325,7 @@
                 "Category": "Medical > Services",
                 "Title": "Broken Heart Repairs",
                 "Description": "Id excepteur est veniam pariatur ex qui laboris enim reprehenderit sunt Lorem.",
-                "Price": "512.00",
+                "Price": 512.0,
                 "DateAdded": "2018-11-08T21:05:00",
                 "Photos": [
                     {
@@ -375,7 +375,7 @@
                 "Category": "Medical > Equipment",
                 "Title": "Stethoscope",
                 "Description": "Nulla tempor do esse esse proident duis sit.",
-                "Price": "89.95",
+                "Price": 89.95,
                 "DateAdded": "2019-11-08T21:05:00",
                 "Photos": [
                     {
@@ -425,7 +425,7 @@
                 "Category": "Food & Drink > Fruits",
                 "Title": "Ripe Strawberries",
                 "Description": "Officia consectetur deserunt cupidatat nostrud deserunt consequat qui irure enim sunt velit.",
-                "Price": "4.70",
+                "Price": 4.7,
                 "DateAdded": "2019-11-01T21:05:00",
                 "Photos": [
                     {
@@ -486,7 +486,7 @@
                 "Category": "Food & Drink > Spicey",
                 "Title": "Red Chillies",
                 "Description": "Duis culpa ullamco ad fugiat occaecat dolor consectetur ullamco consectetur pariatur.",
-                "Price": "3.50",
+                "Price": 3.5,
                 "DateAdded": "2019-11-09T21:05:00",
                 "Photos": [
                     {
@@ -547,7 +547,7 @@
                 "Category": "Paper & Books > Old Books",
                 "Title": "Stack of books",
                 "Description": "In eiusmod anim nulla commodo.",
-                "Price": "45.45",
+                "Price": 45.45,
                 "DateAdded": "2019-10-12T21:05:00",
                 "Photos": [
                     {
@@ -582,17 +582,6 @@
         "UserAddresses": [
             {
                 "Address": {
-                    "AddressLine1": "865 Menahan Street",
-                    "City": "Physical",
-                    "Country": "Kuwait",
-                    "ZipCode": "8957",
-                    "CreatedDate": "2019-04-29T00:00:00"
-                },
-                "AddressTypeId": 1,
-                "CreatedDate": "0001-01-01T00:00:00"
-            },
-            {
-                "Address": {
                     "AddressLine1": "865 Mink Street",
                     "City": "Shipto",
                     "Country": "Kuwait",
@@ -601,6 +590,17 @@
                 },
                 "AddressTypeId": 2,
                 "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "865 Menahan Street",
+                    "City": "Physical",
+                    "Country": "Kuwait",
+                    "ZipCode": "8957",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
             }
         ],
         "MyListings": [
@@ -608,7 +608,7 @@
                 "Category": "Food & Drink > coffee",
                 "Title": "Cup of Coffee",
                 "Description": "Roasted cofee beans in cup",
-                "Price": "4.50",
+                "Price": 4.5,
                 "DateAdded": "2019-11-05T21:05:00",
                 "Photos": [
                     {
@@ -660,7 +660,7 @@
         "DateOfBirth": "2016-01-11T11:00:00",
         "Gender": "male",
         "Phone": "0210719672",
-        "LastActiveDate": "2019-12-01T10:33:21.0853741",
+        "LastActiveDate": "2019-12-07T17:42:01.9104047",
         "CreatedDate": "2019-04-29T21:46:51.1302671",
         "Avatar": {
             "Url": "http://res.cloudinary.com/ethio-trade/image/upload/v1556533389/y3ejzesirs35xgkjefeh.jpg",

@@ -30,76 +30,49 @@ namespace EthCoffee.api.Data
 
         public async Task<IEnumerable<Listing>> GetUserListings(int id)
         {
-            var user = await _context.Users
-            .Include(usr => usr.MyListings)
-                .ThenInclude(p => p.Photos)
-            .FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
             return user.MyListings;
         }
 
         public async Task<IEnumerable<Listing>> GetWatching(int id)
         {
-            var user = await _context.Users
-            .Include(usr => usr.Watchings)
-            .ThenInclude(w => w.Watching)
-            .ThenInclude(p => p.Photos)
-            .FirstOrDefaultAsync(u => u.Id == id);
-
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
             return user.Watchings.Select(w => w.Watching);
         }
 
         public async Task<IEnumerable<int>> GetWatchingIds(int id)
         {
-            var user = await _context.Users
-            .Include(usr => usr.Watchings)
-            .FirstOrDefaultAsync(u => u.Id == id);
-
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
             return user.Watchings.Select(w => w.WatchingId);
         }
 
         public async Task<IEnumerable<User>> GetWatchers(int listingId)
         {
-            var listing = await _context.Listings
-            .Include(ls => ls.Watchers)
-            .FirstOrDefaultAsync(l => l.id == listingId);
-
+            var listing = await _context.Listings.FirstOrDefaultAsync(l => l.id == listingId);
             return listing.Watchers.Select(w => w.Watcher);
         }
 
         public async Task<User> GetUser(int id)
         {
-            var user = await _context.Users
-            .Include(usr => usr.Avatar)
-            .FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }
 
         public async Task<User> GetUserDetails(int id)
         {
-            var user = await _context.Users
-            .Include(usr => usr.Avatar)
-            .Include(usr => usr.UserAddresses)
-            .ThenInclude(usrAdr => usrAdr.Address)
-            .Include(usr => usr.UserAddresses)
-            .ThenInclude(usrAdrT => usrAdrT.AddressType)
-            .FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }
 
         public async Task<Listing> GetListing(int id)
         {
-            var listing = await _context.Listings
-            .Include(p => p.Photos)
-            .Include(l => l.User)
-            .ThenInclude(u => u.Avatar)
-            .Include(l => l.Watchers)
-            .FirstOrDefaultAsync(l => l.id == id);
+            var listing = await _context.Listings.FirstOrDefaultAsync(l => l.id == id);
             return listing;
         }
 
         public async Task<PagedList<Listing>> GetListings(PaginationParams paginationParams, FilterParams filterParams, int userId = -1)
         {
-            var listings = _context.Listings.Include(p => p.Photos).AsQueryable();
+            var listings = _context.Listings.AsQueryable();
 
             if (userId != -1)
             {
@@ -141,7 +114,7 @@ namespace EthCoffee.api.Data
                     break;
             }
 
-            return await PagedList<Listing>.CreateAsync(listings.AsNoTracking(), paginationParams.PageNumber, paginationParams.PageSize);
+            return await PagedList<Listing>.CreateAsync(listings, paginationParams.PageNumber, paginationParams.PageSize);
         }
 
         public async Task<bool> SaveAll()
@@ -179,10 +152,7 @@ namespace EthCoffee.api.Data
 
         public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
         {
-            var messages = _context.Messages
-                .Include(m => m.Sender).ThenInclude(u => u.Avatar)
-                .Include(m => m.Recipient).ThenInclude(u => u.Avatar)
-                .AsQueryable();
+            var messages = _context.Messages.AsQueryable();
 
             switch (messageParams.MessageContainer)
             {
@@ -198,15 +168,12 @@ namespace EthCoffee.api.Data
             }
 
             messages = messages.OrderByDescending(m => m.MessageSent);
-            return await PagedList<Message>.CreateAsync(messages.AsNoTracking(), messageParams.PageNumber, messageParams.PageSize);
+            return await PagedList<Message>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
         }
 
         public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
         {
-            var messages = await _context.Messages
-                .Include(m => m.Sender).ThenInclude(u => u.Avatar)
-                .Include(m => m.Recipient).ThenInclude(u => u.Avatar)
-                .Where(m => (m.SenderId == userId && m.RecipientId == recipientId && !m.SenderDeleted) ||
+            var messages = await _context.Messages.Where(m => (m.SenderId == userId && m.RecipientId == recipientId && !m.SenderDeleted) ||
                  (m.RecipientId == userId && m.SenderId == recipientId && !m.RecipientDeleted))
                  .OrderByDescending(m => m.MessageSent)
                  .ToListAsync();

@@ -2,20 +2,10 @@
     {
         "SenderId": 4,
         "RecipientId": 12,
-        "Content": "Hey sugar cupcakes!",
+        "Content": "relax cupcake",
         "IsRead": true,
-        "DateRead": "2019-11-14T21:58:30.2708871",
-        "MessageSent": "2019-11-12T21:55:30.2708871",
-        "SenderDeleted": false,
-        "RecipientDeleted": false
-    },
-    {
-        "SenderId": 4,
-        "RecipientId": 12,
-        "Content": "jk lol :-D... hssssss",
-        "IsRead": true,
-        "DateRead": "2019-11-28T23:31:22.4706762",
-        "MessageSent": "2019-11-12T21:56:30.2708871",
+        "DateRead": "2019-12-01T10:30:05.240235",
+        "MessageSent": "2019-12-01T10:29:55.960336",
         "SenderDeleted": false,
         "RecipientDeleted": false
     },
@@ -53,8 +43,8 @@
         "SenderId": 11,
         "RecipientId": 12,
         "Content": "Hey KD, why you leave us like that bro?",
-        "IsRead": false,
-        "DateRead": null,
+        "IsRead": true,
+        "DateRead": "2019-12-07T17:03:20.2742722",
         "MessageSent": "2019-11-17T17:13:14.1815348",
         "SenderDeleted": false,
         "RecipientDeleted": false
@@ -292,10 +282,20 @@
     {
         "SenderId": 4,
         "RecipientId": 12,
-        "Content": "relax cupcake",
+        "Content": "jk lol :-D... hssssss",
         "IsRead": true,
-        "DateRead": "2019-12-01T10:30:05.240235",
-        "MessageSent": "2019-12-01T10:29:55.960336",
+        "DateRead": "2019-11-28T23:31:22.4706762",
+        "MessageSent": "2019-11-12T21:56:30.2708871",
+        "SenderDeleted": false,
+        "RecipientDeleted": false
+    },
+    {
+        "SenderId": 4,
+        "RecipientId": 12,
+        "Content": "Hey sugar cupcakes!",
+        "IsRead": true,
+        "DateRead": "2019-11-14T21:58:30.2708871",
+        "MessageSent": "2019-11-12T21:55:30.2708871",
         "SenderDeleted": false,
         "RecipientDeleted": false
     }

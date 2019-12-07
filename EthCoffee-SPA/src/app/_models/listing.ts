@@ -6,7 +6,7 @@ export interface Listing {
   id: number;
   category: string;
   title: string;
-  price: string;
+  price: number;
   dateAdded: string;
   listingPhotoUrl: string;
 

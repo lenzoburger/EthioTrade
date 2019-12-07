@@ -11,7 +11,7 @@ namespace EthCoffee.api.Models
         public DateTime DateAdded { get; set; }
         public bool IsMain { get; set; }
 
-        public Listing Listing { get; set; }
+        public virtual Listing Listing { get; set; }
         public int ListingId { get; set; }
     }
 }

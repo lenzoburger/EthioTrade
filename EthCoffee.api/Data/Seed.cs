@@ -140,15 +140,7 @@ namespace EthCoffee.api.Data
                 return;
             }
 
-            var users = context.Users
-            .Include(usr => usr.Avatar)
-            .Include(usr => usr.UserAddresses)
-            .ThenInclude(usrAdr => usrAdr.Address)
-            .Include(usr => usr.UserAddresses)
-            .ThenInclude(usrAdrT => usrAdrT.AddressType)
-            .Include(usr => usr.MyListings)
-            .ThenInclude(usrAdrT => usrAdrT.Photos)
-            .Include(usr => usr.MyListings).ToList();
+            var users = context.Users.ToList();
 
             var usersSeed = mapper.Map<List<UserSeedDto>>(users);
             var usersSeedData = JsonConvert.SerializeObject(usersSeed, jsonSettings);

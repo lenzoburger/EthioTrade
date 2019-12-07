@@ -13,10 +13,10 @@ namespace EthCoffee.api.Models
         [Column(TypeName = "decimal(19,4)")]
         public decimal Price { get; set; }
         public DateTime DateAdded { get; set; }
-        public ICollection<ListingPhoto> Photos { get; set; }
-        public ICollection<ListingWatch> Watchers { get; set; }
+        public virtual ICollection<ListingPhoto> Photos { get; set; }
+        public virtual ICollection<ListingWatch> Watchers { get; set; }
 
-        public User User { get; set; }
+        public virtual User User { get; set; }
         public int UserId { get; set; }
     }
 }

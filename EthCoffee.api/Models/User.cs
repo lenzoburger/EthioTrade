@@ -17,11 +17,11 @@ namespace EthCoffee.api.Models
         public string Phone { get; set; }    
         public DateTime LastActiveDate { get; set; }
         public DateTime CreatedDate { get; set; }               
-        public Avatar Avatar { get; set; }
-        public ICollection<UserAddress> UserAddresses { get; set; }
-        public ICollection<Listing> MyListings { get; set; }
-        public ICollection<ListingWatch> Watchings { get; set; }
-        public ICollection<Message> MessageSent { get; set; }
-        public ICollection<Message> MessageReceived { get; set; }
+        public virtual Avatar Avatar { get; set; }
+        public virtual ICollection<UserAddress> UserAddresses { get; set; }
+        public virtual ICollection<Listing> MyListings { get; set; }
+        public virtual ICollection<ListingWatch> Watchings { get; set; }
+        public virtual ICollection<Message> MessageSent { get; set; }
+        public virtual ICollection<Message> MessageReceived { get; set; }
     }
 }

@@ -6,11 +6,12 @@ namespace EthCoffee.api.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
+            migrationBuilder.AddColumn<decimal>(
                 name: "Price",
                 table: "Listings",
+                type: "decimal(19,4)",
                 nullable: false,
-                defaultValue: "0.00");
+                defaultValue: 0.00m);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

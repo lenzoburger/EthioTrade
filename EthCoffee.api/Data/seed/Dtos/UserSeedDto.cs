@@ -19,7 +19,5 @@ namespace EthCoffee.api.Data.seed.Dtos
         public AvatarSeedDto Avatar { get; set; }
         public ICollection<UserAddressSeedDto> UserAddresses { get; set; }
         public ICollection<ListingSeedDto> MyListings { get; set; }
-        public ICollection<ListingWatchSeedDto> Watchings { get; set; }
-        public ICollection<MessageSeedDto> MessageSent { get; set; }
     }
 }

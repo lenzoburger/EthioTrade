@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EthCoffee.api.Migrations
@@ -12,6 +13,8 @@ namespace EthCoffee.api.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", 
+                        SqlServerValueGenerationStrategy.IdentityColumn)
                         .Annotation("Sqlite:Autoincrement", true),
                     AddressLine1 = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
@@ -28,6 +31,8 @@ namespace EthCoffee.api.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", 
+                        SqlServerValueGenerationStrategy.IdentityColumn)
                         .Annotation("Sqlite:Autoincrement", true),
                     Type = table.Column<string>(nullable: true)
                 },
@@ -41,6 +46,8 @@ namespace EthCoffee.api.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", 
+                        SqlServerValueGenerationStrategy.IdentityColumn)
                         .Annotation("Sqlite:Autoincrement", true),
                     Username = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
@@ -64,6 +71,8 @@ namespace EthCoffee.api.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", 
+                        SqlServerValueGenerationStrategy.IdentityColumn)
                         .Annotation("Sqlite:Autoincrement", true),
                     Url = table.Column<string>(nullable: true),
                     PublicId = table.Column<string>(nullable: true),
@@ -87,6 +96,8 @@ namespace EthCoffee.api.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", 
+                        SqlServerValueGenerationStrategy.IdentityColumn)
                         .Annotation("Sqlite:Autoincrement", true),
                     Category = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: true),
@@ -141,6 +152,8 @@ namespace EthCoffee.api.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", 
+                        SqlServerValueGenerationStrategy.IdentityColumn)
                         .Annotation("Sqlite:Autoincrement", true),
                     Url = table.Column<string>(nullable: true),
                     PublicId = table.Column<string>(nullable: true),

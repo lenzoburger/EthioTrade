@@ -14,22 +14,28 @@ namespace EthCoffee.api.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
+                .HasAnnotation("ProductVersion", "3.0.0");
 
             modelBuilder.Entity("EthCoffee.api.Models.Address", b =>
                 {
                     b.Property<int>("id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("AddressLine1");
+                    b.Property<string>("AddressLine1")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("City");
+                    b.Property<string>("City")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Country");
+                    b.Property<string>("Country")
+                        .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("ZipCode");
+                    b.Property<string>("ZipCode")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("id");
 
@@ -39,9 +45,11 @@ namespace EthCoffee.api.Migrations
             modelBuilder.Entity("EthCoffee.api.Models.AddressType", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Type");
+                    b.Property<string>("Type")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -78,17 +86,23 @@ namespace EthCoffee.api.Migrations
             modelBuilder.Entity("EthCoffee.api.Models.Avatar", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("DateAdded");
+                    b.Property<DateTime>("DateAdded")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("PublicId");
+                    b.Property<string>("PublicId")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Url");
+                    b.Property<string>("Url")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("UserId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -101,19 +115,26 @@ namespace EthCoffee.api.Migrations
             modelBuilder.Entity("EthCoffee.api.Models.Listing", b =>
                 {
                     b.Property<int>("id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Category");
+                    b.Property<string>("Category")
+                        .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("DateAdded");
+                    b.Property<DateTime>("DateAdded")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Price");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(19,4)");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Title")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("UserId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("id");
 
@@ -125,19 +146,26 @@ namespace EthCoffee.api.Migrations
             modelBuilder.Entity("EthCoffee.api.Models.ListingPhoto", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("DateAdded");
+                    b.Property<DateTime>("DateAdded")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
 
-                    b.Property<bool>("IsMain");
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("ListingId");
+                    b.Property<int>("ListingId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("PublicId");
+                    b.Property<string>("PublicId")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Url");
+                    b.Property<string>("Url")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -148,9 +176,11 @@ namespace EthCoffee.api.Migrations
 
             modelBuilder.Entity("EthCoffee.api.Models.ListingWatch", b =>
                 {
-                    b.Property<int>("WatcherId");
+                    b.Property<int>("WatcherId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("WatchingId");
+                    b.Property<int>("WatchingId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("WatcherId", "WatchingId");
 
@@ -162,23 +192,32 @@ namespace EthCoffee.api.Migrations
             modelBuilder.Entity("EthCoffee.api.Models.Message", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Content");
+                    b.Property<string>("Content")
+                        .HasColumnType("TEXT");
 
-                    b.Property<DateTime?>("DateRead");
+                    b.Property<DateTime?>("DateRead")
+                        .HasColumnType("TEXT");
 
-                    b.Property<bool>("IsRead");
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("MessageSent");
+                    b.Property<DateTime>("MessageSent")
+                        .HasColumnType("TEXT");
 
-                    b.Property<bool>("RecipientDeleted");
+                    b.Property<bool>("RecipientDeleted")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("RecipientId");
+                    b.Property<int>("RecipientId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<bool>("SenderDeleted");
+                    b.Property<bool>("SenderDeleted")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("SenderId");
+                    b.Property<int>("SenderId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -192,29 +231,41 @@ namespace EthCoffee.api.Migrations
             modelBuilder.Entity("EthCoffee.api.Models.User", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("DateOfBirth");
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Firstname");
+                    b.Property<string>("Firstname")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Gender");
+                    b.Property<string>("Gender")
+                        .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("LastActiveDate");
+                    b.Property<DateTime>("LastActiveDate")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Lastname");
+                    b.Property<string>("Lastname")
+                        .HasColumnType("TEXT");
 
-                    b.Property<byte[]>("PasswordHash");
+                    b.Property<byte[]>("PasswordHash")
+                        .HasColumnType("BLOB");
 
-                    b.Property<byte[]>("PasswordSalt");
+                    b.Property<byte[]>("PasswordSalt")
+                        .HasColumnType("BLOB");
 
-                    b.Property<string>("Phone");
+                    b.Property<string>("Phone")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Username");
+                    b.Property<string>("Username")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -223,13 +274,17 @@ namespace EthCoffee.api.Migrations
 
             modelBuilder.Entity("EthCoffee.api.Models.UserAddress", b =>
                 {
-                    b.Property<int>("UserId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("AddressId");
+                    b.Property<int>("AddressId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("AddressTypeId");
+                    b.Property<int>("AddressTypeId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("UserId", "AddressId", "AddressTypeId");
 
@@ -245,7 +300,8 @@ namespace EthCoffee.api.Migrations
                     b.HasOne("EthCoffee.api.Models.User", "User")
                         .WithOne("Avatar")
                         .HasForeignKey("EthCoffee.api.Models.Avatar", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EthCoffee.api.Models.Listing", b =>
@@ -253,7 +309,8 @@ namespace EthCoffee.api.Migrations
                     b.HasOne("EthCoffee.api.Models.User", "User")
                         .WithMany("MyListings")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EthCoffee.api.Models.ListingPhoto", b =>
@@ -261,7 +318,8 @@ namespace EthCoffee.api.Migrations
                     b.HasOne("EthCoffee.api.Models.Listing", "Listing")
                         .WithMany("Photos")
                         .HasForeignKey("ListingId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EthCoffee.api.Models.ListingWatch", b =>
@@ -269,12 +327,14 @@ namespace EthCoffee.api.Migrations
                     b.HasOne("EthCoffee.api.Models.User", "Watcher")
                         .WithMany("Watchings")
                         .HasForeignKey("WatcherId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("EthCoffee.api.Models.Listing", "Watching")
                         .WithMany("Watchers")
                         .HasForeignKey("WatchingId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EthCoffee.api.Models.Message", b =>
@@ -282,12 +342,14 @@ namespace EthCoffee.api.Migrations
                     b.HasOne("EthCoffee.api.Models.User", "Recipient")
                         .WithMany("MessageReceived")
                         .HasForeignKey("RecipientId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("EthCoffee.api.Models.User", "Sender")
                         .WithMany("MessageSent")
                         .HasForeignKey("SenderId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EthCoffee.api.Models.UserAddress", b =>
@@ -295,17 +357,20 @@ namespace EthCoffee.api.Migrations
                     b.HasOne("EthCoffee.api.Models.Address", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("EthCoffee.api.Models.AddressType", "AddressType")
                         .WithMany()
                         .HasForeignKey("AddressTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("EthCoffee.api.Models.User", "User")
                         .WithMany("UserAddresses")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

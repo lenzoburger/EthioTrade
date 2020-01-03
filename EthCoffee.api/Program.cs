@@ -22,8 +22,8 @@ namespace EthCoffee.api
                 {
                     var context = services.GetRequiredService<DataContext>();
                     context.Database.Migrate();
-                    Seed.SeedUsers(context);
-                    // Seed.UpdateSeedDataSource(context);
+                    Seed.SeedTableData(context);
+                    // Seed.UpdateSeedDataSources(context);
                 }
                 catch (Exception ex)
                 {

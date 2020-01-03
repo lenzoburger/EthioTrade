@@ -18,6 +18,12 @@ namespace EthCoffee.api.Data
         // override the OnModelCreating method - UserAddress
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // For sqlLite - Fix sorting of decimals
+            if (Database.IsSqlite())
+            {
+                modelBuilder.Entity<Listing>().Property(l => l.Price).HasConversion<double>();
+            }
+
             modelBuilder.Entity<UserAddress>().HasKey(ua => new { ua.UserId, ua.AddressId, ua.AddressTypeId });
             modelBuilder.Entity<AddressType>().HasData(
                 new AddressType { Id = 1, Type = "Physical" },

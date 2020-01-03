@@ -111,7 +111,8 @@ namespace EthCoffee.api.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("Price");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(19,4)");
 
                     b.Property<string>("Title");
 

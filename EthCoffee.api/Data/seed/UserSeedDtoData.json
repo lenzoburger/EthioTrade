@@ -1,0 +1,690 @@
+[
+    {
+        "Id": 1,
+        "Username": "clarice56",
+        "Password": "Password",
+        "Email": "Clarice56@gmail.com",
+        "Firstname": "Clarice",
+        "Lastname": "Bradford",
+        "DateOfBirth": "1960-11-21T00:00:00",
+        "Gender": "female",
+        "Phone": "0211234567",
+        "LastActiveDate": "0001-01-01T00:00:00",
+        "CreatedDate": "0001-01-01T00:00:00",
+        "Avatar": {
+            "Url": "https://randomuser.me/api/portraits/lego/7.jpg",
+            "PublicId": null,
+            "Description": "Nisi ad aliqua excepteur qui velit enim.",
+            "DateAdded": "0001-01-01T00:00:00"
+        },
+        "UserAddresses": [
+            {
+                "Address": {
+                    "AddressLine1": "875 Menahan Street",
+                    "City": "Physical",
+                    "Country": "Swaziland",
+                    "ZipCode": "5669",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "875 Mink Street",
+                    "City": "Postal",
+                    "Country": "Swaziland",
+                    "ZipCode": "8753",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 4,
+                "CreatedDate": "0001-01-01T00:00:00"
+            }
+        ],
+        "MyListings": [
+            {
+                "Category": "Objects > Board Games",
+                "Title": "Chess Pieces",
+                "Description": "Ullamco ullamco ea consequat adipisicing amet irure ex veniam cillum sunt commodo et.",
+                "Price": 1.25,
+                "DateAdded": "2019-11-03T21:05:00",
+                "Photos": [
+                    {
+                        "Url": "https://www.stockvault.net/data/2010/05/02/113811/preview16.jpg",
+                        "PublicId": null,
+                        "Description": "Adipisicing tempor eiusmod deserunt incididunt magna ad amet.",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id": 2,
+        "Username": "ginger24",
+        "Password": "Password",
+        "Email": "ginger24@gmail.com",
+        "Firstname": "Saoirse",
+        "Lastname": "Ronan",
+        "DateOfBirth": "1981-11-19T00:00:00",
+        "Gender": "female",
+        "Phone": "0211444467",
+        "LastActiveDate": "0001-01-01T00:00:00",
+        "CreatedDate": "0001-01-01T00:00:00",
+        "Avatar": {
+            "Url": "https://randomuser.me/api/portraits/lego/5.jpg",
+            "PublicId": null,
+            "Description": "Aliqua incididunt magna velit sunt laborum laborum esse nulla officia commodo elit nisi dolore.",
+            "DateAdded": "0001-01-01T00:00:00"
+        },
+        "UserAddresses": [
+            {
+                "Address": {
+                    "AddressLine1": "867 Menahan Street",
+                    "City": "Physical",
+                    "Country": "Kuwait",
+                    "ZipCode": "8957",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "867 Mink Street",
+                    "City": "Bills",
+                    "Country": "Kuwait",
+                    "ZipCode": "8157",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 3,
+                "CreatedDate": "0001-01-01T00:00:00"
+            }
+        ],
+        "MyListings": [
+            {
+                "Category": "Objects > Toys",
+                "Title": "Rubiks Cube",
+                "Description": "Ea aliquip esse exercitation et velit officia.",
+                "Price": 3.5,
+                "DateAdded": "2019-10-06T21:05:00",
+                "Photos": [
+                    {
+                        "Url": "https://www.stockvault.net/data/2010/10/05/115240/preview16.jpg",
+                        "PublicId": null,
+                        "Description": "Commodo labore laborum incididunt do sunt voluptate sint esse officia adipisicing.",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id": 3,
+        "Username": "erika49",
+        "Password": "Password",
+        "Email": "test_email@gmail.com",
+        "Firstname": "Erika",
+        "Lastname": "Hale",
+        "DateOfBirth": "1999-10-17T00:00:00",
+        "Gender": "female",
+        "Phone": "0211234567",
+        "LastActiveDate": "0001-01-01T00:00:00",
+        "CreatedDate": "0001-01-01T00:00:00",
+        "Avatar": {
+            "Url": "https://randomuser.me/api/portraits/lego/4.jpg",
+            "PublicId": null,
+            "Description": "In voluptate eiusmod culpa Lorem anim pariatur consequat elit et.",
+            "DateAdded": "0001-01-01T00:00:00"
+        },
+        "UserAddresses": [
+            {
+                "Address": {
+                    "AddressLine1": "870 Menahan Street",
+                    "City": "Physical",
+                    "Country": "Vietnam",
+                    "ZipCode": "8989",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "870 Mink Street",
+                    "City": "Postal",
+                    "Country": "Vietnam",
+                    "ZipCode": "8554",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 4,
+                "CreatedDate": "0001-01-01T00:00:00"
+            }
+        ],
+        "MyListings": [
+            {
+                "Category": "Landscape > Seating",
+                "Title": "Park Bench",
+                "Description": "Et ad voluptate culpa anim incididunt et ex commodo sit anim voluptate in reprehenderit aliquip.",
+                "Price": 169.99,
+                "DateAdded": "2019-10-23T21:05:00",
+                "Photos": [
+                    {
+                        "Url": "https://www.stockvault.net/data/2010/10/21/115455/preview16.jpg",
+                        "PublicId": null,
+                        "Description": "Lorem nostrud aliquip esse laboris ullamco qui consequat ullamco velit qui ut enim laborum.",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id": 4,
+        "Username": "serena69",
+        "Password": "Password",
+        "Email": "Serena69@gmail.com",
+        "Firstname": "Serena",
+        "Lastname": "Drake",
+        "DateOfBirth": "1958-09-03T00:00:00",
+        "Gender": "female",
+        "Phone": "0217654321",
+        "LastActiveDate": "2019-12-01T10:33:21.5407037",
+        "CreatedDate": "0001-01-01T00:00:00",
+        "Avatar": {
+            "Url": "http://res.cloudinary.com/ethio-trade/image/upload/v1573974622/nhgqyoklmbgg16oukb9e.jpg",
+            "PublicId": "nhgqyoklmbgg16oukb9e",
+            "Description": null,
+            "DateAdded": "2019-11-17T17:10:22.0170387"
+        },
+        "UserAddresses": [
+            {
+                "Address": {
+                    "AddressLine1": "868 Mink Street",
+                    "City": "Post",
+                    "Country": "Afghanistan",
+                    "ZipCode": "8554",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 4,
+                "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "868 Menahan Street",
+                    "City": "Physical",
+                    "Country": "Afghanistan",
+                    "ZipCode": "8959",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
+            }
+        ],
+        "MyListings": [
+            {
+                "Category": "Objects > Umbrellas",
+                "Title": "Blue umbrella - the blue one",
+                "Description": "Excepteur est nostrud nostrud deserunt amet dolore veniam dolor reprehenderit exercitation commodo et.",
+                "Price": 12.0,
+                "DateAdded": "2019-07-08T21:05:00",
+                "Photos": [
+                    {
+                        "Url": "https://res.cloudinary.com/ethio-trade/image/upload/v1556080987/oisvbhqabxghlnttmwb0.jpg",
+                        "PublicId": "oisvbhqabxghlnttmwb0",
+                        "Description": "Lots of Umbrellas",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": true
+                    },
+                    {
+                        "Url": "https://res.cloudinary.com/ethio-trade/image/upload/v1556080985/t05ikfdmintcbah5ri6s.jpg",
+                        "PublicId": "t05ikfdmintcbah5ri6s",
+                        "Description": "Dinosaur umbrella",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": false
+                    },
+                    {
+                        "Url": "https://res.cloudinary.com/ethio-trade/image/upload/v1556080984/fikoavi4obeivfest7h6.jpg",
+                        "PublicId": "fikoavi4obeivfest7h6",
+                        "Description": "Butterfly umbrella",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": false
+                    },
+                    {
+                        "Url": "https://res.cloudinary.com/ethio-trade/image/upload/v1556080983/foninwbdudfqidbiozv9.png",
+                        "PublicId": "foninwbdudfqidbiozv9",
+                        "Description": "Blue curved umbrella",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": false
+                    },
+                    {
+                        "Url": "https://res.cloudinary.com/ethio-trade/image/upload/v1555878763/c62inocnoavtmluwymhh.jpg",
+                        "PublicId": "c62inocnoavtmluwymhh",
+                        "Description": "Folded gray umbrella",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": false
+                    },
+                    {
+                        "Url": "https://www.stockvault.net/data/2012/08/29/134616/preview16.jpg",
+                        "PublicId": null,
+                        "Description": "Nisi mollit Lorem dolor aliquip aliquip eu ullamco nostrud nulla laborum excepteur.",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id": 5,
+        "Username": "roy27",
+        "Password": "Password",
+        "Email": "test_email@gmail.com",
+        "Firstname": "Roy",
+        "Lastname": "Mccullough",
+        "DateOfBirth": "1964-09-01T00:00:00",
+        "Gender": "male",
+        "Phone": "0211234567",
+        "LastActiveDate": "0001-01-01T00:00:00",
+        "CreatedDate": "0001-01-01T00:00:00",
+        "Avatar": {
+            "Url": "https://randomuser.me/api/portraits/lego/5.jpg",
+            "PublicId": null,
+            "Description": "Incididunt tempor aliquip sunt cillum magna occaecat velit.",
+            "DateAdded": "0001-01-01T00:00:00"
+        },
+        "UserAddresses": [
+            {
+                "Address": {
+                    "AddressLine1": "873 Menahan Street",
+                    "City": "Physical",
+                    "Country": "Equatorial Guinea",
+                    "ZipCode": "8909",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "873 Mink Street",
+                    "City": "Billing",
+                    "Country": "Equatorial Guinea",
+                    "ZipCode": "8754",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 3,
+                "CreatedDate": "0001-01-01T00:00:00"
+            }
+        ],
+        "MyListings": [
+            {
+                "Category": "Medical > Services",
+                "Title": "Broken Heart Repairs",
+                "Description": "Id excepteur est veniam pariatur ex qui laboris enim reprehenderit sunt Lorem.",
+                "Price": 512.0,
+                "DateAdded": "2018-11-08T21:05:00",
+                "Photos": [
+                    {
+                        "Url": "https://www.stockvault.net/data/2013/01/11/140143/preview16.jpg",
+                        "PublicId": null,
+                        "Description": "Magna anim et veniam enim cillum veniam fugiat sunt aliqua labore consectetur exercitation.",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id": 6,
+        "Username": "harmon71",
+        "Password": "Password",
+        "Email": "test_email@gmail.com",
+        "Firstname": "Harmon",
+        "Lastname": "Andrews",
+        "DateOfBirth": "1999-08-18T00:00:00",
+        "Gender": "male",
+        "Phone": "0211234567",
+        "LastActiveDate": "0001-01-01T00:00:00",
+        "CreatedDate": "0001-01-01T00:00:00",
+        "Avatar": {
+            "Url": "https://randomuser.me/api/portraits/lego/6.jpg",
+            "PublicId": null,
+            "Description": "Do duis aliqua ut cupidatat proident exercitation minim aliqua nulla laboris.",
+            "DateAdded": "0001-01-01T00:00:00"
+        },
+        "UserAddresses": [
+            {
+                "Address": {
+                    "AddressLine1": "872 Menahan Street",
+                    "City": "Physical",
+                    "Country": "Bhutan",
+                    "ZipCode": "8909",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
+            }
+        ],
+        "MyListings": [
+            {
+                "Category": "Medical > Equipment",
+                "Title": "Stethoscope",
+                "Description": "Nulla tempor do esse esse proident duis sit.",
+                "Price": 89.95,
+                "DateAdded": "2019-11-08T21:05:00",
+                "Photos": [
+                    {
+                        "Url": "https://www.stockvault.net/data/2012/12/12/138954/preview16.jpg",
+                        "PublicId": null,
+                        "Description": "Labore dolor et cillum ullamco.",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id": 7,
+        "Username": "kelley12",
+        "Password": "Password",
+        "Email": "Hancock@gmail.com",
+        "Firstname": "Kelley",
+        "Lastname": "Hancock",
+        "DateOfBirth": "1963-05-16T00:00:00",
+        "Gender": "female",
+        "Phone": "0211234567",
+        "LastActiveDate": "0001-01-01T00:00:00",
+        "CreatedDate": "0001-01-01T00:00:00",
+        "Avatar": {
+            "Url": "https://randomuser.me/api/portraits/lego/7.jpg",
+            "PublicId": null,
+            "Description": "Exercitation consectetur consectetur eiusmod do commodo in do fugiat laboris in sunt.",
+            "DateAdded": "0001-01-01T00:00:00"
+        },
+        "UserAddresses": [
+            {
+                "Address": {
+                    "AddressLine1": "878 Menahan Street",
+                    "City": "Physical",
+                    "Country": "Gambia",
+                    "ZipCode": "5609",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
+            }
+        ],
+        "MyListings": [
+            {
+                "Category": "Food & Drink > Fruits",
+                "Title": "Ripe Strawberries",
+                "Description": "Officia consectetur deserunt cupidatat nostrud deserunt consequat qui irure enim sunt velit.",
+                "Price": 4.7,
+                "DateAdded": "2019-11-01T21:05:00",
+                "Photos": [
+                    {
+                        "Url": "https://www.stockvault.net/data/2011/02/12/117618/preview16.jpg",
+                        "PublicId": null,
+                        "Description": "Nostrud anim sit duis in voluptate duis.",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id": 8,
+        "Username": "jackson62",
+        "Password": "Password",
+        "Email": "test_email@gmail.com",
+        "Firstname": "Jackson",
+        "Lastname": "Santiago",
+        "DateOfBirth": "1958-04-09T00:00:00",
+        "Gender": "male",
+        "Phone": "0211234567",
+        "LastActiveDate": "0001-01-01T00:00:00",
+        "CreatedDate": "0001-01-01T00:00:00",
+        "Avatar": {
+            "Url": "https://randomuser.me/api/portraits/lego/2.jpg",
+            "PublicId": null,
+            "Description": "Laborum aliquip quis veniam qui.",
+            "DateAdded": "0001-01-01T00:00:00"
+        },
+        "UserAddresses": [
+            {
+                "Address": {
+                    "AddressLine1": "871 Menahan Street",
+                    "City": "Physical",
+                    "Country": "Zambia",
+                    "ZipCode": "8989",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "871 Mink Street",
+                    "City": "SHipping",
+                    "Country": "Zambia",
+                    "ZipCode": "8554",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 2,
+                "CreatedDate": "0001-01-01T00:00:00"
+            }
+        ],
+        "MyListings": [
+            {
+                "Category": "Food & Drink > Spicey",
+                "Title": "Red Chillies",
+                "Description": "Duis culpa ullamco ad fugiat occaecat dolor consectetur ullamco consectetur pariatur.",
+                "Price": 3.5,
+                "DateAdded": "2019-11-09T21:05:00",
+                "Photos": [
+                    {
+                        "Url": "https://www.stockvault.net/data/2010/10/05/115249/preview16.jpg",
+                        "PublicId": null,
+                        "Description": "Veniam exercitation nostrud duis consequat eu irure quis exercitation.",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id": 9,
+        "Username": "estrada43",
+        "Password": "Password",
+        "Email": "test_email@gmail.com",
+        "Firstname": "Estrada",
+        "Lastname": "Vang",
+        "DateOfBirth": "1993-05-06T00:00:00",
+        "Gender": "male",
+        "Phone": "0211234567",
+        "LastActiveDate": "0001-01-01T00:00:00",
+        "CreatedDate": "0001-01-01T00:00:00",
+        "Avatar": {
+            "Url": "https://randomuser.me/api/portraits/lego/2.jpg",
+            "PublicId": null,
+            "Description": "In deserunt mollit veniam sint id officia.",
+            "DateAdded": "0001-01-01T00:00:00"
+        },
+        "UserAddresses": [
+            {
+                "Address": {
+                    "AddressLine1": "874 Mink Street",
+                    "City": "HQ",
+                    "Country": "Seychelles",
+                    "ZipCode": "8754",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 5,
+                "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "874 Menahan Street",
+                    "City": "Physical",
+                    "Country": "Seychelles",
+                    "ZipCode": "8909",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
+            }
+        ],
+        "MyListings": [
+            {
+                "Category": "Paper & Books > Old Books",
+                "Title": "Stack of books",
+                "Description": "In eiusmod anim nulla commodo.",
+                "Price": 45.45,
+                "DateAdded": "2019-10-12T21:05:00",
+                "Photos": [
+                    {
+                        "Url": "https://www.stockvault.net/data/2009/10/28/111363/preview16.jpg",
+                        "PublicId": null,
+                        "Description": "Do velit eiusmod consequat ex occaecat qui duis do occaecat.",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id": 10,
+        "Username": "curry72",
+        "Password": "Password",
+        "Email": "splashbro_1@gmail.com",
+        "Firstname": "Curry",
+        "Lastname": "Parsons",
+        "DateOfBirth": "1968-03-15T00:00:00",
+        "Gender": "male",
+        "Phone": "0215432167",
+        "LastActiveDate": "2019-11-18T21:50:38.2776451",
+        "CreatedDate": "2019-04-29T21:49:54.1205528",
+        "Avatar": {
+            "Url": "http://res.cloudinary.com/ethio-trade/image/upload/v1573974717/qbfyhx58vti2sp26mhor.jpg",
+            "PublicId": "qbfyhx58vti2sp26mhor",
+            "Description": null,
+            "DateAdded": "2019-11-17T17:11:57.7487551"
+        },
+        "UserAddresses": [
+            {
+                "Address": {
+                    "AddressLine1": "865 Mink Street",
+                    "City": "Shipto",
+                    "Country": "Kuwait",
+                    "ZipCode": "8957",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 2,
+                "CreatedDate": "0001-01-01T00:00:00"
+            },
+            {
+                "Address": {
+                    "AddressLine1": "865 Menahan Street",
+                    "City": "Physical",
+                    "Country": "Kuwait",
+                    "ZipCode": "8957",
+                    "CreatedDate": "2019-04-29T00:00:00"
+                },
+                "AddressTypeId": 1,
+                "CreatedDate": "0001-01-01T00:00:00"
+            }
+        ],
+        "MyListings": [
+            {
+                "Category": "Food & Drink > coffee",
+                "Title": "Cup of Coffee",
+                "Description": "Roasted cofee beans in cup",
+                "Price": 4.5,
+                "DateAdded": "2019-11-05T21:05:00",
+                "Photos": [
+                    {
+                        "Url": "https://www.stockvault.net/data/2011/06/05/124624/preview16.jpg",
+                        "PublicId": null,
+                        "Description": "Coffee Beans",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": true
+                    },
+                    {
+                        "Url": "https://www.stockvault.net/data/2011/06/05/124638/preview16.jpg",
+                        "PublicId": null,
+                        "Description": "Coffee on white",
+                        "DateAdded": "0001-01-01T00:00:00",
+                        "IsMain": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id": 11,
+        "Username": "klay11",
+        "Password": "Password",
+        "Email": "splashbro_2@gmail.com",
+        "Firstname": "Klay",
+        "Lastname": "Thompson",
+        "DateOfBirth": "1990-02-08T00:00:00",
+        "Gender": "male",
+        "Phone": "0215432167",
+        "LastActiveDate": "2019-11-17T17:15:32.2610637",
+        "CreatedDate": "2019-04-29T20:49:54.1146083",
+        "Avatar": {
+            "Url": "http://res.cloudinary.com/ethio-trade/image/upload/v1573974456/kbcyctv92v54cwuhbim1.jpg",
+            "PublicId": "kbcyctv92v54cwuhbim1",
+            "Description": null,
+            "DateAdded": "2019-11-17T17:07:34.9122072"
+        },
+        "UserAddresses": [],
+        "MyListings": []
+    },
+    {
+        "Id": 12,
+        "Username": "snake007",
+        "Password": "Password",
+        "Email": "kevin_Snake@gmail.com",
+        "Firstname": "Kevin",
+        "Lastname": "Durant",
+        "DateOfBirth": "2016-01-11T11:00:00",
+        "Gender": "male",
+        "Phone": "0210719672",
+        "LastActiveDate": "2019-12-07T17:42:01.9104047",
+        "CreatedDate": "2019-04-29T21:46:51.1302671",
+        "Avatar": {
+            "Url": "http://res.cloudinary.com/ethio-trade/image/upload/v1556533389/y3ejzesirs35xgkjefeh.jpg",
+            "PublicId": "y3ejzesirs35xgkjefeh",
+            "Description": null,
+            "DateAdded": "2019-04-29T22:23:08.400436"
+        },
+        "UserAddresses": [],
+        "MyListings": []
+    },
+    {
+        "Id": 13,
+        "Username": "matt10of10",
+        "Password": "Password",
+        "Email": "matt10@gmail.com",
+        "Firstname": "Matt",
+        "Lastname": "Spierings",
+        "DateOfBirth": "2005-11-12T11:00:00",
+        "Gender": "male",
+        "Phone": "021CallME",
+        "LastActiveDate": "2019-05-15T12:27:32.7379324",
+        "CreatedDate": "2019-05-15T12:27:32.7378273",
+        "Avatar": null,
+        "UserAddresses": [],
+        "MyListings": []
+    }
+]

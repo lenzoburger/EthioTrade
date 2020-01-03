@@ -1,0 +1,34 @@
+[
+    {
+        "WatcherId": 4,
+        "WatchingId": 7
+    },
+    {
+        "WatcherId": 4,
+        "WatchingId": 10
+    },
+    {
+        "WatcherId": 12,
+        "WatchingId": 4
+    },
+    {
+        "WatcherId": 12,
+        "WatchingId": 7
+    },
+    {
+        "WatcherId": 12,
+        "WatchingId": 8
+    },
+    {
+        "WatcherId": 4,
+        "WatchingId": 9
+    },
+    {
+        "WatcherId": 4,
+        "WatchingId": 1
+    },
+    {
+        "WatcherId": 12,
+        "WatchingId": 2
+    }
+]

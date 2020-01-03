@@ -1,14 +1,11 @@
 using System;
 
-namespace EthCoffee.api.Models
+namespace EthCoffee.api.Data.seed.Dtos
 {
-    public class Message
+    public class MessageSeedDto
     {
-        public int Id { get; set; }
         public int SenderId { get; set; }
-        public virtual User Sender { get; set; }
         public int RecipientId { get; set; }
-        public virtual User Recipient { get; set; }
         public string Content { get; set; }
         public bool IsRead { get; set; }
         public DateTime? DateRead { get; set; }

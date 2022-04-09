@@ -34,7 +34,7 @@
     "bootswatch": "^4.4.0",
     "core-js": "^3.4.5",
     "font-awesome": "^4.7.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng2-file-upload": "^1.4.0",
     "ngx-bootstrap": "^5.2.0",
     "ngx-gallery": "^5.10.0",

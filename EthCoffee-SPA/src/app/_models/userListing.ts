@@ -1,5 +1,5 @@
 import { Avatar } from './avatar';
-import { Listing } from './Listing';
+import { Listing } from './listing';
 import { Address } from './address';
 
 export interface UserListing {
